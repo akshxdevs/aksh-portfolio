@@ -1,9 +1,9 @@
 export const NavBar = () => {
   return (
-    <div className="w-full max-w-fit mx-auto px-6 py-4">
-      <div className="flex items-center  px-3 py-2 border border-gray-600 rounded-xl bg-zinc-900 backdrop-blur-sm">
+    <div className="w-full max-w-fit mx-auto">
+      <div className="flex items-center px-3 py-1 border border-gray-600 rounded-xl bg-zinc-900 backdrop-blur-sm">
         <div className="group relative">
-          <button className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img 
               width="30" 
               height="30" 
@@ -18,7 +18,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="group relative">
-          <button className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img
               width="30"
               height="30"
@@ -33,7 +33,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="group relative">
-          <button className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img
               width="30"
               height="30"
@@ -48,7 +48,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="group relative">
-          <button className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img
               width="24"
               height="24"
@@ -63,7 +63,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="group relative">
-          <button className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img
               width="30"
               height="30"
@@ -77,7 +77,7 @@ export const NavBar = () => {
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
           </div>
         </div>
-        <div className="mx-2">
+        <div>
           <img
             width="25"
             height="35"
@@ -87,7 +87,7 @@ export const NavBar = () => {
           />
         </div>
         <div className="group relative">
-          <button className="flex items-center p-2 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <button className="flex items-center p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
