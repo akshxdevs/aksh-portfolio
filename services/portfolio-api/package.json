@@ -1,5 +1,5 @@
 {
-  "name": "primary-backend",
+  "name": "portfolio-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

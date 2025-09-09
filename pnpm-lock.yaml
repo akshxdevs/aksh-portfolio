@@ -140,6 +140,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@tailwindcss/postcss':
+        specifier: ^4
+        version: 4.1.12
       framer-motion:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -158,6 +161,9 @@ importers:
       react-lucid:
         specifier: ^0.0.1
         version: 0.0.1
+      tailwindcss:
+        specifier: ^4
+        version: 4.1.12
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
