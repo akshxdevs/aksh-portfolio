@@ -1,7 +1,7 @@
 export const MyIntro = () => {
   return (
-    <div className="max-w-5xl mx-auto py-10">
-      <div className="flex justify-between gap-5 py-10 px-32">
+    <div className="max-w-5xl mx-auto pt-10">
+      <div className="flex justify-between gap-5 pt-10 px-32">
         <div>
           <img
             width="900"
