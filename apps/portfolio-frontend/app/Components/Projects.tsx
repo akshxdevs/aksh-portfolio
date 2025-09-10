@@ -31,6 +31,9 @@ export const Projects = () => {
       toast.error("Failed to fetch projects");
     }
   };
+  const handleProject = (projectName:string) => {
+    router.push(`/project/${projectName}`)
+  }
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
@@ -46,9 +49,9 @@ export const Projects = () => {
       </div>
       <div className="flex flex-col justify-center items-center mt-16">
         {projects.length > 0 && (
-          <div className="w-fit h-fit grid grid-cols-2 gap-4 ">
+          <div className="w-2/3 h-fit grid grid-cols-2 gap-4">
             {projects.map((project) => (
-              <div key={project.id} className="border border-zinc-800 mt-5 rounded-md pb-5">
+              <div onClick={()=>handleProject(project.title)} key={project.id} className="border border-zinc-800 mt-5 rounded-md pb-5 shadow-lg shadow-black">
                 <img
                   src={project.imgUrl}
                   alt="projectImg"
@@ -62,7 +65,7 @@ export const Projects = () => {
                   <div className="flex items-center"><p className="bg-green-200 text-green-700 px-2 py-1 rounded-xl text-sm font-semibold">{project.status}</p></div>
                 </div>
                 <div className="px-5 py-3">
-                  <p>{project.description}</p>
+                  <p>{project.intro}</p>
                 </div>
                 <div className="flex gap-3 px-5 py-2">
                   <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">

@@ -57,4 +57,19 @@ router.get("/getallprojects", async (req, res) => {
   }
 });
 
+router.get("/getproject/:projectName", async (req, res) => {
+  try {
+    const getproject = await prismaClient.projects.findFirst({
+        where: {
+          title: req.params.projectName,
+      },
+    });
+    res.json(getproject);
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    res.status(500).json({ message: "Something went wrong!!" });
+  }
+});
+
+
 export const pageRouter = router;
