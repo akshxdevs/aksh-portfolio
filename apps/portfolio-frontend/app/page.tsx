@@ -34,9 +34,6 @@ export default function Home() {
         <BlogSection />
       </div>
       <div>
-        <NewsLetter />
-      </div>
-      <div>
         <Experience />
       </div>
       <div>
@@ -44,6 +41,9 @@ export default function Home() {
       </div>
       <div>
         <ReachOut />
+      </div>
+      <div>
+        <NewsLetter />
       </div>
       <div>
         <SupportSection />
