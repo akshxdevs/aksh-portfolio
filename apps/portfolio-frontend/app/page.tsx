@@ -51,7 +51,7 @@ export default function Home() {
       <div>
         <Footer />
       </div>
-      <div className="fixed bottom-[70px] left-1/2 -translate-x-1/2 w-full">
+      <div className="fixed bottom-[40px] left-1/2 -translate-x-1/2 w-full">
         <NavBar />
       </div>
     </div>

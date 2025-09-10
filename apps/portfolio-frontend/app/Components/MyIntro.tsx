@@ -15,9 +15,12 @@ export const MyIntro = () => {
           <div className="flex items-center gap-2">
             <h1 className="text-2xl text-slate-50 font-bold">Akash</h1>
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
+          </div>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-200">
+            21, Full Stack and Blockchain Developer
             <a
               href="mailto:akash@example.com"
-              className="group relative ml-2 p-2 rounded-lg transition-all duration-300 hover:bg-green-600/20 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+              className="group relative rounded-lg transition-all duration-300 hover:bg-green-600/20 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
               title="Hire Me"
             >
               <img
@@ -27,14 +30,11 @@ export const MyIntro = () => {
                 alt="about-me"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
-              <div className="w-56 overflow-x-hidden absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
                 Hire Me!
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
               </div>
             </a>
-          </div>
-          <h2 className="text-lg font-semibold text-slate-200">
-            21, Full Stack and Blockchain Developer
           </h2>
           <p className="text-md text-slate-300">
             i break things, fix them, and learn fast. deep into code, chasing
