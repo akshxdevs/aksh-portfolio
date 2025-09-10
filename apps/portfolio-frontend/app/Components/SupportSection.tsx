@@ -1,6 +1,52 @@
 export const SupportSection = () => {
-    return (
-        <div>
+  return (
+    <div className="max-w-5xl mx-auto py-5">
+      <div className="flex flex-col gap-2 px-32">
+        <h1 className="text-2xl text-slate-50 font-semibold">Support Me</h1>
+        <p className="text-md text-zinc-200">
+          if you vibe with my work, projects, or content, consider supporting
+          me. every bit of support helps me keep creating, improving, and
+          sharing more.
+        </p>
+        <div className="flex gap-2 mt-4">
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/hatch/64/F25081/like.png"
+              alt="like"
+            />
+            Github Sponsors
+          </button>
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/doodle/48/coffee-to-go.png"
+              alt="coffee-to-go"
+            />
+            Buy Me a Coffee
+          </button>
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/nolan/64/solana.png"
+              alt="solana"
+            />
+            Solana
+          </button>
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/bhim-upi.png"
+              alt="bhim-upi"
+            />
+            UPI
+          </button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };

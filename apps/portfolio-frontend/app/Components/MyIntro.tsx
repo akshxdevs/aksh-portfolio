@@ -28,10 +28,7 @@ export const MyIntro = () => {
                 className="transition-all duration-300 group-hover:brightness-110"
               />
               <div className="w-56 overflow-x-hidden absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
-                I’m currently available for internships, full-time
-                opportunities, and freelance projects. If you’re looking for
-                someone passionate, skilled, and ready to contribute, I’m here
-                to help bring your ideas to life!
+                Hire Me!
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
               </div>
             </a>
@@ -50,7 +47,7 @@ export const MyIntro = () => {
           <div className="flex gap-2 mt-2">
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <svg
-                className="w-6 h-6 text-white"
+                className="w-8 h-8 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

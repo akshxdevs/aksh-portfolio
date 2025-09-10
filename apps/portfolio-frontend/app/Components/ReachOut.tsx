@@ -2,10 +2,10 @@ export const ReachOut = () => {
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center px-32">
-        <h1 className="text-2xl text-slate-50 font-semibold">Get in Touch</h1>
+        <h1 className="text-4xl text-slate-50 font-semibold">Get in Touch</h1>
       </div>
       <div className="px-44 py-10">
-        <p className="text-xl text-zinc-200">Got questions? Talk to me.</p>
+        <p className="text-2xl text-zinc-200">Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="border rounded-lg p-2">Book a meet</button>
           <button className="border rounded-lg p-2">Chat on twitter</button>
@@ -35,7 +35,7 @@ export const ReachOut = () => {
           />
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-medium rounded-lg shadow-md hover:from-indigo-600 hover:to-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95"
+            className="w-full px-6 py-3 bg-gradient-to-r from-zinc-700 to-black text-white font-medium rounded-lg shadow-md hover:from-zinc-70 hover:to-black transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95"
           >
             Send Message
           </button>
