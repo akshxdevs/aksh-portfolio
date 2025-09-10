@@ -20,7 +20,6 @@ model Blog {
   writings     String
   coverImg     String
   blogImages   Images[]
-  userId       String
   tags         String?
   thumbnailImg String?
   likes        Likes[]
@@ -37,7 +36,6 @@ model Subscribers {
 model Likes {
   id     String @id @default(uuid())
   blogId String
-  userId String
   blog   Blog   @relation(fields: [blogId], references: [id])
 }
 

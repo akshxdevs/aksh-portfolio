@@ -44,9 +44,8 @@ router.get("/getblog/:id", async (req, res) => {
   }
 });
 
-router.post("/createblog/:id", async (req, res) => {
+router.post("/createblog", async (req, res) => {
   try {
-    const userId = req.params.id;
     const parsedBody = blogSchema.safeParse(req.body);
     if (!parsedBody.success) {
       console.log(parsedBody.error?.errors);
@@ -59,7 +58,6 @@ router.post("/createblog/:id", async (req, res) => {
         subtitle: subtitle,
         writings: writings,
         coverImg: coverImg,
-        userId: userId,
         tags: tags,
         thumbnailImg: thumbnailImg,
       },
@@ -77,7 +75,6 @@ router.post("/createblog/:id", async (req, res) => {
 router.post("/like/:id", async (req, res) => {
   try {
     const blogId = req.params.id;
-    const userId = req.body.userId;
     
     const blog = await prismaClient.blog.findUnique({
       where: {
@@ -93,7 +90,6 @@ router.post("/like/:id", async (req, res) => {
     const existingLike = await prismaClient.likes.findFirst({
       where: {
         blogId: blogId,
-        userId: userId,
       },
     });
 
@@ -103,7 +99,6 @@ router.post("/like/:id", async (req, res) => {
 
     await prismaClient.likes.create({
       data: {
-        userId: userId,
         blogId: blogId,
       },
     });
