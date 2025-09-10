@@ -15,8 +15,8 @@ export const NewsLetter = () => {
           />
           <div className="flex justify-between  w-full border border-zinc-600 rounded-md ">
             <input
-              type="text"
-              placeholder="heisenberg.druglord@gamil.com"
+              type="email"
+              placeholder="heisenberg.druglord@gmail.com"
               className="w-full outline-none bg-transparent p-2"
             />
             <button className="w-56 bg-orange-600 px-6 rounded-md font-semibold">
