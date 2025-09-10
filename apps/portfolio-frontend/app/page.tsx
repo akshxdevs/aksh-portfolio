@@ -1,6 +1,8 @@
 import { AppBar } from "./Components/AppBar";
 import { BlogSection } from "./Components/BlogSection";
 import { Contact } from "./Components/Contact";
+import { Education } from "./Components/Education";
+import { Experience } from "./Components/Experience";
 import { Footer } from "./Components/Footer";
 import { MyIntro } from "./Components/MyIntro";
 import { NavBar } from "./Components/NavBar";
@@ -12,38 +14,44 @@ import { TechStack } from "./Components/TechStack";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <div>
         <AppBar />
       </div>
       <div>
-        {/* <MyIntro/> */}
+        <MyIntro />
       </div>
       <div>
-        <TechStack/>
+        <TechStack />
       </div>
       <div>
-        <Projects/>
+        <Projects />
       </div>
       <div>
-        <BlogSection/>
+        <Contact />
       </div>
       <div>
-        <NewsLetter/>
+        <BlogSection />
       </div>
       <div>
-        <ReachOut/>
+        <NewsLetter />
       </div>
       <div>
-        <Contact/>
+        <Experience />
       </div>
       <div>
-        <SupportSection/>
+        <Education />
       </div>
       <div>
-        <Footer/>
+        <ReachOut />
       </div>
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 w-full">
+      <div>
+        <SupportSection />
+      </div>
+      <div>
+        <Footer />
+      </div>
+      <div className="fixed bottom-[70px] left-1/2 -translate-x-1/2 w-full">
         <NavBar />
       </div>
     </div>
