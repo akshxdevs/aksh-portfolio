@@ -17,7 +17,7 @@ export default function Home() {
         <AppBar />
       </div>
       <div>
-        <MyIntro/>
+        {/* <MyIntro/> */}
       </div>
       <div>
         <TechStack/>

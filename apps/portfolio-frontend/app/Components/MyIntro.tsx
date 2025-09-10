@@ -20,15 +20,18 @@ export const MyIntro = () => {
               className="group relative ml-2 p-2 rounded-lg transition-all duration-300 hover:bg-green-600/20 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
               title="Hire Me"
             >
-              <img 
-                width="20" 
-                height="20" 
-                src="https://img.icons8.com/ios-filled/50/FFFFFF/about-me.png" 
+              <img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/ios-filled/50/FFFFFF/about-me.png"
                 alt="about-me"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
-                Hire Me
+              <div className="w-56 overflow-x-hidden absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
+                I’m currently available for internships, full-time
+                opportunities, and freelance projects. If you’re looking for
+                someone passionate, skilled, and ready to contribute, I’m here
+                to help bring your ideas to life!
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
               </div>
             </a>
