@@ -16,7 +16,6 @@ export const Contact = () => {
         </p>
         <div className="flex gap-3 mt-2">
           <button className="border rounded-lg p-2">Hire me</button>
-          <button className="border rounded-lg p-2">Book a meet</button>
           <button className="border rounded-lg p-2">Get in touch</button>
         </div>
       </div>
