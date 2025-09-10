@@ -5,21 +5,31 @@ import { pageRouter } from "./routes/page";
 
 const app = express();
 
+// Enable CORS for all routes
+app.use(cors());
+
+// Parse JSON bodies
 app.use(express.json());
-app.use(
-    cors({
-      origin: "https://akshxdevs.com",
-      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-      allowedHeaders: ["Content-Type", "Authorization"],
-      credentials: true, // Allow cookies & headers
-    })
-  );
 
-app.use("/about",pageRouter);
-// app.use("/home",);
-// app.use("/projects",);
-// app.use("/contact-me",);
+// Routes
+app.use("/projects", pageRouter);
 
-app.listen(PORT,()=>{
-    console.log(`server running on ${PORT}`);
-})
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.json({ message: "Portfolio API is running!", status: "healthy" });
+});
+
+// Error handling middleware
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Something went wrong!" });
+});
+
+// 404 handler
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Portfolio API server running on port ${PORT}`);
+});

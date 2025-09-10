@@ -1,0 +1,40 @@
+"use client";
+import { useRouter } from "next/navigation";
+
+export default function () {
+    const router = useRouter();
+  return (
+    <div className="max-w-5xl mx-auto py-32">
+      <div className="flex gap-4">
+        <button onClick={()=>router.push("/")}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+            />
+          </svg>
+        </button>
+        <p>Back to Main</p>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+        <h1 className="text-5xl text-slate-50 font-bold">Proof of work!</h1>
+        <h2 className="text-2xl text-slate-200 font-semibold">
+          things i’ve made real.
+        </h2>
+        <p className="text-center text-md text-zinc-400 font-normal">
+          i’ve built, shipped, and scaled projects, from simple sites to full-on
+          web & dApps. some started as experiments, some became real products.
+          these are the ones that made it through.
+        </p>
+      </div>
+    </div>
+  );
+}
