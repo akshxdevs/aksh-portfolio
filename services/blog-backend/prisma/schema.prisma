@@ -13,77 +13,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id String @id @default(uuid())
-  username String @unique
-  handle String
-  name String
-  password String
-  profleImg String?
-  blogs Blog[]
-  drafts Draft[]
-  subscribers Subscribers[]
-  comments Comments[]
-  likes Likes[]
-  Saved SaveBlog[]
-}
-
 model Blog {
-  id String @id @default(uuid())
-  title String
-  subtitle String
-  writings String
-  blogImages Images[]
-  userId String
-  tags String?
+  id           String     @id @default(uuid())
+  title        String
+  subtitle     String
+  writings     String
+  coverImg     String
+  blogImages   Images[]
+  userId       String
+  tags         String?
   thumbnailImg String?
-  likes Likes[]
-  comments Comments[]
-  user User @relation(fields: [userId],references: [id])
-  createdOn DateTime @default(now())
+  likes        Likes[]
+  createdOn    DateTime   @default(now())
+  updateAt     DateTime   @updatedAt
 }
 
 model Subscribers {
-  id String @id @default(uuid())
-  userId String
-  subscriberId String?
+  id              String  @id @default(uuid())
+  subscriberName  String?
   subscriberEmail String?
-  user User @relation(fields: [userId],references: [id])
-}
-
-model Draft{
-  id String @id @default(uuid())
-  userId String
-  user User @relation(fields: [userId],references: [id])
-}
-
-model Comments{
-  id String @id @default(uuid())
-  comment String
-  userId String
-  blogId String
-  blog Blog @relation(fields: [blogId],references: [id])
-  user User @relation(fields: [userId],references: [id])
 }
 
 model Likes {
-  id String @id @default(uuid())
+  id     String @id @default(uuid())
   blogId String
   userId String
-  blog Blog @relation(fields: [blogId],references: [id])
-  user User @relation(fields: [userId],references: [id])
-}
-
-model SaveBlog {
-  id String @id @default(uuid())
-  userId String
-  blogId String
-  user User @relation(fields: [userId],references: [id])
+  blog   Blog   @relation(fields: [blogId], references: [id])
 }
 
 model Images {
-  id String @id @default(uuid())
-  url String
+  id     String @id @default(uuid())
+  url    String
   blogId String
-  blog Blog @relation(fields: [blogId],references: [id])
+  blog   Blog   @relation(fields: [blogId], references: [id])
 }

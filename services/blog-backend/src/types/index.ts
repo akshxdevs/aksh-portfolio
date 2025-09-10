@@ -17,8 +17,23 @@ export const blogSchema = z.object({
     title:z.string().min(5).max(100),
     subtitle:z.string().min(5).max(100),
     writings:z.string(),
-    blogImg:z.string().optional(),
-    tags:z.string().optional()
+    coverImg:z.string(), // Required field as per schema
+    tags:z.string().optional(),
+    thumbnailImg:z.string().optional()
 });
+
+export const subscriberSchema = z.object({
+    subscriberName:z.string().optional(),
+    subscriberEmail:z.string().email().optional()
+});
+
+export const imageSchema = z.object({
+    url:z.string(),
+});
+
+// Middleware type
+export interface AuthRequest extends Request {
+    userId?: string;
+}
 
   
