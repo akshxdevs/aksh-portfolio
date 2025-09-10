@@ -17,7 +17,7 @@ datasource db {
 model Projects {
   id          String   @id @default(uuid())
   title       String
-  intro       String
+  intro       String   @default("")
   description String
   imgUrl      String?
   demoVideo   String?
