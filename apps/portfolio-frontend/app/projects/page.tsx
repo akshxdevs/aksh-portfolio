@@ -21,7 +21,7 @@ export default function () {
       if (res.data && res.data.length > 0) {
         setProjects(res.data);
         console.log(res.data);
-        
+
         toast.success("Projects fetched successfully!");
       } else {
         toast.error("No projects found!");
@@ -63,23 +63,27 @@ export default function () {
           these are the ones that made it through.
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center mt-20">
+      <div className="flex flex-col justify-center items-center mt-16">
         {projects.length > 0 && (
-          <div>
+          <div className="w-fit h-fit grid grid-cols-2 gap-4 ">
             {projects.map((project) => (
-              <div key={project.id} className="">
-                <img src={project.imgUrl} alt="projectImg" />
-                <div>
+              <div key={project.id} className="border border-zinc-800 mt-5 rounded-md pb-5">
+                <img
+                  src={project.imgUrl}
+                  alt="projectImg"
+                  className="rounded-md w-full h-64 object-cover"
+                />
+                <div className="flex justify-between mt-10 px-5">
                   <div>
-                    <h1>{project.title}</h1>
-                    <p>{dayjs(project.createdAt).format("MMMM YYYY")}</p>
+                    <h1 className="text-lg font-semibold">{project.title}</h1>
+                    <p className="text-zinc-400">{dayjs(project.createdAt).format("MMMM YYYY")}</p>
                   </div>
-                  <div>{project.status}</div>
+                  <div className="flex items-center"><p className="bg-green-200 text-green-700 px-2 py-1 rounded-xl text-sm font-semibold">{project.status}</p></div>
                 </div>
-                <div>
+                <div className="px-5 py-3">
                   <p>{project.description}</p>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 px-5 py-2">
                   <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
                     <img
                       width="20"
