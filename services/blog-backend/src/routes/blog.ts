@@ -85,7 +85,7 @@ router.post("/createblog", authMiddleware, async (req: AuthenticatedRequest, res
         subtitle: subtitle,
         writings: writings,
         coverImg: coverImg,
-        tags: tags,
+        tags: tags || [],
         thumbnailImg: thumbnailImg,
         authorId: req.userId!
       },

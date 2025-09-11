@@ -31,7 +31,7 @@ model Blog {
   writings     String
   coverImg     String
   blogImages   Images[]
-  tags         String?
+  tags         String[]   
   thumbnailImg String?
   likes        Likes[]
   authorId     String

@@ -18,7 +18,7 @@ export const blogSchema = z.object({
     subtitle: z.string().min(5, "Subtitle must be at least 5 characters").max(300, "Subtitle too long"),
     writings: z.string().min(10, "Content must be at least 10 characters"),
     coverImg: z.string().url("Invalid cover image URL"),
-    tags: z.string().optional(),
+    tags: z.array(z.string()).optional(),
     thumbnailImg: z.string().url("Invalid thumbnail URL").optional()
 });
 
