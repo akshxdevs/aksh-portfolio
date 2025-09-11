@@ -98,24 +98,27 @@ export const BlogSection = () => {
         <h1 className="text-2xl text-slate-50 font-semibold mb-8">
           Recent Blogs
         </h1>
-        <div className="grid grid-cols-1 gap-1 w-1/2">
+        <div className="grid grid-cols-1 w-1/2">
           {blogs.map((blog) => (
-            <div onClick={() => router.push(`/blog/${blog.title}`)} className="max-w-full w-full p-4 cursor-pointer hover:bg-zinc-900 rounded-lg transition-all duration-300">
-              <div className="flex justify-between items-center mb-2">
-                <div>
-                  <h1 className="text-xl font-semibold text-slate-50">{blog.title}</h1>
-                  <p className="text-slate-300 text-md">{blog.subtitle}</p>
+            <div onClick={() => router.push(`/blog/${blog.title}`)} className="max-w-full w-full p-4 cursor-pointer">
+                <div className="relative">
+                  <img src={blog.coverImg} alt="" className="w-full h-40 object-cover rounded-lg" />
+                  <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-lg"></div>
                 </div>
-                <div>
-                  <div className="text-slate-400 text-xs">{getTimeAgo(blog.createdOn)}</div>
-                </div>
-              </div>
-              <div className='flex gap-2'>
-                <p className="text-slate-400 text-xs">6 min read</p>
-                <div className='relative top-2 w-1 h-1 border rounded-full bg-white'></div>
-                <div className="text-slate-500 text-xs">{formatDate(blog.createdOn)}</div>
-              </div>
-
+                  <div className="relative bottom-10 px-4 flex justify-between items-center">
+                    <div>
+                      <h1 className="text-xl font-semibold text-slate-50">{blog.title}</h1>
+                      <p className="text-slate-300 text-md">{blog.subtitle}</p>
+                      <div className='flex gap-2'>
+                        <p className="text-slate-400 text-xs">6 min read</p>
+                        <div className='relative top-2 w-1 h-1 border rounded-full bg-white'></div>
+                        <div className="text-slate-500 text-xs">{formatDate(blog.createdOn)}</div>
+                      </div>
+                    </div>
+                  <div>
+                      <div className="text-slate-400 text-xs">{getTimeAgo(blog.createdOn)}</div>
+                  </div>
+                  </div>
             </div>
           ))}
         </div>
