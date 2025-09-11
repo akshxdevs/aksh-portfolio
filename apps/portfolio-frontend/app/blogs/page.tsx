@@ -226,7 +226,16 @@ export default function BlogsPage() {
             ))}
           </div>
         )}
-        
+                  <div className="flex justify-between  w-full border border-zinc-600 rounded-md ">
+            <input
+              type="email"
+              placeholder="heisenberg.druglord@gmail.com"
+              className="w-full outline-none bg-transparent p-2 border-t border-b border-l rounded-l-md border-orange-600"
+            />
+            <button className="w-56 bg-orange-600 px-6 rounded-sm font-semibold">
+              Subscribe
+            </button>
+          </div>
         {blogs.length === 0 && (
           <div className="text-center py-12">
             <p className="text-slate-400 text-lg">No blogs available at the moment.</p>

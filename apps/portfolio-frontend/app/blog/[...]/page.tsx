@@ -50,7 +50,6 @@ export default function BlogPage() {
     }
   };
 
-  // Loading state
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto py-32">
@@ -79,13 +78,11 @@ export default function BlogPage() {
         <div className="flex flex-col justify-center items-center mt-8">
           <div className="w-2/3 h-fit">
             <div className="mt-5 rounded-md pb-5">
-              {/* Title skeleton */}
               <div className="flex flex-col justify-center items-center mt-10 mb-5 px-5">
                 <div className="h-12 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-3/4 mb-4 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-1/3 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
               </div>
               
-              {/* Content skeleton */}
               <div className="px-5 py-3 space-y-4">
                 {[...Array(8)].map((_, index) => (
                   <div key={index} className="space-y-2">
@@ -101,7 +98,6 @@ export default function BlogPage() {
     );
   }
 
-  // Error state
   if (error) {
     return (
       <div className="max-w-5xl mx-auto py-32">
@@ -140,7 +136,6 @@ export default function BlogPage() {
     );
   }
 
-  // No blog found
   if (!blog) {
     return (
       <div className="max-w-5xl mx-auto py-32">
@@ -253,6 +248,18 @@ export default function BlogPage() {
                 ))}
               </div>
             )}
+            <div className='flex justify-center items-center'>
+              <div className="flex justify-between w-[65%] border border-zinc-600 rounded-md mt-8">
+                <input
+                  type="email"
+                  placeholder="heisenberg.druglord@gmail.com"
+                  className="w-full outline-none bg-transparent p-1 border-t border-b border-l rounded-l-md border-orange-600"
+                />
+                <button className="w-56 bg-orange-600 rounded-sm font-semibold">
+                  Subscribe
+                </button>
+              </div>
+            </div>
             <div className="flex justify-center items-center mt-8 px-5 gap-1">
                 <p className="text-slate-400 text-sm">Whispers of a mind at work</p>
                 <p className='text-slate-400 text-sm'>by @akashxdevs</p>
