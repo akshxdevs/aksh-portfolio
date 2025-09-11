@@ -13,6 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  blogs     Blog[]
+  likes     Likes[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Blog {
   id           String     @id @default(uuid())
   title        String
@@ -23,6 +34,8 @@ model Blog {
   tags         String?
   thumbnailImg String?
   likes        Likes[]
+  authorId     String
+  author       User       @relation(fields: [authorId], references: [id])
   createdOn    DateTime   @default(now())
   updateAt     DateTime   @updatedAt
 }
@@ -35,8 +48,12 @@ model Subscribers {
 
 model Likes {
   id     String @id @default(uuid())
+  userId String?
+  user   User?  @relation(fields: [userId], references: [id])
   blogId String
   blog   Blog   @relation(fields: [blogId], references: [id])
+  
+  @@unique([userId, blogId])
 }
 
 model Images {
