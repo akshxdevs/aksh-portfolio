@@ -53,18 +53,39 @@ export const BlogSection = () => {
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto py-5">
-        <div className="px-32">
+        <div className="flex flex-col items-center justify-center px-8">
           <h1 className="text-2xl text-slate-50 font-semibold mb-8">
             Recent Blogs
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, index) => (
-              <div key={index} className="bg-slate-800 rounded-lg p-6 animate-pulse">
-                <div className="h-4 bg-slate-700 rounded mb-3"></div>
-                <div className="h-3 bg-slate-700 rounded mb-2"></div>
-                <div className="h-3 bg-slate-700 rounded w-2/3"></div>
+          <div className="grid grid-cols-1 gap-6 w-1/2">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="max-w-full w-full p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <div className="flex-1">
+                    <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-3/4 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  </div>
+                  <div className="ml-4">
+                    <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-16 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-20 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="w-1 h-1 bg-slate-600 rounded-full animate-pulse"></div>
+                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-24 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                </div>
               </div>
             ))}
+          </div>
+          
+          {/* Loading indicator */}
+          <div className="mt-8 flex items-center gap-2">
+            <div className="flex gap-1">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+            </div>
+            <span className="text-slate-400 text-sm ml-2">Loading blogs...</span>
           </div>
         </div>
       </div>
@@ -100,7 +121,7 @@ export const BlogSection = () => {
         </h1>
         <div className="grid grid-cols-1 gap-6 w-1/2">
           {blogs.map((blog) => (
-            <div className='max-w-full w-full p-4 border rounded-lg border-slate-700'>
+            <div className='max-w-full w-full p-4'>
               <div className="flex justify-between items-center mb-2">
                 <div>
                   <h1 className="text-xl font-semibold text-slate-50">{blog.title}</h1>
