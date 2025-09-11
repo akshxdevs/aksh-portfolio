@@ -98,9 +98,9 @@ export const BlogSection = () => {
         <h1 className="text-2xl text-slate-50 font-semibold mb-8">
           Recent Blogs
         </h1>
-        <div className="grid grid-cols-1 w-1/2">
+        <div className="grid grid-cols-1 gap-1 w-1/2">
           {blogs.map((blog) => (
-            <div onClick={() => router.push(`/blog/${blog.title}`)} className='max-w-full w-full p-4'>
+            <div onClick={() => router.push(`/blog/${blog.title}`)} className="max-w-full w-full p-4 cursor-pointer hover:bg-zinc-900 rounded-lg transition-all duration-300">
               <div className="flex justify-between items-center mb-2">
                 <div>
                   <h1 className="text-xl font-semibold text-slate-50">{blog.title}</h1>

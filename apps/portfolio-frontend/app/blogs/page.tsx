@@ -181,22 +181,21 @@ export default function BlogsPage() {
       <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
         <h1 className="text-5xl text-slate-50 font-bold">My Blogs</h1>
       </div>
-      
       <div className="flex flex-col justify-center items-center mt-16">
         {blogs.length > 0 && (
-          <div className="w-2/3 h-fit grid grid-cols-1 gap-6">
+          <div className="w-2/3 h-fit grid grid-cols-1 gap-4">
             {blogs.map((blog) => (
               <div 
                 key={blog.id} 
                 onClick={() => handleBlogClick(blog.title)}
                 className="max-w-full w-full p-6 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors cursor-pointer hover:bg-slate-800/20"
               >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center ">
                   <div className="flex-1">
                     <h3 className="text-2xl font-semibold text-slate-50 mb-2">
                       {blog.title}
                     </h3>
-                    <p className="text-slate-300 text-lg mb-3">
+                    <p className="text-slate-300 text-lg">
                       {blog.subtitle}
                     </p>
                   </div>

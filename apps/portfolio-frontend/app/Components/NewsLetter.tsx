@@ -11,15 +11,15 @@ export const NewsLetter = () => {
           <input
             type="text"
             placeholder="heisenberg"
-            className="w-36 border border-zinc-600 rounded-md bg-transparent p-2"
+            className="w-36 bg-transparent p-2 border rounded-md border-orange-600"
           />
           <div className="flex justify-between  w-full border border-zinc-600 rounded-md ">
             <input
               type="email"
               placeholder="heisenberg.druglord@gmail.com"
-              className="w-full outline-none bg-transparent p-2"
+              className="w-full outline-none bg-transparent p-2 border-t border-b border-l rounded-l-md border-orange-600"
             />
-            <button className="w-56 bg-orange-600 px-6 rounded-md font-semibold">
+            <button className="w-56 bg-orange-600 px-6 rounded-sm font-semibold">
               Subscribe
             </button>
           </div>

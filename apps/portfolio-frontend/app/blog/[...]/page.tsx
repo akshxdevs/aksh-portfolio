@@ -3,35 +3,21 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { formatDate } from '../../utils/timeUtils';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
-interface Blog {
-  id: string;
-  title: string;
-  subtitle: string;
-  content?: string;
-  createdOn: string;
-  author: {
-    id: string;
-    name: string | null;
-    email: string;
-  };
-  tags: string[];
-  thumbnailImg?: string;
-}
 
 export default function BlogPage() {
   const router = useRouter();
-  const [blog, setBlog] = useState<Blog | null>(null);
+  const [blog, setBlog] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const params = useParams();
 
-  // For catch-all routes [...], the params are under an empty string key
   const blogName = Array.isArray(params[""])
     ? decodeURIComponent(params[""][0] || "")
     : decodeURIComponent(params[""] || "");
 
-  console.log("Decoded blogId:", blogName);
+  console.log("Decoded blogName:", blogName);
 
   useEffect(() => {
     if (blogName) {
@@ -45,13 +31,14 @@ export default function BlogPage() {
     try {
       setLoading(true);
       console.log("Fetching blog:", blogName);
-      const response = await fetch(`http://localhost:3000/api/v1/blog/getblog/${encodeURIComponent(blogName)}`);
+      const response = await axios.get(`http://localhost:3000/api/v1/blog/getblog/${encodeURIComponent(blogName)}`);
       
-      if (!response.ok) {
+      if (!response.data || !response.data.blog) {
         throw new Error('Failed to fetch blog');
       }
       
-      const data = await response.json();
+      const data = response.data.blog; 
+      console.log("Blog data:", data);
       setBlog(data);
       toast.success("Blog fetched successfully!");
     } catch (error) {
@@ -207,34 +194,41 @@ export default function BlogPage() {
         </button>
         <p>Back to Main</p>
       </div>
-
-      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-        <h1 className="text-5xl text-slate-50 font-bold">Recent Blogs</h1>
-      </div>
-
-      <div className="flex flex-col justify-center items-center mt-8">
-        <div className="w-2/3 h-fit">
-          <div className="mt-5 rounded-md pb-5">
-            <div className="flex flex-col justify-center items-center mt-10 mb-5 px-5">
-              <h1 className="text-4xl font-semibold text-slate-50 text-center mb-4">
-                {blog.title}
-              </h1>
-              <p className="text-zinc-400 text-center">
-                {formatDate(blog.createdOn)}
-              </p>
-              <p className="text-slate-300 text-center mt-2">
-                {blog.subtitle}
-              </p>
+      <div className='px-44'>
+        <div className="flex flex-col pt-6">
+          <p className='text-zinc-700 text-sm'>akshxdevs</p>
+          <h1 className="text-4xl text-slate-50 font-bold">{blog.title}</h1>
+          <p className='text-zinc-300 text-xl mt-2'>{blog.subtitle}</p>
+          <p className="text-zinc-500 text-sm mt-1">
+              {blog.createdOn}
+          </p>
+        </div>
+        <div className='flex justify-between items-center gap-2 mt-4'>
+          <div className='flex items-center gap-2'>
+            <img src="/profilepic.jpeg" alt="profile picture" className="w-10 h-10 rounded-full" />
+            <div className='flex flex-col'>
+              <h1 className='text-zinc-50-50 font-semibold'>Akash</h1>
+              <p className="text-zinc-400 text-sm">
+              {formatDate(blog.createdOn)}
+            </p>
             </div>
-
+          </div>
+          <div>
+          <p className='text-zinc-400 text-sm'>3 min read</p>
+          </div>
+        </div>
+      </div>
+      <div className='border-b border-zinc-800 w-[70%] mx-auto pt-4'/>
+      <div className="flex flex-col justify-center items-center ">
+        <div className="w-[60%] h-fit">
+          <div className="mt-5 rounded-md pb-5">
             {blog.thumbnailImg && (
               <img
                 src={blog.thumbnailImg}
                 alt="blog thumbnail"
-                className="rounded-md w-full h-96 object-cover mb-8"
+                className="rounded-md w-full h-full object-cover mb-8"
               />
             )}
-
             <div className="px-5 py-3">
               {blog.content ? (
                 <div 
@@ -242,15 +236,14 @@ export default function BlogPage() {
                   dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
               ) : (
-                <p className="text-slate-300 text-lg leading-relaxed">
-                  {blog.subtitle}
+                <p className="text-slate-300 text-lg leading-relaxed font-serif">
+                  {blog.writings}
                 </p>
               )}
             </div>
-
             {blog.tags && blog.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 justify-center items-center mt-8 px-5">
-                {blog.tags.map((tag, index) => (
+              <div className="flex justify-center items-center gap-2 mt-8">
+                {blog.tags.map((tag: any, index: any) => (
                   <span
                     key={index}
                     className="border border-zinc-600 rounded-lg px-3 py-1 hover:bg-zinc-800 transition-colors text-slate-300"
@@ -260,11 +253,9 @@ export default function BlogPage() {
                 ))}
               </div>
             )}
-
-            <div className="flex justify-center items-center mt-8 px-5">
-              <div className="text-slate-400 text-sm">
-                By {} • {formatDate(blog.createdOn)}
-              </div>
+            <div className="flex justify-center items-center mt-8 px-5 gap-1">
+                <p className="text-slate-400 text-sm">Whispers of a mind at work</p>
+                <p className='text-slate-400 text-sm'>by @akashxdevs</p>
             </div>
           </div>
         </div>
