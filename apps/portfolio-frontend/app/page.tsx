@@ -4,6 +4,7 @@ import { Contact } from "./Components/Contact";
 import { Education } from "./Components/Education";
 import { Experience } from "./Components/Experience";
 import { Footer } from "./Components/Footer";
+import { Contributions } from "./Components/GitHubContributionGraph";
 import { MyIntro } from "./Components/MyIntro";
 import { NavBar } from "./Components/NavBar";
 import { NewsLetter } from "./Components/NewsLetter";
@@ -19,19 +20,13 @@ export default function Home() {
         <AppBar />
       </div>
       <div>
+        <NavBar />
+      </div>
+      <div>
         <MyIntro />
       </div>
       <div>
         <TechStack />
-      </div>
-      <div>
-        <Projects />
-      </div>
-      <div>
-        <Contact />
-      </div>
-      <div>
-        <BlogSection />
       </div>
       <div>
         <Experience />
@@ -40,19 +35,28 @@ export default function Home() {
         <Education />
       </div>
       <div>
-        <ReachOut />
+        <Projects />
       </div>
       <div>
-        <NewsLetter />
+        <Contributions username="akshxdevs" />
+      </div>
+      <div>
+        <BlogSection />
       </div>
       <div>
         <SupportSection />
       </div>
       <div>
-        <Footer />
+        <NewsLetter />
       </div>
-      <div className="fixed bottom-3 left-1/2 -translate-x-1/2 w-full">
-        <NavBar />
+      <div>
+        <ReachOut />
+      </div>
+      <div>
+        <Contact />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
