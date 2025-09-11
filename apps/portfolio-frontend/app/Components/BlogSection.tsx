@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getTimeAgo, formatDate } from '../utils/timeUtils';
+import { useRouter } from 'next/navigation';
 
 interface Blog {
   id: string;
@@ -25,6 +26,7 @@ export const BlogSection = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -58,7 +60,7 @@ export const BlogSection = () => {
             Recent Blogs
           </h1>
           <div className="grid grid-cols-1 gap-6 w-1/2">
-            {[...Array(3)].map((_, index) => (
+            {[...Array(2)].map((_, index) => (
               <div key={index} className="max-w-full w-full p-4">
                 <div className="flex justify-between items-center mb-2">
                   <div className="flex-1">
@@ -141,13 +143,19 @@ export const BlogSection = () => {
           ))}
         </div>
         {blogs.length > 0 && (
-          <div className="flex text-center mt-8 gap-2">
-            <button className="text-white rounded-lg hover:text-blue-700 transition-colors font-medium">
-              View All Blogs
-            </button>
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          <div className="mt-12 flex justify-center">
+            <button 
+              onClick={() => router.push('/blogs')}
+              className="group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50"
+            >
+              <span className="text-sm font-medium">View More Blogs</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
