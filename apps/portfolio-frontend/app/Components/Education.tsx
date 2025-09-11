@@ -16,7 +16,7 @@ export const Education = () => {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <p className="text-md bg-zinc-800 text-slate-200 px-2 py-1 rounded-xl">2022 - 2025</p>
+            <p className="text-md bg-zinc-800 text-slate-200 px-2 py-1 rounded-xl">2021 - 2025</p>
           </div>
         </div>
       </div>

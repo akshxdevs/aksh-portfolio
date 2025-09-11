@@ -4,26 +4,9 @@ import { useState, useEffect } from 'react';
 import { getTimeAgo, formatDate } from '../utils/timeUtils';
 import { useRouter } from 'next/navigation';
 
-interface Blog {
-  id: string;
-  title: string;
-  subtitle: string;
-  createdOn: string;
-  author: {
-    id: string;
-    name: string | null;
-    email: string;
-  };
-  tags: string[];
-  thumbnailImg?: string;
-}
-
-interface BlogResponse {
-  blogs: Blog[];
-}
 
 export const BlogSection = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -32,15 +15,12 @@ export const BlogSection = () => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        // Replace with your actual backend URL
         const response = await fetch('http://localhost:3000/api/v1/blog/getblogs');
-        
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }
-        
-        const data: BlogResponse = await response.json();
-        setBlogs(data.blogs.slice(0, 6)); // Show only first 6 blogs
+        const data = await response.json();
+        setBlogs(data.blogs.slice(0, 2));
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');
         console.error('Error fetching blogs:', err);
@@ -48,7 +28,6 @@ export const BlogSection = () => {
         setLoading(false);
       }
     };
-
     fetchBlogs();
   }, []);
 
@@ -80,7 +59,6 @@ export const BlogSection = () => {
             ))}
           </div>
           
-          {/* Loading indicator */}
           <div className="mt-8 flex items-center gap-2">
             <div className="flex gap-1">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
@@ -114,16 +92,15 @@ export const BlogSection = () => {
       </div>
     );
   }
-
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col items-center justify-center px-8">
         <h1 className="text-2xl text-slate-50 font-semibold mb-8">
           Recent Blogs
         </h1>
-        <div className="grid grid-cols-1 gap-6 w-1/2">
+        <div className="grid grid-cols-1 w-1/2">
           {blogs.map((blog) => (
-            <div className='max-w-full w-full p-4'>
+            <div onClick={() => router.push(`/blog/${blog.title}`)} className='max-w-full w-full p-4'>
               <div className="flex justify-between items-center mb-2">
                 <div>
                   <h1 className="text-xl font-semibold text-slate-50">{blog.title}</h1>
@@ -143,7 +120,7 @@ export const BlogSection = () => {
           ))}
         </div>
         {blogs.length > 0 && (
-          <div className="mt-12 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <button 
               onClick={() => router.push('/blogs')}
               className="group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50"

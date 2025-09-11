@@ -5,7 +5,6 @@ import { authMiddleware, AuthenticatedRequest } from "../middleware/auth";
 
 const router = Router();
 
-// Public route - Get all blogs (no auth required)
 router.get("/getblogs", async (req, res) => {
   try {
     const getAllBlogs = await prismaClient.blog.findMany({
@@ -36,13 +35,12 @@ router.get("/getblogs", async (req, res) => {
   }
 });
 
-// Public route - Get single blog (no auth required)
-router.get("/getblog/:id", async (req, res) => {
+router.get("/getblog/:title", async (req, res) => {
   try {
-    const blogId = req.params.id;
-    const blog = await prismaClient.blog.findUnique({
+    const title = req.params.title;
+    const blog = await prismaClient.blog.findFirst({
       where: {
-        id: blogId,
+        title: title,
       },
       include: {
         blogImages: true,
@@ -68,7 +66,6 @@ router.get("/getblog/:id", async (req, res) => {
   }
 });
 
-// Protected route - Create blog (auth required)
 router.post("/createblog", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
     const parsedBody = blogSchema.safeParse(req.body);
@@ -110,7 +107,6 @@ router.post("/createblog", authMiddleware, async (req: AuthenticatedRequest, res
   }
 });
 
-// Protected route - Like/Unlike blog (auth required)
 router.post("/like/:id", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
     const blogId = req.params.id;
@@ -125,7 +121,6 @@ router.post("/like/:id", authMiddleware, async (req: AuthenticatedRequest, res) 
       return res.status(404).json({ message: "Blog not found!" });
     }
 
-    // Check if user already liked this blog
     const existingLike = await prismaClient.likes.findFirst({
       where: {
         blogId: blogId,
@@ -134,7 +129,6 @@ router.post("/like/:id", authMiddleware, async (req: AuthenticatedRequest, res) 
     });
 
     if (existingLike) {
-      // Unlike the blog
       await prismaClient.likes.delete({
         where: {
           id: existingLike.id
@@ -146,7 +140,6 @@ router.post("/like/:id", authMiddleware, async (req: AuthenticatedRequest, res) 
         action: "unliked"
       });
     } else {
-      // Like the blog
       await prismaClient.likes.create({
         data: {
           blogId: blogId,
@@ -165,7 +158,6 @@ router.post("/like/:id", authMiddleware, async (req: AuthenticatedRequest, res) 
   }
 });
 
-// Public route - Get likes count for a blog
 router.get("/getlikes/:id", async (req, res) => {
   try {
     const blogId = req.params.id;
@@ -194,7 +186,6 @@ router.get("/getlikes/:id", async (req, res) => {
   }
 });
 
-// Public route - Subscribe to newsletter (no auth required)
 router.post("/subscribe", async (req, res) => {
   try {
     const parsedBody = subscriberSchema.safeParse(req.body);
@@ -204,7 +195,6 @@ router.post("/subscribe", async (req, res) => {
     
     const { subscriberName, subscriberEmail } = parsedBody.data;
     
-    // Check if email already subscribed
     const existingSubscriber = await prismaClient.subscribers.findFirst({
       where: {
         subscriberEmail: subscriberEmail,
@@ -231,7 +221,6 @@ router.post("/subscribe", async (req, res) => {
   }
 });
 
-// Protected route - Add images to blog (auth required, only blog author)
 router.post("/addimages/:id", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
     const blogId = req.params.id;
@@ -252,7 +241,6 @@ router.post("/addimages/:id", authMiddleware, async (req: AuthenticatedRequest, 
       return res.status(404).json({ message: "Blog not found!" });
     }
 
-    // Check if the user is the author of the blog
     if (blog.authorId !== req.userId) {
       return res.status(403).json({ message: "You are not authorized to add images to this blog!" });
     }
@@ -273,7 +261,6 @@ router.post("/addimages/:id", authMiddleware, async (req: AuthenticatedRequest, 
   }
 });
 
-// Protected route - Get user's own blogs
 router.get("/myblogs", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
     const userBlogs = await prismaClient.blog.findMany({
@@ -305,7 +292,6 @@ router.get("/myblogs", authMiddleware, async (req: AuthenticatedRequest, res) =>
   }
 });
 
-// Protected route - Delete blog (auth required, only blog author)
 router.delete("/deleteblog/:id", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
     const blogId = req.params.id;
@@ -318,12 +304,10 @@ router.delete("/deleteblog/:id", authMiddleware, async (req: AuthenticatedReques
       return res.status(404).json({ message: "Blog not found!" });
     }
 
-    // Check if the user is the author of the blog
     if (blog.authorId !== req.userId) {
       return res.status(403).json({ message: "You are not authorized to delete this blog!" });
     }
 
-    // Delete related records first (images and likes)
     await prismaClient.images.deleteMany({
       where: { blogId: blogId }
     });
@@ -332,7 +316,6 @@ router.delete("/deleteblog/:id", authMiddleware, async (req: AuthenticatedReques
       where: { blogId: blogId }
     });
 
-    // Delete the blog
     await prismaClient.blog.delete({
       where: { id: blogId }
     });

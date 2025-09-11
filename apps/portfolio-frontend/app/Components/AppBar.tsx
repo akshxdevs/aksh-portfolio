@@ -16,7 +16,6 @@ export const AppBar = () => {
         const minutes = time.getMinutes().toString().padStart(2,'0');
         return `${hours}:${minutes}`;
     }
-    
     return (
         <div>
             <div className="flex justify-center py-2 items-center text-white text-md font-normal">

@@ -8,7 +8,11 @@ export const ReachOut = () => {
         <p className="text-2xl text-zinc-200">Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="border rounded-lg p-2">Book a meet</button>
-          <button className="border rounded-lg p-2">Chat on twitter</button>
+          <button className="border rounded-lg p-2">
+            <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferrer">
+              Chat on twitter
+            </a>
+          </button>
         </div>
       </div>
       <div className="px-44">
