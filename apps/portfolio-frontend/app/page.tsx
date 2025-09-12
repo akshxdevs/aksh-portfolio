@@ -20,9 +20,6 @@ export default function Home() {
         <AppBar />
       </div>
       <div>
-        <NavBar />
-      </div>
-      <div>
         <MyIntro />
       </div>
       <div>
@@ -57,6 +54,9 @@ export default function Home() {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2">
+        <NavBar />
       </div>
     </div>
   );
