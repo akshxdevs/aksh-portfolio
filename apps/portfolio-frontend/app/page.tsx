@@ -15,7 +15,7 @@ import { TechStack } from "./Components/TechStack";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="min-h-screen transition-colors duration-300" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
       <div>
         <AppBar />
       </div>
