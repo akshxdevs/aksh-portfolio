@@ -8,15 +8,15 @@ export const MyIntro = () => {
             height="900"
             src="./profilepic.jpeg"
             alt="ProfilePic"
-            className="border rounded-lg border-slate-700"
+            className="border rounded-lg border-gray-300 dark:border-slate-700 transition-colors duration-300"
           />
         </div>
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl text-slate-50 font-bold">Akash</h1>
+            <h1 className="text-2xl text-gray-800 dark:text-slate-50 font-bold transition-colors duration-300">Akash</h1>
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
           </div>
-          <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-200">
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-gray-600 dark:text-slate-200 transition-colors duration-300">
             21, Full Stack and Blockchain Developer
             <a
               href="mailto:akash@example.com"
@@ -66,7 +66,7 @@ export const MyIntro = () => {
 
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
+                width="30"  
                 height="30"
                 src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
                 alt="twitterx--v2"
