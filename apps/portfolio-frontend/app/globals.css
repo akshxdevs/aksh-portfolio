@@ -50,7 +50,7 @@
 
 .dark {
   --background: #171717;
-  --foreground: #ededed;
+    --foreground: #ededed;
   --card-bg: #1e293b;
   --card-border: #334155;
   --text-primary: #f1f5f9;
@@ -86,9 +86,9 @@ a {
 }
 
 .dark .imgLight {
-  display: none;
-}
+    display: none;
+  }
 
 .dark .imgDark {
-  display: unset;
+    display: unset;
 }
