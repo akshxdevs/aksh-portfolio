@@ -4,7 +4,7 @@ import { Contact } from "./Components/Contact";
 import { Education } from "./Components/Education";
 import { Experience } from "./Components/Experience";
 import { Footer } from "./Components/Footer";
-import { Contributions } from "./Components/GitHubContributionGraph";
+import { GitHubContributionGraph } from "./Components/GitHubContributionGraph";
 import { MyIntro } from "./Components/MyIntro";
 import { NavBar } from "./Components/NavBar";
 import { NewsLetter } from "./Components/NewsLetter";
@@ -29,19 +29,19 @@ export default function Home() {
         <Experience />
       </div>
       <div>
-        <Education />
-      </div>
-      <div>
         <Projects />
       </div>
       <div>
-        <Contributions username="akshxdevs" />
+        <GitHubContributionGraph />
+      </div>
+      <div>
+        <Education />
       </div>
       <div>
         <BlogSection />
       </div>
       <div>
-        <SupportSection />
+        <Contact />
       </div>
       <div>
         <NewsLetter />
@@ -50,7 +50,7 @@ export default function Home() {
         <ReachOut />
       </div>
       <div>
-        <Contact />
+        <SupportSection />
       </div>
       <div>
         <Footer />

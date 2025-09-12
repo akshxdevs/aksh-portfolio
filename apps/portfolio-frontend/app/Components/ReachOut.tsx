@@ -8,8 +8,15 @@ export const ReachOut = () => {
         <p className="text-2xl text-zinc-200">Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="border rounded-lg p-2">Book a meet</button>
-          <button className="border rounded-lg p-2">
-            <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferrer">
+          <button className="border rounded-lg p-2 hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-800 transition-all duration-300">
+            <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferre" className="flex items-center gap-1">
+              <img
+                  width="20"
+                  height="20"
+                  src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
+                  alt="twitterx--v2"
+                  className="transition-all duration-300 group-hover:brightness-110"
+                />
               Chat on twitter
             </a>
           </button>
