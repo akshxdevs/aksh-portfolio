@@ -2,22 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes gradient-rotate {
+  0% {
+    background: linear-gradient(0deg, #3b82f6, #8b5cf6, #ec4899);
+  }
+  25% {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899, #3b82f6);
+  }
+  50% {
+    background: linear-gradient(180deg, #ec4899, #3b82f6, #8b5cf6);
+  }
+  75% {
+    background: linear-gradient(270deg, #3b82f6, #8b5cf6, #ec4899);
+  }
+  100% {
+    background: linear-gradient(360deg, #3b82f6, #8b5cf6, #ec4899);
+  }
+}
+
+@keyframes twitter-gradient {
+  0% {
+    background: linear-gradient(0deg, #6b7280, #3b82f6, #10b981);
+  }
+  25% {
+    background: linear-gradient(90deg, #3b82f6, #10b981, #6b7280);
+  }
+  50% {
+    background: linear-gradient(180deg, #10b981, #6b7280, #3b82f6);
+  }
+  75% {
+    background: linear-gradient(270deg, #6b7280, #3b82f6, #10b981);
+  }
+  100% {
+    background: linear-gradient(360deg, #6b7280, #3b82f6, #10b981);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #3b82f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #171717;
+  --foreground: #ededed;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent: #60a5fa;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -40,15 +85,10 @@ a {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.dark .imgLight {
+  display: none;
+}
 
-  .imgLight {
-    display: none;
-  }
-  .imgDark {
-    display: unset;
-  }
+.dark .imgDark {
+  display: unset;
 }
