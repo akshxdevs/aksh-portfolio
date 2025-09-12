@@ -7,13 +7,13 @@ export const NewsLetter = () => {
           get updates on my latest projects, blogs, and experiments. no spam,
           just what i’m building and thinking.
         </p>
-        <div className="flex gap-4 p-3 border rounded-lg border-zinc-800 mt-4">
+        <div className="flex gap-4 p-3 border rounded-lg border-zinc-300 mt-4">
           <input
             type="text"
             placeholder="heisenberg"
             className="w-36 bg-transparent p-2 border rounded-md border-orange-600"
           />
-          <div className="flex justify-between  w-full border border-zinc-600 rounded-md ">
+          <div className="flex justify-between w-full rounded-md">
             <input
               type="email"
               placeholder="heisenberg.druglord@gmail.com"
