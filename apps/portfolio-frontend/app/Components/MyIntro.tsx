@@ -8,7 +8,7 @@ export const MyIntro = () => {
             height="900"
             src="./profilepic.jpeg"
             alt="ProfilePic"
-            className="border rounded-lg border-gray-300 dark:border-slate-700 transition-colors duration-300"
+            className="border rounded-full border-gray-300 dark:border-slate-700 transition-colors duration-300"
           />
         </div>
         <div className="flex flex-col">
