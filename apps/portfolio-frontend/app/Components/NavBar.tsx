@@ -5,7 +5,7 @@ export const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
   return (
     <div className="w-full max-w-fit mx-auto">
-      <div className="flex items-center px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-zinc-900 backdrop-blur-sm transition-colors duration-300">
+      <div className="flex items-center px-3 py-1 border border-zinc-600 rounded-xl backdrop-blur-md transition-colors duration-300">
         <div className="group relative">
           <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             <img 
@@ -89,7 +89,7 @@ export const NavBar = () => {
             alt="vertical-line"
             className="opacity-50"
           />
-        </div>
+        </div>  
         <div className="group relative">
           <button 
             onClick={toggleTheme}
@@ -102,7 +102,7 @@ export const NavBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6 transition-all duration-300 group-hover:brightness-110 group-hover:text-yellow-400"
+                className="size-6 transition-all duration-300 group-hover:brightness-110 group-hover:text-yellow-400 text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -111,19 +111,8 @@ export const NavBar = () => {
                 />
               </svg>
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-6 transition-all duration-300 group-hover:brightness-110 group-hover:text-blue-400"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 text-slate-50 transition-all duration-300 group-hover:brightness-110 group-hover:text-blue-400">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
               </svg>
             )}
           </button>
