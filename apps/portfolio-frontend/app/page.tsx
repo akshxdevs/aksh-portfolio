@@ -1,4 +1,7 @@
+'use client';
+import { useState, useEffect } from 'react';
 import { AppBar } from "./Components/AppBar";
+import { AnimatedBackground } from "./Components/AnimatedBackground";
 import { BlogSection } from "./Components/BlogSection";
 import { Contact } from "./Components/Contact";
 import { Education } from "./Components/Education";
@@ -16,10 +19,11 @@ import { TechStack } from "./Components/TechStack";
 export default function Home() {
   return (
     <div className="min-h-screen transition-colors duration-300" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
-      <div>
+      <div className="relative z-10">
         <AppBar />
       </div>
-      <div>
+      <AnimatedBackground />
+      <div className="relative z-10">
         <MyIntro />
       </div>
       <div>
@@ -55,7 +59,7 @@ export default function Home() {
       <div>
         <Footer />
       </div>
-      <div className="fixed bottom-5 left-1/2 -translate-x-1/2">
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-20">
         <NavBar />
       </div>
     </div>
