@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const TechStack = () => {
   const [showMore, setShowMore] = useState(false);
+  const {theme} = useTheme();
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="px-32">
         {showMore ? (
-          <h1 className="text-2xl text-slate-50 font-semibold">
+          <h1 className={`text-2xl ${theme === 'dark' ? 'text-slate-50' : 'text-slate-900'} font-semibold`}>
             tech & tools.
           </h1>
         ) : (
-          <h1 className="text-2xl text-slate-50 font-semibold">
+          <h1 className={`text-2xl ${theme === 'dark' ? 'text-slate-50' : 'text-slate-900'} font-semibold`}>
             weapons of choice.
           </h1>
         )}
