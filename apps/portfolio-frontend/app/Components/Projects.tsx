@@ -111,31 +111,31 @@ export const Projects = () => {
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
         <h1
-          className={`text-5xl text-slate-50 font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}
+          className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}
         >
           Proof of work!
         </h1>
         <h2
-          className={`text-2xl text-slate-200 font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+          className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
         >
           things i've made real.
         </h2>
         <p
-          className={`text-center text-md text-zinc-400 font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+          className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
         >
           i've built, shipped, and scaled projects, from simple sites to full-on
           web & dApps. some started as experiments, some became real products.
           these are the ones that made it through.
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center mt-16">
+      <div className="flex flex-col justify-center items-center mt-10">
         {projects.length > 0 && (
-          <div className="w-2/3 h-fit grid grid-cols-2 gap-4">
+          <div className="w-2/3 h-1/2 grid grid-cols-2 gap-4">
             {projects.map((project) => (
               <div
                 onClick={() => handleProject(project.title)}
                 key={project.id}
-                className="border border-zinc-800 mt-5 rounded-md pb-5 shadow-lg shadow-black"
+                className={`border ${theme === 'dark' ? 'shadow-black border-zinc-700' : 'shadow-zinc-500 border-zinc-200'} mt-5 rounded-md pb-5 shadow-lg cursor-pointer`}
               >
                 <img
                   src={project.imgUrl}
@@ -158,7 +158,7 @@ export const Projects = () => {
                 <div className="px-5 py-3">
                   <p>{project.intro}</p>
                 </div>
-                <div className="flex gap-3 px-5 py-2">
+                <div className="flex gap-3 px-5 ">
                   {theme === "dark" ? (
                     <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
                       <img
@@ -170,7 +170,7 @@ export const Projects = () => {
                       Webiste
                     </button>
                   ) : (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
                       <img
                         width="20"
                         height="20"
@@ -193,7 +193,7 @@ export const Projects = () => {
                       Source
                     </button>
                   ) : (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
                       <img
                         width="30"
                         height="30"
@@ -213,11 +213,11 @@ export const Projects = () => {
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => router.push("/projects")}
-              className="group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50"
+              className={`group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-900'}`}
             >
               <span className="text-sm font-medium">View More Projects</span>
               <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-900'}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
