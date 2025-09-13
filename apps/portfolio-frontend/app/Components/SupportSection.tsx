@@ -1,9 +1,13 @@
+'use client';
+import { useTheme } from "../contexts/ThemeContext";
+
 export const SupportSection = () => {
+  const {theme} = useTheme();
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col gap-2 px-32">
-        <h1 className="text-2xl text-slate-50 font-semibold">Support Me</h1>
-        <p className="text-md text-zinc-200">
+        <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}>Support Me</h1>
+        <p className={`text-md ${theme === "dark" ? "text-zinc-200" : "text-slate-900"}`}>
           if you vibe with my work, projects, or content, consider supporting
           me. every bit of support helps me keep creating, improving, and
           sharing more.
