@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const gifUrls = [
   'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHViMHRjYmlpN2YxcHU1NmF6cmJwdWdyZzVxanBwcmpmeml6ejd1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dMsfVKqi7PHyYTdHsS/giphy.gif',
@@ -11,7 +12,7 @@ const gifUrls = [
 
 export const AnimatedBackground = () => {
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
-
+  const { theme } = useTheme();
   useEffect(() => {
     // Update GIF every 1 hour sequentially
     const interval = setInterval(() => {
@@ -29,7 +30,7 @@ export const AnimatedBackground = () => {
           alt="Animated background" 
           className="w-full h-full object-cover transition-opacity duration-1000"
         />
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-zinc-900"/>
+        <div className={`absolute bottom-0 left-0 w-full h-full ${theme === 'dark' ? 'bg-gradient-to-b from-transparent to-zinc-900' : 'bg-gradient-to-b from-transparent to-white'}`}/>
       </div>
     </div>
   );
