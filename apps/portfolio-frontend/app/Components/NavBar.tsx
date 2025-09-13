@@ -150,7 +150,6 @@ export const NavBar = () => {
               height="35"
               src="https://img.icons8.com/ios/50/FFFFFF/vertical-line.png"
               alt="vertical-line"
-              className="opacity-50"
             />
           ) : (
             <img
@@ -158,7 +157,6 @@ export const NavBar = () => {
               height="35"
               src="https://img.icons8.com/ios/50/vertical-line.png"
               alt="vertical-line"
-              className="opacity-50"
             />
           )}
         </div>
