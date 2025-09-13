@@ -6,7 +6,7 @@ export const NavBar = () => {
   return (
     <div className="w-full max-w-fit mx-auto">
       <div
-        className={`flex items-center px-3 py-1 border rounded-xl backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-300 bg-slate-300"}`}
+        className={`flex items-center px-3 py-1 border rounded-xl backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
       >
         <div className="group relative">
           {theme === "dark" ? (
