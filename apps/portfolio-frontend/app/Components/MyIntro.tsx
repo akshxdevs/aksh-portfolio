@@ -69,8 +69,8 @@ export const MyIntro = () => {
             sometimes, but execution always lands. here to make something real,
             something that lasts.
           </p>
-          <div className="flex gap-2 mt-2">
-            <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+          <div className="flex mt-2">
+            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               {theme === "dark" ? (
                 <svg
                   className="w-8 h-8 text-white"
@@ -89,7 +89,7 @@ export const MyIntro = () => {
                 </svg>
               )}
             </button>
-            <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               {theme === "dark" ? (
                 <img
                   width="30"
@@ -107,7 +107,7 @@ export const MyIntro = () => {
               )}
             </button>
 
-            <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               {theme === "dark" ? (
                 <img
                   width="30"
@@ -124,7 +124,7 @@ export const MyIntro = () => {
                 />
               )}
             </button>
-            <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+              <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               {theme === "dark" ? (
                 <img
                   width="30"
@@ -141,7 +141,7 @@ export const MyIntro = () => {
                 />
               )}
             </button>
-            <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               {theme === "dark" ? (
                 <img
                   width="30"
