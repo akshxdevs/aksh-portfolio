@@ -1,13 +1,17 @@
+'use client';
+import { useTheme } from "../contexts/ThemeContext";
+
 export const NewsLetter = () => {
+  const {theme} = useTheme();
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col px-32">
-        <h1 className="text-2xl text-slate-50 font-semibold">Newsletter</h1>
-        <p className="text-md text-slate-300">
+        <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}>Newsletter</h1>
+        <p className={`text-md ${theme === "dark" ? "text-slate-300" : "text-slate-900"}`}>
           get updates on my latest projects, blogs, and experiments. no spam,
           just what i’m building and thinking.
         </p>
-        <div className="flex gap-4 p-3 border rounded-lg border-zinc-300 mt-4">
+        <div className={`flex gap-4 p-3 border rounded-lg mt-4 ${theme === "dark" ? "border-zinc-700" : "border-zinc-300"}`}>
           <input
             type="text"
             placeholder="heisenberg"
