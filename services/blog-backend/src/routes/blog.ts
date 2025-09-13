@@ -220,6 +220,17 @@ router.post("/subscribe", async (req, res) => {
     res.status(411).json({ message: "Something went wrong!!" });
   }
 });
+router.post("/getAllsubscribe", async (req, res) => {
+  try {
+    const getAllSubscribers = await prismaClient.subscribers.findMany();
+    res.json({
+      subscribers: getAllSubscribers,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(411).json({ message: "Something went wrong!!" });
+  }
+});
 
 router.post("/addimages/:id", authMiddleware, async (req: AuthenticatedRequest, res) => {
   try {
