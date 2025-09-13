@@ -1,8 +1,12 @@
+'use client';
+import { useTheme } from "../contexts/ThemeContext";
+
 export const Education = () => {
+  const {theme} = useTheme();
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="px-32">
-        <h1 className="text-3xl text-slate-50 font-bold">Education</h1>
+        <h1 className={`text-3xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-bold`}>Education</h1>
         <div className="flex justify-between mt-4">
           <div className="flex items-center gap-2">
             <img
@@ -11,7 +15,7 @@ export const Education = () => {
               className="h-16 w-16 border border-zinc-800 rounded-full"
             />
             <div>
-              <h1 className="text-xl text-slate-100 font-bold">Electronics and Communication Engineering</h1>
+              <h1 className={`text-xl ${theme === "dark" ? "text-slate-100" : "text-slate-900"} font-bold`}>Electronics and Communication Engineering</h1>
               <p>Anna University</p>
             </div>
           </div>
