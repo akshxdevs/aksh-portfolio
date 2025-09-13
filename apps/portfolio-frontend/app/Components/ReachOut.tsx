@@ -1,12 +1,15 @@
 'use client';
+import { useTheme } from "../contexts/ThemeContext";
+
 export const ReachOut = () => {
+  const {theme} = useTheme(); 
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center px-32">
-        <h1 className="text-4xl text-gray-800 dark:text-slate-50 font-semibold transition-colors duration-300">Get in Touch</h1>
+        <h1 className={`text-4xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold transition-colors duration-300`}>Get in Touch</h1>
       </div>
       <div className="px-44 py-10">
-        <p className="text-2xl text-gray-600 dark:text-zinc-200 transition-colors duration-300">Got questions? Talk to me.</p>
+        <p className={`text-2xl ${theme === "dark" ? "text-zinc-200" : "text-slate-900"} transition-colors duration-300`}>Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="relative rounded-lg p-2 overflow-hidden group ">
               <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'gradient-rotate 0.5s linear infinite', animationPlayState: 'running'}}></div>
@@ -32,13 +35,13 @@ export const ReachOut = () => {
         </div>
       </div>
       <div className="px-44">
-        <h1 className="text-2xl text-gray-800 dark:text-slate-50 font-semibold transition-colors duration-300">Reach Me by Email</h1>
+        <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold transition-colors duration-300`}>Reach Me by Email</h1>
         <form
           action="https://getform.io/f/bdrnmkxb"
           method="POST"
           className="w-full flex flex-col gap-3 mt-4"
         >
-          <h2 className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Your Email</h2>
+          <h2 className={`${theme === "dark" ? "text-gray-300" : "text-gray-700"} transition-colors duration-300`}>Your Email</h2>
           <input
             type="email"
             name="email"
@@ -46,7 +49,7 @@ export const ReachOut = () => {
             className="w-full px-4 py-3 text-gray-800 dark:text-white bg-white dark:bg-slate-50 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm transition-all duration-300"
             placeholder="Your Email"
           />
-          <h2 className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Your Message</h2>
+          <h2 className={`${theme === "dark" ? "text-gray-300" : "text-gray-700"} transition-colors duration-300`}>Your Message</h2>
           <textarea
             name="message"
             required
