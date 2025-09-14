@@ -45,11 +45,11 @@ export const Projects = () => {
     return (
       <div className="max-w-5xl mx-auto py-5">
         <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className="text-5xl text-slate-50 font-bold">Proof of work!</h1>
-          <h2 className="text-2xl text-slate-200 font-semibold">
+          <h1 className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>Proof of work!</h1>
+          <h2 className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}>
             things i've made real.
           </h2>
-          <p className="text-center text-md text-zinc-400 font-normal">
+          <p className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}>
             i've built, shipped, and scaled projects, from simple sites to
             full-on web & dApps. some started as experiments, some became real
             products. these are the ones that made it through.
