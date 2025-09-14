@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { formatDate } from '../../utils/timeUtils';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { useTheme } from '../../contexts/ThemeContext';
 
 
 export default function BlogPage() {
@@ -11,6 +12,7 @@ export default function BlogPage() {
   const [blog, setBlog] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const {theme} = useTheme();
   const params = useParams();
 
   const blogName = Array.isArray(params[""])
@@ -73,7 +75,7 @@ export default function BlogPage() {
           <p>Back to Main</p>
         </div>
         <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className="text-5xl text-slate-50 font-bold">Recent Blogs</h1>
+          <h1 className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>Recent Blogs</h1>
         </div>
         <div className="flex flex-col justify-center items-center mt-8">
           <div className="w-2/3 h-fit">
@@ -159,8 +161,8 @@ export default function BlogPage() {
           <p>Back to Main</p>
         </div>
         <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className="text-5xl text-slate-50 font-bold">Recent Blogs</h1>
-          <div className="text-slate-400 text-center py-8">
+          <h1 className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>Recent Blogs</h1>
+          <div className={`text-center py-8 ${theme === "dark" ? "text-slate-400" : "text-zinc-900"}`}>
             <p>Blog not found</p>
           </div>
         </div>
@@ -191,10 +193,10 @@ export default function BlogPage() {
       </div>
       <div className='px-44'>
         <div className="flex flex-col pt-6">
-          <p className='text-zinc-700 text-sm'>akshxdevs</p>
-          <h1 className="text-4xl text-slate-50 font-bold">{blog.title}</h1>
-          <p className='text-zinc-300 text-xl mt-2'>{blog.subtitle}</p>
-          <p className="text-zinc-500 text-sm mt-1">
+          <p className={`text-sm ${theme === "dark" ? "text-zinc-700" : "text-zinc-900"}`}>akshxdevs</p>
+          <h1 className={`text-4xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>{blog.title}</h1>
+          <p className={`text-xl mt-2 ${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}>{blog.subtitle}</p>
+          <p className={`text-sm mt-1 ${theme === "dark" ? "text-zinc-500" : "text-zinc-500"}`}>
               {blog.createdOn}
           </p>
         </div>
@@ -202,14 +204,14 @@ export default function BlogPage() {
           <div className='flex items-center gap-2'>
             <img src="/profilepic.jpeg" alt="profile picture" className="w-10 h-10 rounded-full" />
             <div className='flex flex-col'>
-              <h1 className='text-zinc-50-50 font-semibold'>Akash</h1>
-              <p className="text-zinc-400 text-sm">
+              <h1 className={`font-semibold ${theme === "dark" ? "text-zinc-50" : "text-zinc-900"}`}>Akash</h1>
+              <p className={`text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}`}>
               {formatDate(blog.createdOn)}
             </p>
             </div>
           </div>
           <div>
-          <p className='text-zinc-400 text-sm'>3 min read</p>
+          <p className={`text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}`}>3 min read</p>
           </div>
         </div>
       </div>
@@ -231,7 +233,7 @@ export default function BlogPage() {
                   dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
               ) : (
-                <p className="text-slate-300 text-lg leading-relaxed font-serif">
+                <p className={`text-lg leading-relaxed font-serif ${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}>
                   {blog.writings}
                 </p>
               )}
@@ -241,7 +243,7 @@ export default function BlogPage() {
                 {blog.tags.map((tag: any, index: any) => (
                   <span
                     key={index}
-                    className="border border-zinc-600 rounded-lg px-3 py-1 hover:bg-zinc-800 transition-colors text-slate-300"
+                    className={`border border-zinc-600 rounded-lg px-3 py-1 hover:bg-zinc-300 transition-colors ${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}
                   >
                     {tag}
                   </span>
@@ -255,14 +257,14 @@ export default function BlogPage() {
                   placeholder="heisenberg.druglord@gmail.com"
                   className="w-full outline-none bg-transparent p-1 border-t border-b border-l rounded-l-md border-orange-600"
                 />
-                <button className="w-56 bg-orange-600 rounded-sm font-semibold">
+                <button className="w-56 bg-orange-600 rounded-sm font-semibold text-slate-100">
                   Subscribe
                 </button>
               </div>
             </div>
-            <div className="flex justify-center items-center mt-8 px-5 gap-1">
-                <p className="text-slate-400 text-sm">Whispers of a mind at work</p>
-                <p className='text-slate-400 text-sm'>by @akashxdevs</p>
+            <div className="relative top-28 flex justify-center items-center mt-8 px-5 gap-1">
+                <p className={`text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}`}>Whispers of a mind at work</p>
+                <p className={`text-sm ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}`}>by @akashxdevs</p>
             </div>
           </div>
         </div>
