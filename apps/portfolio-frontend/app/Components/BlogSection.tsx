@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { getTimeAgo, formatDate } from '../utils/timeUtils';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../contexts/ThemeContext';
+import toast from 'react-hot-toast';
 
 
 export const BlogSection = () => {
@@ -20,7 +21,7 @@ export const BlogSection = () => {
         const response = await fetch('http://localhost:3000/api/v1/blog/getblogs');
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
-        }
+        } 
         const data = await response.json();
         setBlogs(data.blogs.slice(0, 2));
       } catch (err) {
