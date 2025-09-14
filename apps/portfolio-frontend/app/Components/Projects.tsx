@@ -21,11 +21,8 @@ export const Projects = () => {
       const res = await axios.get(
         "http://localhost:5000/projects/getallprojects"
       );
-      if (res.data && res.data.length > 0) {
+      if (res.data) {
         setProjects(res.data);
-        console.log(res.data);
-
-        toast.success("Projects fetched successfully!");
       } else {
         toast.error("No projects found!");
       }
@@ -45,11 +42,19 @@ export const Projects = () => {
     return (
       <div className="max-w-5xl mx-auto py-5">
         <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>Proof of work!</h1>
-          <h2 className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}>
+          <h1
+            className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}
+          >
+            Proof of work!
+          </h1>
+          <h2
+            className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+          >
             things i've made real.
           </h2>
-          <p className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}>
+          <p
+            className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+          >
             i've built, shipped, and scaled projects, from simple sites to
             full-on web & dApps. some started as experiments, some became real
             products. these are the ones that made it through.
@@ -110,22 +115,24 @@ export const Projects = () => {
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-        <h1
-          className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}
+        <button
+          className="btn-glow-projects relative group"
+          style={{ zIndex: 10 }}
         >
-          Proof of work!
-        </h1>
+          <h1 className="px-2 py-1 rounded-xl bg-zinc-800 text-gray-800 dark:text-white transition-colors duration-300 relative z-10">
+            Proof of work
+          </h1>
+        </button>
         <h2
-          className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+          className={`text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
         >
-          things i've made real.
+          Check out my latest work
         </h2>
         <p
-          className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+          className={`w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
         >
-          i've built, shipped, and scaled projects, from simple sites to full-on
-          web & dApps. some started as experiments, some became real products.
-          these are the ones that made it through.
+          I've worked on a variety of projects, from simple websites to complex
+          web applications. Here are a few of my favorites.
         </p>
       </div>
       <div className="flex flex-col justify-center items-center mt-10">
@@ -133,77 +140,95 @@ export const Projects = () => {
           <div className="w-2/3 h-1/2 grid grid-cols-2 gap-4">
             {projects.map((project) => (
               <div
-                onClick={() => handleProject(project.title)}
                 key={project.id}
-                className={`border ${theme === 'dark' ? 'shadow-black border-zinc-700' : 'shadow-zinc-500 border-zinc-200'} mt-5 rounded-md pb-5 shadow-lg cursor-pointer`}
+                className={`btn-glow-projects relative  group border ${theme === "dark" ? "shadow-black border-zinc-700" : "shadow-zinc-100 border-zinc-200"} mt-5 rounded-lg  shadow-lg cursor-pointer`}
+                style={{ zIndex: 10 }}
               >
-                <img
-                  src={project.imgUrl}
-                  alt="projectImg"
-                  className="rounded-md w-full h-64 object-cover"
-                />
-                <div className="flex justify-between mt-10 px-5">
-                  <div>
-                    <h1 className="text-lg font-semibold">{project.title}</h1>
-                    <p className="text-zinc-400">
-                      {dayjs(project.createdAt).format("MMMM YYYY")}
-                    </p>
+                <div className={`relative z-10 w-full h-full pb-4 rounded-lg ${theme === "dark" ? "bg-zinc-800" : "bg-zinc-100"}`}>
+                  <div onClick={() => handleProject(project.title)}>
+                    <img
+                      src={project.imgUrl}
+                      alt="projectImg"
+                      className="rounded-t-lg w-full h-48 object-cover"
+                    />
+                    <div className="flex justify-between mt-5 px-5">
+                      <div className="flex flex-col">
+                        <h1 className="text-lg font-semibold">{project.title}</h1>
+                        <p className="text-zinc-400">
+                          {dayjs(project.createdAt).format("MMMM YYYY")}
+                        </p>
+                      </div>
+                      <div className="flex items-center">
+                        <p className="bg-green-200 text-green-700 px-2 py-1 rounded-xl text-sm font-semibold">
+                          {project.status}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="px-5 py-3">
+                      <p>{project.intro}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <p className="bg-green-200 text-green-700 px-2 py-1 rounded-xl text-sm font-semibold">
-                      {project.status}
-                    </p>
+
+                  <div className="flex gap-3 px-5 ">
+                    {theme === "dark" ? (
+                      <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+                        <a href={project.webUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <img
+                            width="20"
+                            height="20"
+                            src="https://img.icons8.com/pulsar-line/50/FFFFFF/external-link.png"
+                            alt="external-link"
+                            />
+                            Webiste
+                        </a>
+                      </button>
+                    ) : (
+                      <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+                        <a href={project.webUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <img
+                            width="20"
+                            height="20"
+                            src="https://img.icons8.com/pulsar-line/48/external-link.png"
+                            alt="external-link"
+                            className="transition-all duration-300 group-hover:brightness-110"
+                            />
+                          Webiste
+                        </a>
+                      </button>
+                    )}
+                    {theme === "dark" ? (
+                      <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <img
+                            width="30"
+                            height="30"
+                            src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
+                            alt="github"
+                            className="transition-all duration-300 group-hover:brightness-110"
+                          />
+                          Source
+                        </a>
+                      </button>
+                    ) : (
+                      <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <img
+                            width="30"
+                            height="30"
+                            src="https://img.icons8.com/sf-regular/48/github.png"
+                            alt="github"
+                            className="transition-all duration-300 group-hover:brightness-110"
+                          />
+                        </a>
+                        Source
+                      </button>
+                    )}
                   </div>
-                </div>
-                <div className="px-5 py-3">
-                  <p>{project.intro}</p>
-                </div>
-                <div className="flex gap-3 px-5 ">
-                  {theme === "dark" ? (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
-                      <img
-                        width="20"
-                        height="20"
-                        src="https://img.icons8.com/pulsar-line/50/FFFFFF/external-link.png"
-                        alt="external-link"
-                      />
-                      Webiste
-                    </button>
-                  ) : (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
-                      <img
-                        width="20"
-                        height="20"
-                        src="https://img.icons8.com/pulsar-line/48/external-link.png"
-                        alt="external-link"
-                        className="transition-all duration-300 group-hover:brightness-110"
-                      />
-                      Webiste
-                    </button>
-                  )}
-                  {theme === "dark" ? (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
-                        alt="github"
-                        className="transition-all duration-300 group-hover:brightness-110"
-                      />
-                      Source
-                    </button>
-                  ) : (
-                    <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
-                      <img
-                        width="30"
-                        height="30"
-                        src="https://img.icons8.com/sf-regular/48/github.png"
-                        alt="github"
-                        className="transition-all duration-300 group-hover:brightness-110"
-                      />
-                      Source
-                    </button>
-                  )}
                 </div>
               </div>
             ))}
@@ -213,11 +238,11 @@ export const Projects = () => {
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => router.push("/projects")}
-              className={`group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-900'}`}
+              className={`group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50 ${theme === "dark" ? "text-slate-300" : "text-slate-900"}`}
             >
               <span className="text-sm font-medium">View More Projects</span>
               <svg
-                className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-900'}`}
+                className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 ${theme === "dark" ? "text-slate-300" : "text-slate-900"}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
