@@ -4,11 +4,13 @@ import dayjs from "dayjs";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function ProjectPage() {
   const router = useRouter();
   const [project, setProject] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
   const params = useParams();
 
   // For catch-all routes [...], the params are under an empty string key
@@ -90,14 +92,10 @@ export default function ProjectPage() {
         <p>Back to Main</p>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-        <h1 className="text-5xl text-slate-50 font-bold">Proof of work</h1>
-      </div>
-
-      <div className="flex flex-col justify-center items-center mt-8">
+      <div className="flex flex-col justify-center items-center">
         <div className="w-fit h-fit">
           <div className="mt-5 rounded-md pb-5">
-            <div className="flex flex-col justify-center items-center mt-10 mb-5 px-5">
+            <div className="flex flex-col justify-center items-center px-5 pb-5">
               <h1 className="text-4xl font-semibold">{project.title}</h1>
               <p className="text-zinc-400">
                 {dayjs(project.createdAt).format("MMMM YYYY")}
@@ -123,34 +121,54 @@ export default function ProjectPage() {
                   </p>
                 ))}
               </div>
-              <div className="flex justify-center items-center gap-3 px-5 py-2">
+              <div className="flex justify-center items-center gap-3">
                 <a
                   href={project.webUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2 hover:bg-zinc-800 transition-colors"
+                  className="flex items-center gap-1 border border-zinc-600 rounded-lg p-1 hover:bg-zinc-800 transition-colors"
                 >
-                  <img
-                    width="20"
-                    height="20"
-                    src="https://img.icons8.com/pulsar-line/50/FFFFFF/external-link.png"
-                    alt="external-link"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      width="20"
+                      height="20"
+                      src="https://img.icons8.com/pulsar-line/50/FFFFFF/external-link.png"
+                      alt="external-link"
+                    />
+                  ) : (
+                    <img
+                      width="20"
+                      height="20"
+                      src="https://img.icons8.com/pulsar-line/48/external-link.png"
+                      alt="external-link"
+                      className="transition-all duration-300 group-hover:brightness-110"
+                    />
+                  )}
                   Website
                 </a>
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2 hover:bg-zinc-800 transition-colors"
+                  className="flex items-center gap-1 border border-zinc-600 rounded-lg p-1 hover:bg-zinc-800 transition-colors"
                 >
-                  <img
-                    width="20"
-                    height="20"
-                    src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
-                    alt="github"
-                    className="transition-all duration-300 group-hover:brightness-110"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      width="20"
+                      height="20"
+                      src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
+                      alt="github"
+                      className="transition-all duration-300 group-hover:brightness-110"
+                    />
+                  ) : (
+                    <img
+                      width="20"
+                      height="20"
+                      src="https://img.icons8.com/sf-regular/48/github.png"
+                      alt="github"
+                      className="transition-all duration-300 group-hover:brightness-110"
+                    />
+                  )}
                   Source
                 </a>
               </div>
