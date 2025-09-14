@@ -276,13 +276,25 @@ export const TechStack = () => {
               <span className="text-slate-200 font-medium">Next.js</span>
             </div>
             <div className="px-4 py-1 rounded-lg bg-zinc-800 flex items-center justify-center gap-3">
-              <button onClick={() => setShowMore((prev) => !prev)}>
-                <img
-                  width="25"
-                  height="25"
-                  src="https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
-                  alt="more"
-                />
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log('Button clicked!', showMore); // Debug log
+                  setShowMore((prev) => !prev);
+                }}
+                type="button"
+                className="rounded-lg transition-all duration-200 cursor-pointer hover:scale-105"
+                style={{zIndex: 9999}}
+              >
+                <div className="relative bg-zinc-800 rounded-lg">
+                  <img
+                    width="25"
+                    height="25"
+                    src="https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
+                    alt="more"
+                    className="transition-transform duration-200"
+                  />
+                </div>
               </button>
             </div>
           </div>
