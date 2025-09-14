@@ -2,6 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.btn-glow {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::before,
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20%;
+  width: 50%;
+  padding: 1px;
+  border-radius: 10px;
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff0080,
+    #ffd700,
+    #00bfff,
+    #ff1493,
+    #ff0080
+  );
+  z-index: -1;
+  pointer-events: none;
+  animation: spin-conic 1.5s linear infinite;
+}
+
+.btn-glow::before {
+  padding: 16px;
+  filter: blur(16px);
+  opacity: 0.8;
+}
+
+@keyframes spin-conic {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.btn-glow-projects {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-glow-projects::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 14px;
+  background-image: conic-gradient(
+    from var(--angle),
+    #A855F7,
+    #3B82F6
+    
+  );
+  z-index: -2;
+  pointer-events: none;
+  animation: spin-conic 2s linear infinite;
+  filter: blur(1px);
+  opacity: 0.6;
+}
+
+.btn-glow-projects::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+  background-image: conic-gradient(
+    from var(--angle),
+    #A855F7,
+    #3B82F6
+  );
+  z-index: -1;
+  pointer-events: none;
+  animation: spin-conic 1s linear infinite;
+  opacity: 0.9;
+}
+
 @keyframes gradient-rotate {
   0% {
     background: linear-gradient(0deg, #3b82f6, #8b5cf6, #ec4899);
@@ -42,7 +143,6 @@
   --background: #ffffff;
   --foreground: #171717;
   --card-bg: #f8fafc;
-  --toast-bg: #63565639;
   --card-border: #e2e8f0;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
@@ -51,7 +151,7 @@
 
 .dark {
   --background: #171717;
-    --foreground: #ededed;
+  --foreground: #ededed;
   --card-bg: #1e293b;
   --card-border: #334155;
   --text-primary: #f1f5f9;
@@ -87,9 +187,9 @@ a {
 }
 
 .dark .imgLight {
-    display: none;
-  }
+  display: none;
+}
 
 .dark .imgDark {
-    display: unset;
+  display: unset;
 }
