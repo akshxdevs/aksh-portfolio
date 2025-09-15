@@ -14,10 +14,9 @@ export const AnimatedBackground = () => {
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
   const { theme } = useTheme();
   useEffect(() => {
-    // Update GIF every 1 hour sequentially
     const interval = setInterval(() => {
       setCurrentGifIndex(prevIndex => (prevIndex + 1) % gifUrls.length);
-    }, 60 * 60 * 1000); // 1 hour in milliseconds
+    }, 60 * 60 * 1000); 
 
     return () => clearInterval(interval);
   }, []);
