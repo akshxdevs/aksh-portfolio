@@ -5,6 +5,7 @@ import { getTimeAgo, formatDate } from '../utils/timeUtils';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../contexts/ThemeContext';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 
 export const BlogSection = () => {
@@ -18,12 +19,12 @@ export const BlogSection = () => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`process.env.NEXT_PUBLIC_BLOG_API_URL/api/v1/blog/getblogs`);
-        if (!response.ok) {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblogs`);
+        if (!response.data) {
           throw new Error('Failed to fetch blogs');
         }   
-        const data = await response.json();
-        setBlogs(data.blogs.slice(0, 2));
+        const data = response.data.blogs; 
+        setBlogs(data.slice(0, 2));
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');
         console.error('Error fetching blogs:', err);
