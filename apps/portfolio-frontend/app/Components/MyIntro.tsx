@@ -70,94 +70,129 @@ export const MyIntro = () => {
             something that lasts.
           </p>
           <div className="flex mt-2">
-            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-              {theme === "dark" ? (
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-              ) : (
-                <svg
-                  className="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-              )}
-            </button>
-            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-              {theme === "dark" ? (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
-                  alt="github"
-                />
-              ) : (
-                <img
-                  width="40"
-                  height="40"
-                  src="https://img.icons8.com/sf-regular/48/github.png"
-                  alt="github"
-                />
-              )}
-            </button>
+            <div className="group relative">
+              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                {theme === "dark" ? (
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                )}
+              </button>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                Email
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
+              </div>
+            </div>
 
-            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-              {theme === "dark" ? (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
-                  alt="twitterx--v2"
-                />
-              ) : (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios/50/twitterx--v2.png"
-                  alt="twitterx--v2"
-                />
-              )}
-            </button>
-              <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-              {theme === "dark" ? (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/pastel-glyph/128/FFFFFF/drink-to-go.png"
-                  alt="drink-to-go"
-                />
-              ) : (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios/50/coffee-to-go.png"
-                  alt="coffee-to-go"
-                />
-              )}
-            </button>
-            <button className="p-1 rounded-lg transition-all duration-300  hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-              {theme === "dark" ? (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios-glyphs/50/FFFFFF/resume.png"
-                  alt="resume"
-                />
-              ) : (
-                <img
-                  width="30"
-                  height="30"
-                  src="https://img.icons8.com/ios/50/resume.png"
-                  alt="resume"
-                />
-              )}
-            </button>
+            <div className="group relative">
+              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                {theme === "dark" ? (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
+                    alt="github"
+                  />
+                ) : (
+                  <img
+                    width="35"
+                    height="35"
+                    src="https://img.icons8.com/sf-regular/48/github.png"
+                    alt="github"
+                  />
+                )}
+              </button>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                GitHub
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                {theme === "dark" ? (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
+                    alt="twitterx--v2"
+                  />
+                ) : (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios/50/twitterx--v2.png"
+                    alt="twitterx--v2"
+                  />
+                )}
+              </button>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                Twitter/X
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                {theme === "dark" ? (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
+                    alt="linkedin"
+                    className="transition-all duration-300 group-hover:brightness-110"
+                  />
+                ) : (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/color/48/linkedin.png"
+                    alt="linkedin"
+                    className="transition-all duration-300 group-hover:brightness-110"
+                  />
+                )}
+              </button>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                Buy me a coffee
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                {theme === "dark" ? (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-glyphs/50/FFFFFF/resume.png"
+                    alt="resume"
+                  />
+                ) : (
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios/50/resume.png"
+                    alt="resume"
+                  />
+                )}
+              </button>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                Resume
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
