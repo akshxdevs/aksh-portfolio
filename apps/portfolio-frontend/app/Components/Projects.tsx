@@ -116,7 +116,7 @@ export const Projects = () => {
           className="btn-glow relative group"
           style={{ zIndex: 10 }}
         >
-          <h1 className="px-2 py-1 rounded-md bg-zinc-200 text-zinc-800 transition-colors duration-300 relative z-10">
+          <h1 className={`px-2 py-1 rounded-md ${theme === "dark" ? "bg-zinc-200 text-zinc-800" : "bg-zinc-800 text-zinc-200"} transition-colors duration-300 relative z-10`}>
             Proof of work
           </h1>
         </button>
