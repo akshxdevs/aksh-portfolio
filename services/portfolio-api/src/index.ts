@@ -9,7 +9,6 @@ app.use(express.json());
 
 app.use("/projects", apiRouter);
 
-
 app.listen(PORT, () => {
   console.log(`Portfolio API server running on port ${PORT}`);
 });
