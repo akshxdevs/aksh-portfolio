@@ -6,14 +6,14 @@ export const NavBar = () => {
   return (
     <div className="w-full max-w-fit mx-auto">
       <div
-        className={`flex items-center px-3 py-1 border rounded-xl backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
+        className={`flex items-center px-3 py-1 border rounded-full backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
       >
         <div className="group relative">
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="27"
+                height="27"
                 src="https://img.icons8.com/ios-glyphs/30/FFFFFF/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -22,15 +22,15 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="27"
+                height="27"
                 src="https://img.icons8.com/fluency/48/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
           )}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             My Crypto
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
@@ -39,8 +39,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
                 alt="twitterx--v2"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -49,15 +49,15 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/ios-filled/50/twitterx--v1.png"
                 alt="twitterx--v1"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
           )}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             Twitter/X
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
@@ -66,8 +66,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -76,15 +76,15 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/color/48/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
           )}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             LinkedIn
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
@@ -93,8 +93,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/FFFFFF/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -103,15 +103,15 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
           )}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             LeetCode
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
@@ -120,8 +120,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -130,15 +130,15 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 src="https://img.icons8.com/3d-fluency/94/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
           )}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             GitHub
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
@@ -197,7 +197,7 @@ export const NavBar = () => {
               </svg>
             )}
           </button>
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
             Toggle Theme
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
           </div>
