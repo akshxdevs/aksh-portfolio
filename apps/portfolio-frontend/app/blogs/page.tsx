@@ -18,7 +18,7 @@ export default function BlogsPage() {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:3000/api/v1/blog/getblogs');
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblogs`);
         
         if (!response.data) {
           throw new Error('Failed to fetch blogs');
