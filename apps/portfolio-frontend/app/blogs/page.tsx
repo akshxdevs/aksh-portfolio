@@ -72,17 +72,17 @@ export default function BlogsPage() {
               <div key={index} className="max-w-full w-full p-4">
                 <div className="flex justify-between items-center mb-2">
                   <div className="flex-1">
-                    <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-3/4 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg mb-2  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-3/4  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   </div>
                   <div className="ml-4">
-                    <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-16 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-16  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-20 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                  <div className="w-1 h-1 bg-slate-600 rounded-full animate-pulse"></div>
-                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-24 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-20  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="w-1 h-1 bg-slate-600 rounded-full "></div>
+                  <div className="h-3 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-24  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 </div>
               </div>
             ))}
