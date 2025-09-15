@@ -18,48 +18,52 @@ export const SupportSection = () => {
           me. every bit of support helps me keep creating, improving, and
           sharing more.
         </p>
-        <div className="flex gap-2 mt-4">
-          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
-            <img
-              width="30"
-              height="30"
-              src="https://img.icons8.com/hatch/64/F25081/like.png"
-              alt="like"
-            />
-            Github Sponsors
+        <div className="flex gap-2 mt-2">
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+            <a href="https://github.com/sponsors/akshxdevs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+              <img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/hatch/64/F25081/like.png"
+                alt="like"
+              />
+              Github Sponsors
+            </a>
           </button>
-          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
+            <a href="https://buymeacoffee.com/akshxdevs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
             <img
-              width="30"
-              height="30"
+              width="20"
+              height="20"
               src="https://img.icons8.com/doodle/48/coffee-to-go.png"
               alt="coffee-to-go"
             />
             Buy Me a Coffee
+            </a>
           </button>
-          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg p-2">
+          <button className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1">
             <img
-              width="30"
-              height="30"
+              width="20"
+              height="20"
               src="https://img.icons8.com/nolan/64/solana.png"
               alt="solana"
             />
             Solana
           </button>
-          <button className="border border-zinc-600 rounded-lg p-2">
+          <button className="border border-zinc-600 rounded-lg px-2 py-1">
             <div className="flex items-center gap-1 group">
               {theme === "dark" ? (
                 <img
-                  width="30"
-                  height="30"
+                  width="20"
+                  height="20"
                   src="https://img.icons8.com/ios-filled/50/FFFFFF/bhim-upi.png"
                   alt="bhim-upi"
                   className="group-hover:animate-bounce"
                 />
               ) : (
                   <img
-                    width="30"
-                    height="30"
+                    width="20"
+                    height="20"
                     src="https://img.icons8.com/ios-filled/50/bhim-upi.png"
                     alt="bhim-upi"
                     className="group-hover:animate-bounce"
