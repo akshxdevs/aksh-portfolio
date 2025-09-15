@@ -33,7 +33,7 @@ export default function BlogPage() {
     try {
       setLoading(true);
       console.log("Fetching blog:", blogName);
-      const response = await axios.get(`http://localhost:3000/api/v1/blog/getblog/${encodeURIComponent(blogName)}`);
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblog/${encodeURIComponent(blogName)}`);
       
       if (!response.data || !response.data.blog) {
         throw new Error('Failed to fetch blog');
