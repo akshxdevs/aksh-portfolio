@@ -279,8 +279,8 @@ export const TechStack = () => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log('Button clicked!', showMore); // Debug log
-                  setShowMore((prev) => !prev);
+                  console.log('Button clicked!', showMore); 
+                  setShowMore((prev) => !prev); 
                 }}
                 type="button"
                 className="rounded-lg transition-all duration-200 cursor-pointer hover:scale-105"
