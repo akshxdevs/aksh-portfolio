@@ -23,6 +23,7 @@ router.post("/createproject", async (req, res) => {
       techStack,
       intro,
     } = parsedBody.data;
+    
     const createProject = await prismaClient.projects.create({
       data: {
         title,
@@ -63,9 +64,13 @@ router.get("/getproject/:projectName", async (req, res) => {
         title: req.params.projectName,
       },
     });
-    res.json(getproject);
+    if (getproject) {
+      res.json(getproject);
+    } else {
+      res.status(404).json({ message: "Project not found" });
+    }
   } catch (error) {
-    console.error("Error fetching projects:", error);
+    console.error("Error fetching project:", error);
     res.status(500).json({ message: "Something went wrong!!" });
   }
 });
