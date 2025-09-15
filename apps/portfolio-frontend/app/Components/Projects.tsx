@@ -19,7 +19,7 @@ export const Projects = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "http://localhost:5000/projects/getallprojects"
+        `${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/projects/getallprojects`
       );
       if (res.data) {
         setProjects(res.data);
@@ -69,26 +69,26 @@ export const Projects = () => {
                 key={index}
                 className="border border-zinc-800 mt-5 rounded-md pb-5 shadow-lg shadow-black"
               >
-                <div className="rounded-md w-full h-64 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="rounded-md w-full h-64 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
 
                 <div className="flex justify-between mt-10 px-5">
                   <div className="flex-1">
-                    <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-3/4 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-3/4  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   </div>
                   <div className="ml-4">
-                    <div className="h-6 bg-gradient-to-r from-green-700 via-green-600 to-green-700 rounded-xl w-20 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-6 bg-gradient-to-r from-green-700 via-green-600 to-green-700 rounded-xl w-20  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   </div>
                 </div>
 
                 <div className="px-5 py-3">
-                  <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                  <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-5/6 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-5/6  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 </div>
 
                 <div className="flex gap-3 px-5 py-2">
-                  <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-24 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                  <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-20 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-24  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                  <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-20  bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 </div>
               </div>
             ))}
