@@ -111,7 +111,7 @@ router.get("/debug-db", async (req, res) => {
     console.error("Debug error:", error);
     res.status(500).json({ 
       message: "Debug failed", 
-      error: error.message 
+      error: error instanceof Error ? error.message : "Unknown error"
     });
   }
 });
