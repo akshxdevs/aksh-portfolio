@@ -1,8 +1,10 @@
 'use client';
+import { useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 
 export const ReachOut = () => {
   const {theme} = useTheme(); 
+  const [isSending,setIsSending] = useState(false);
   return (
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center px-32">
@@ -14,14 +16,14 @@ export const ReachOut = () => {
           <button className="relative rounded-lg p-2 overflow-hidden group ">
               <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'gradient-rotate 0.5s linear infinite', animationPlayState: 'running'}}></div>
               <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
-              <a href="" className="relative flex items-center gap-2 z-10">
+              <a href="https://cal.com/akshxdevs-4fqslc/fun-meet" className="relative flex items-center gap-2 z-10">
                 <img width="20" height="20" src="https://img.icons8.com/ios/50/FFFFFF/calendar--v1.png" alt="calendar--v1"/>
                 <span className="text-gray-800 dark:text-white transition-colors duration-300">Book a meet</span>
               </a>
             </button>
             <button className="relative rounded-lg p-2 overflow-hidden group">
               <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'twitter-gradient 0.5s linear infinite', animationPlayState: 'running'}}></div>
-              <div className="absolute inset-[1px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
+              <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
               <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferre" className="relative flex items-center gap-1 z-10">
                 <img
                     width="20"
@@ -58,9 +60,19 @@ export const ReachOut = () => {
           />
           <button
             type="submit"
+            onClick={() => setIsSending(true)}
             className="w-full px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-zinc-700 dark:to-black text-white font-medium rounded-lg shadow-md hover:from-gray-700 hover:to-gray-900 dark:hover:from-zinc-70 dark:hover:to-black transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95"
           >
-            Send Message
+            {isSending ? (
+              <div className="flex justify-center items-center gap-2">
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span className="text-white">Sending...</span>
+              </div>
+            ):(
+              <div>
+                Send Message
+              </div>
+            )}
           </button>
         </form>
       </div>
