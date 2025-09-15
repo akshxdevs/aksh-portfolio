@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Projects" ADD COLUMN IF NOT EXISTS "intro" TEXT NOT NULL DEFAULT '';
