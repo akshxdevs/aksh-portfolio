@@ -41,25 +41,27 @@ export const Projects = () => {
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto py-5">
-        <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1
-            className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}
-          >
-            Proof of work!
+      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+        <button
+          className="btn-glow relative group"
+          style={{ zIndex: 10 }}
+        >
+          <h1 className="px-2 py-1 rounded-md bg-zinc-800 text-gray-800 dark:text-white transition-colors duration-300 relative z-10">
+            Proof of work
           </h1>
-          <h2
-            className={`text-2xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
-          >
-            things i've made real.
-          </h2>
-          <p
-            className={`text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
-          >
-            i've built, shipped, and scaled projects, from simple sites to
-            full-on web & dApps. some started as experiments, some became real
-            products. these are the ones that made it through.
-          </p>
-        </div>
+        </button>
+        <h2
+          className={`text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+        >
+          Check out my latest work
+        </h2>
+        <p
+          className={`w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+        >
+          I've worked on a variety of projects, from simple websites to complex
+          web applications. Here are a few of my favorites.
+        </p>
+      </div>
         <div className="flex flex-col justify-center items-center mt-16">
           <div className="w-2/3 h-fit grid grid-cols-2 gap-4">
             {[...Array(2)].map((_, index) => (
@@ -67,10 +69,8 @@ export const Projects = () => {
                 key={index}
                 className="border border-zinc-800 mt-5 rounded-md pb-5 shadow-lg shadow-black"
               >
-                {/* Image skeleton */}
                 <div className="rounded-md w-full h-64 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
 
-                {/* Content skeleton */}
                 <div className="flex justify-between mt-10 px-5">
                   <div className="flex-1">
                     <div className="h-6 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
@@ -81,13 +81,11 @@ export const Projects = () => {
                   </div>
                 </div>
 
-                {/* Description skeleton */}
                 <div className="px-5 py-3">
                   <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded mb-2 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-5/6 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 </div>
 
-                {/* Buttons skeleton */}
                 <div className="flex gap-3 px-5 py-2">
                   <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-24 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   <div className="h-10 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-20 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
@@ -96,7 +94,6 @@ export const Projects = () => {
             ))}
           </div>
 
-          {/* Loading indicator */}
           <div className="mt-8 flex items-center gap-2">
             <div className="flex gap-1">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
@@ -116,10 +113,10 @@ export const Projects = () => {
     <div className="max-w-5xl mx-auto py-5">
       <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
         <button
-          className="btn-glow-projects relative group"
+          className="btn-glow relative group"
           style={{ zIndex: 10 }}
         >
-          <h1 className="px-2 py-1 rounded-xl bg-zinc-800 text-gray-800 dark:text-white transition-colors duration-300 relative z-10">
+          <h1 className="px-2 py-1 rounded-md bg-zinc-200 text-zinc-800 transition-colors duration-300 relative z-10">
             Proof of work
           </h1>
         </button>
@@ -141,7 +138,7 @@ export const Projects = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className={`btn-glow-projects relative  group border ${theme === "dark" ? "shadow-black border-zinc-700" : "shadow-zinc-100 border-zinc-200"} mt-5 rounded-lg  shadow-lg cursor-pointer`}
+                className={`btn-glow-projects relative group border ${theme === "dark" ? "shadow-black border-zinc-700" : "shadow-zinc-100 border-zinc-200"} mt-5 rounded-lg  shadow-lg cursor-pointer`}
                 style={{ zIndex: 10 }}
               >
                 <div className={`relative z-10 w-full h-full pb-4 rounded-lg ${theme === "dark" ? "bg-zinc-800" : "bg-zinc-100"}`}>
