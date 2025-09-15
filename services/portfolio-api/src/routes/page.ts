@@ -49,7 +49,10 @@ router.post("/createproject", async (req, res) => {
 
 router.get("/getallprojects", async (req, res) => {
   try {
+    console.log("Fetching all projects...");
     const getallprojects = await prismaClient.projects.findMany({});
+    console.log("Found projects:", getallprojects.length);
+    console.log("Projects data:", getallprojects);
     res.json(getallprojects);
   } catch (error) {
     console.error("Error fetching projects:", error);
