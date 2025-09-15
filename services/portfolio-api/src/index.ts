@@ -22,7 +22,7 @@ app.get("/test-db", async (req, res) => {
     res.json({ message: "Database connection successful", result });
   } catch (error) {
     console.error("Database test failed:", error);
-    res.status(500).json({ message: "Database connection failed", error: error.message });
+    res.status(500).json({ message: "Database connection failed", error: error instanceof Error ? error.message : "Unknown error" });
   }
 });
 
