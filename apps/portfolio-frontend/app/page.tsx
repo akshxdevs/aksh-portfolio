@@ -35,7 +35,7 @@ export default function Home() {
       <div>
         <Projects />
       </div>
-      <div>
+      <div className="hidden sm:block">
         <GitHubContributionGraph />
       </div>
       <div>
