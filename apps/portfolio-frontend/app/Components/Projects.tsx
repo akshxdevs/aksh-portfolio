@@ -46,7 +46,7 @@ export const Projects = () => {
           className="btn-glow relative group"
           style={{ zIndex: 10 }}
         >
-          <h1 className="px-2 py-1 rounded-md bg-zinc-800 text-gray-800 dark:text-white transition-colors duration-300 relative z-10">
+          <h1 className={`px-2 py-1 rounded-md ${theme === "dark" ? "bg-zinc-800 text-gray-800" : "bg-zinc-200 text-gray-200"} transition-colors duration-300 relative z-10`}>
             Proof of work
           </h1>
         </button>
@@ -111,7 +111,7 @@ export const Projects = () => {
 
   return (
     <div className="max-w-5xl mx-auto py-5">
-      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-5 sm:px-44">
         <button
           className="btn-glow relative group"
           style={{ zIndex: 10 }}
@@ -121,20 +121,20 @@ export const Projects = () => {
           </h1>
         </button>
         <h2
-          className={`text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+          className={`text-center text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
         >
           Check out my latest work
         </h2>
         <p
-          className={`w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+          className={`w-full sm:w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
         >
           I've worked on a variety of projects, from simple websites to complex
           web applications. Here are a few of my favorites.
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center mt-10">
+      <div className="flex flex-col justify-center items-center mt-10 px-5 sm:px-0">
         {projects.length > 0 && (
-          <div className="w-2/3 h-1/2 grid grid-cols-2 gap-4">
+          <div className="w-full sm:w-2/3 h-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {projects.map((project) => (
               <div
                 key={project.id}
