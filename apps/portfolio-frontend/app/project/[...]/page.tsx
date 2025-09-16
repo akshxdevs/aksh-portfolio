@@ -168,13 +168,12 @@ export default function ProjectPage() {
             <img
               src={project.imgUrl}
               alt="projectImg"
-              className="rounded-md w-full h-96 object-cover"
+              className="ml-5 rounded-md w-[90%] h-[90%] sm:w-full sm:h-96 object-cover"
             />
 
-            <div className="px-5 py-3">
+            <div className="px-5 py-3 mt-8">
                 <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
             </div>
-            <div className="flex justify-between">
               <div className="flex flex-wrap gap-2 justify-center items-center">
                 {project.techStack.map((tag: any) => (
                   <p
@@ -185,7 +184,7 @@ export default function ProjectPage() {
                   </p>
                 ))}
               </div>
-              <div className="flex justify-center items-center gap-3">
+              <div className="flex justify-center items-center gap-3 mt-10">
                 <a
                   href={project.webUrl}
                   target="_blank"
@@ -236,7 +235,6 @@ export default function ProjectPage() {
                     <span className="text-gray-800 dark:text-white">Source</span>
                 </a>
                 </div>
-              </div>
             </div>
           </div>
         </div>
