@@ -4,9 +4,9 @@ import { useTheme } from "../contexts/ThemeContext";
 export const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="w-full max-w-fit mx-auto">
+    <div className="w-full max-w-[300px] mx-auto sm:max-w-fit">
       <div
-        className={`flex items-center  p-1 sm:px-3 sm:py-1 border rounded-full backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
+        className={`flex items-center p-1 sm:px-3 sm:py-1 border rounded-full backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
       >
         <div className="group relative">
           {theme === "dark" ? (
@@ -163,7 +163,7 @@ export const NavBar = () => {
         <div className="group relative">
           <button
             onClick={toggleTheme}
-            className="flex items-center pr-2 py-1 sm:p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+            className="flex items-center pr-2 py-1 sm:p-1 rounded-lg transition-all duration-300 hover:scale-110 ">
             {theme === "dark" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@ export const NavBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6 text-black transition-all duration-300 group-hover:brightness-110 group-hover:text-blue-400"
+                className="size-5 text-black transition-all duration-300 group-hover:brightness-110 group-hover:text-blue-400"
               >
                 <path
                   strokeLinecap="round"
