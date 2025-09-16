@@ -7,10 +7,10 @@ export const ReachOut = () => {
   const [isSending,setIsSending] = useState(false);
   return (
     <div className="max-w-5xl mx-auto py-5">
-      <div className="flex flex-col justify-center items-center px-32">
+      <div className="flex flex-col justify-center items-center px-5 sm:px-32">
         <h1 className={`text-4xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold transition-colors duration-300`}>Get in Touch</h1>
       </div>
-      <div className="px-44 py-10">
+      <div className="px-5 sm:px-44 py-10">
         <p className={`text-2xl ${theme === "dark" ? "text-zinc-200" : "text-slate-900"} transition-colors duration-300`}>Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="relative rounded-lg p-2 overflow-hidden group ">
@@ -36,7 +36,7 @@ export const ReachOut = () => {
             </button>
         </div>
       </div>
-      <div className="px-44">
+      <div className="px-5 sm:px-44">
         <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold transition-colors duration-300`}>Reach Me by Email</h1>
         <form
           action="https://getform.io/f/bdrnmkxb"
