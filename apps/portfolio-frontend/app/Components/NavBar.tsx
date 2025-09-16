@@ -6,14 +6,14 @@ export const NavBar = () => {
   return (
     <div className="w-full max-w-fit mx-auto">
       <div
-        className={`flex items-center px-3 py-1 border rounded-full backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
+        className={`flex items-center  p-1 sm:px-3 sm:py-1 border rounded-full backdrop-blur-md transition-colors duration-300 ${theme === "dark" ? "border-zinc-600" : "border-zinc-400"}`}
       >
         <div className="group relative">
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="27"
-                height="27"
+                width="70"
+                height="70"
                 src="https://img.icons8.com/ios-glyphs/30/FFFFFF/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -22,8 +22,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="27"
-                height="27"
+                width="70"
+                height="70"
                 src="https://img.icons8.com/fluency/48/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -39,8 +39,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="65"
+                height="65"
                 src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
                 alt="twitterx--v2"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -49,8 +49,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="65"
+                height="65"
                 src="https://img.icons8.com/ios-filled/50/twitterx--v1.png"
                 alt="twitterx--v1"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -66,8 +66,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="65"
+                height="65"
                 src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -76,8 +76,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="65"
+                height="65"
                 src="https://img.icons8.com/color/48/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -93,8 +93,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="20"
-                height="20"
+                width="60"
+                height="60"
                 src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/FFFFFF/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -103,8 +103,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="20"
-                height="20"
+                width="60"
+                height="60"
                 src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -120,8 +120,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="70"
+                height="70"
                 src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -130,8 +130,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="25"
-                height="25"
+                width="70"
+                height="70"
                 src="https://img.icons8.com/3d-fluency/94/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -146,15 +146,15 @@ export const NavBar = () => {
         <div>
           {theme === "dark" ? (
             <img
-              width="25"
-              height="35"
+              width="45"
+              height="45"
               src="https://img.icons8.com/ios/50/FFFFFF/vertical-line.png"
               alt="vertical-line"
             />
           ) : (
             <img
-              width="25"
-              height="35"
+              width="45"
+              height="45"
               src="https://img.icons8.com/ios/50/vertical-line.png"
               alt="vertical-line"
             />
@@ -163,8 +163,7 @@ export const NavBar = () => {
         <div className="group relative">
           <button
             onClick={toggleTheme}
-            className="flex items-center p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25"
-          >
+            className="flex items-center pr-2 py-1 sm:p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
             {theme === "dark" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +171,7 @@ export const NavBar = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6 transition-all duration-300 group-hover:brightness-110 group-hover:text-yellow-400 text-white"
+                className="size-5 sm:size-6 transition-all duration-300 group-hover:brightness-110 group-hover:text-yellow-400 text-white"
               >
                 <path
                   strokeLinecap="round"
