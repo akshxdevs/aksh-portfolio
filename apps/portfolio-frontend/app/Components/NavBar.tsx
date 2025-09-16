@@ -12,9 +12,9 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="70"
-                height="70"
-                src="https://img.icons8.com/ios-glyphs/30/FFFFFF/cryptocurrency.png"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios/50/FFFFFF/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
@@ -22,9 +22,9 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="70"
-                height="70"
-                src="https://img.icons8.com/fluency/48/cryptocurrency.png"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios/50/000000/cryptocurrency.png"
                 alt="cryptocurrency"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
@@ -39,8 +39,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="65"
-                height="65"
+                width="30"
+                height="30"
                 src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
                 alt="twitterx--v2"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -49,10 +49,10 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-zinc-300 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="65"
-                height="65"
-                src="https://img.icons8.com/ios-filled/50/twitterx--v1.png"
-                alt="twitterx--v1"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios/50/000000/twitterx--v2.png"
+                alt="twitterx--v2"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
             </button>
@@ -66,8 +66,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="65"
-                height="65"
+                width="30"
+                height="30"
                 src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -76,9 +76,9 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="65"
-                height="65"
-                src="https://img.icons8.com/color/48/linkedin.png"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
                 alt="linkedin"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
@@ -93,8 +93,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="60"
-                height="60"
+                width="30"
+                height="30"
                 src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/FFFFFF/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-light-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -103,8 +103,8 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="60"
-                height="60"
+                width="30"
+                height="30"
                 src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png"
                 alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -120,8 +120,8 @@ export const NavBar = () => {
           {theme === "dark" ? (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="70"
-                height="70"
+                width="30"
+                height="30"
                 src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
@@ -130,9 +130,9 @@ export const NavBar = () => {
           ) : (
             <button className="p-1 rounded-lg transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
               <img
-                width="70"
-                height="70"
-                src="https://img.icons8.com/3d-fluency/94/github.png"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
                 alt="github"
                 className="transition-all duration-300 group-hover:brightness-110"
               />
@@ -146,15 +146,15 @@ export const NavBar = () => {
         <div>
           {theme === "dark" ? (
             <img
-              width="45"
-              height="45"
+              width="25"
+              height="25"
               src="https://img.icons8.com/ios/50/FFFFFF/vertical-line.png"
               alt="vertical-line"
             />
           ) : (
             <img
-              width="45"
-              height="45"
+              width="25"
+              height="25"
               src="https://img.icons8.com/ios/50/vertical-line.png"
               alt="vertical-line"
             />
