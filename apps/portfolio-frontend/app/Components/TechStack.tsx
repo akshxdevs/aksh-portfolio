@@ -215,19 +215,31 @@ export const TechStack = () => {
               />
               <span className="text-slate-200 font-medium">Kubernetes</span>
             </div>
-            <div className="px-2 py-1 rounded-lg bg-zinc-800 flex items-center justify-center shadow-md gap-2 ">
-              <button onClick={() => setShowMore((prev) => !prev)}>
-                <img
-                  width="25"
-                  height="25"
-                  src="https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
-                  alt="more"
-                />
+          <div className="px-2 py-1 rounded-lg bg-zinc-800 flex items-center justify-center gap-2">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log('Button clicked!', showMore); 
+                  setShowMore((prev) => !prev); 
+                }}
+                type="button"
+                className="rounded-lg transition-all duration-200 cursor-pointer hover:scale-105"
+                style={{zIndex: 9999}}
+              >
+                <div className="relative bg-zinc-800 rounded-lg">
+                  <img
+                    width="25"
+                    height="25"
+                    src="https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
+                    alt="more"
+                    className="transition-transform duration-200"
+                  />
+                </div>
               </button>
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 mt-2">
+          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2 mt-2">
             <div className="px-2 py-1 rounded-lg bg-zinc-800 flex items-center justify-center shadow-md gap-1">
               <img
                 src="./solana.png"
