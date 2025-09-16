@@ -44,7 +44,7 @@ export default function BlogsPage() {
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto py-32">
-        <div className="flex gap-4">
+        <div className="flex gap-4 px-5 sm:px-0">
           <button onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ export default function BlogsPage() {
           </button>
           <p>Back to Main</p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+        <div className="flex flex-col justify-center items-center gap-3 pt-2 mt-10 px-5 sm:px-44">
           <h1 className={`text-5xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-bold`}>My Blogs</h1>
         </div>
         <div className="flex flex-col justify-center items-center mt-16">
@@ -104,7 +104,7 @@ export default function BlogsPage() {
   if (error) {
     return (
       <div className="max-w-5xl mx-auto py-32">
-        <div className="flex gap-4">
+        <div className="flex gap-2 px-2 sm:px-0">
           <button onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ export default function BlogsPage() {
           </button>
           <p>Back to Main</p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+        <div className="flex flex-col justify-center items-center gap-3 pt-2 mt-10 px-5 sm:px-44">
           <h1 className={`text-5xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-bold`}>My Blogs</h1>
           <div className="text-red-400 text-center py-8">
             <p>Failed to load blogs: {error}</p>
@@ -141,7 +141,7 @@ export default function BlogsPage() {
 
   return (
     <div className="max-w-5xl mx-auto py-32">
-      <div className="flex gap-4">
+      <div className="flex gap-2 px-2 sm:px-0">
         <button onClick={() => router.push("/")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -161,12 +161,12 @@ export default function BlogsPage() {
         <p>Back to Main</p>
       </div>
       
-      <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+      <div className="flex flex-col justify-center items-center gap-3 mt-10 px-5 sm:px-44">
         <h1 className={`text-5xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-bold`}>My Blogs</h1>
       </div>
       <div className="flex flex-col justify-center items-center mt-16">
         {blogs.length > 0 && (
-          <div className="w-2/3 h-fit grid grid-cols-1 gap-4">
+          <div className="w-full sm:w-2/3 h-fit grid grid-cols-1 gap-4 px-5 sm:px-0">
             {blogs.map((blog) => (
               <div 
                 key={blog.id} 
