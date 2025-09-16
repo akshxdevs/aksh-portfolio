@@ -10,7 +10,6 @@ export const NewsLetter = () => {
   const [email, setEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const handleSubscribtion = async () => {
-    console.log(name, email);
     setIsSubscribing(true);
     try {
       const res = await axios.post(
@@ -34,7 +33,6 @@ export const NewsLetter = () => {
       } else {
         toast.error("Failed to subscribe");
       }
-      console.log(error);
     } finally {
       setIsSubscribing(false);
     }

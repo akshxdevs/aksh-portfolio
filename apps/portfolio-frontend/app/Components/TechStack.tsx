@@ -219,7 +219,6 @@ export const TechStack = () => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log('Button clicked!', showMore); 
                   setShowMore((prev) => !prev); 
                 }}
                 type="button"
@@ -291,7 +290,6 @@ export const TechStack = () => {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log('Button clicked!', showMore); 
                   setShowMore((prev) => !prev); 
                 }}
                 type="button"

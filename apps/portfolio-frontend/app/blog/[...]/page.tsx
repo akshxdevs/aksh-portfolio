@@ -19,8 +19,6 @@ export default function BlogPage() {
     ? decodeURIComponent(params[""][0] || "")
     : decodeURIComponent(params[""] || "");
 
-  console.log("Decoded blogName:", blogName);
-
   useEffect(() => {
     if (blogName) {
       getBlog();
@@ -32,7 +30,6 @@ export default function BlogPage() {
   const getBlog = async () => {
     try {
       setLoading(true);
-      console.log("Fetching blog:", blogName);
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblog/${encodeURIComponent(blogName)}`);
       
       if (!response.data || !response.data.blog) {
@@ -40,11 +37,9 @@ export default function BlogPage() {
       }
       
       const data = response.data.blog; 
-      console.log("Blog data:", data);
       setBlog(data);
       toast.success("Blog fetched successfully!");
     } catch (error) {
-      console.error("Error fetching blog:", error);
       setError(error instanceof Error ? error.message : 'An error occurred');
       toast.error("Failed to fetch blog");
     } finally {

@@ -95,7 +95,6 @@ export const SupportSection = () => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              console.log("UPI button clicked!");
               handleUpi();
             }} 
             className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors cursor-pointer"
