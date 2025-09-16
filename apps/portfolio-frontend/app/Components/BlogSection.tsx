@@ -102,7 +102,7 @@ export const BlogSection = () => {
         <h1 className={`text-2xl text-slate-50 font-semibold mb-8 ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>
           Recent Blogs
         </h1>
-        <div className="grid grid-cols-1 w-[600px]">
+        <div className="grid grid-cols-1 w-full sm:w-[600px]">
           {blogs.map((blog) => (
             <div onClick={() => router.push(`/blog/${blog.title}`)} className="max-w-full w-full px-4 cursor-pointer">
                 <div className="relative">
