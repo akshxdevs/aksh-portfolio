@@ -18,7 +18,6 @@ export const SupportSection = () => {
     }
   }
   const handleUpi = () => {
-    console.log("UPI button clicked!"); // Debug log
     const myUpiId = "akashgovind222-1@okaxis";
     if (navigator && navigator.clipboard) {
       navigator.clipboard.writeText(myUpiId)
@@ -30,13 +29,12 @@ export const SupportSection = () => {
           toast.error("Failed to copy UPI ID.");
         });
     } else {
-      // Fallback for browsers that don't support clipboard API
       toast.error("Clipboard not supported in this browser.");
     }
   }
   return (
     <div className="max-w-5xl mx-auto py-5">
-      <div className="flex flex-col gap-2 px-32">
+      <div className="flex flex-col gap-2 px-5 sm:px-32">
         <h1
           className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}
         >
@@ -49,12 +47,12 @@ export const SupportSection = () => {
           me. every bit of support helps me keep creating, improving, and
           sharing more.
         </p>
-        <div className="flex gap-2 mt-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
           <a 
             href="https://github.com/sponsors/akshxdevs" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
           >
             <img
               width="20"
@@ -69,7 +67,7 @@ export const SupportSection = () => {
             href="https://buymeacoffee.com/akshxdevs" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
           >
             <img
               width="20"
@@ -82,7 +80,7 @@ export const SupportSection = () => {
           
           <button 
             onClick={() => handleSolana()} 
-            className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
           >
             <img
               width="20"
@@ -100,7 +98,7 @@ export const SupportSection = () => {
               console.log("UPI button clicked!");
               handleUpi();
             }} 
-            className="flex items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors cursor-pointer"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors cursor-pointer"
             type="button"
           >
             {theme === "dark" ? (
