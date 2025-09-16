@@ -19,7 +19,7 @@ export const Education = () => {
               <p>Anna University</p>
             </div>
           </div>
-          <div className="mx-8 w-1/2 sm:w-full flex justify-center items-center">
+          <div className="mx-8 w-1/2 sm:justify-end flex justify-center items-center">
             <p className="text-sm sm:text-md bg-zinc-800 text-slate-200 px-2 py-1 rounded-xl">2021 - 2025</p>
           </div>
         </div>
