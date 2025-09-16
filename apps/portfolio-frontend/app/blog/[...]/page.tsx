@@ -52,10 +52,14 @@ export default function BlogPage() {
     }
   };
 
+  const date = new Date(blog.createdOn);
+  const formatted = date.toISOString().split('T')[0];
+
+
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto py-32">
-        <div className="flex gap-4">
+        <div className="flex gap-2 px-2 sm:px-0">
           <button onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,22 +78,19 @@ export default function BlogPage() {
           </button>
           <p>Back to Main</p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className={`text-5xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>Recent Blogs</h1>
-        </div>
         <div className="flex flex-col justify-center items-center mt-8">
           <div className="w-2/3 h-fit">
             <div className="mt-5 rounded-md pb-5">
               <div className="flex flex-col justify-center items-center mt-10 mb-5 px-5">
-                <div className="h-12 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-3/4 mb-4 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-1/3 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="h-12 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded-lg w-3/4 mb-4 bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-1/3 bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
               </div>
               
               <div className="px-5 py-3 space-y-4">
                 {[...Array(8)].map((_, index) => (
                   <div key={index} className="space-y-2">
-                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-5/6 animate-pulse bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                    <div className="h-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded w-5/6 bg-[length:200%_100%] animate-[shimmer_2s_ease-in-out_infinite]"></div>
                   </div>
                 ))}
               </div>
@@ -103,7 +104,7 @@ export default function BlogPage() {
   if (error) {
     return (
       <div className="max-w-5xl mx-auto py-32">
-        <div className="flex gap-4">
+        <div className="flex gap-2 px-2 sm:px-0">
           <button onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -122,18 +123,6 @@ export default function BlogPage() {
           </button>
           <p>Back to Main</p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
-          <h1 className="text-5xl text-slate-50 font-bold">Recent Blogs</h1>
-          <div className="text-red-400 text-center py-8">
-            <p>Failed to load blog: {error}</p>
-            <button 
-              onClick={() => window.location.reload()} 
-              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-            >
-              Retry
-            </button>
-          </div>
-        </div>
       </div>
     );
   }
@@ -141,7 +130,7 @@ export default function BlogPage() {
   if (!blog) {
     return (
       <div className="max-w-5xl mx-auto py-32">
-        <div className="flex gap-4">
+        <div className="flex gap-2 px-2 sm:px-0">
           <button onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +161,7 @@ export default function BlogPage() {
 
   return (
     <div className="max-w-5xl mx-auto py-32">
-      <div className="flex gap-4">
+      <div className="flex gap-2 px-2 sm:px-0">
         <button onClick={() => router.push("/")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -191,13 +180,13 @@ export default function BlogPage() {
         </button>
         <p>Back to Main</p>
       </div>
-      <div className='px-44'>
+      <div className='px-5 sm:px-44'>
         <div className="flex flex-col pt-6">
           <p className={`text-sm ${theme === "dark" ? "text-zinc-700" : "text-zinc-900"}`}>akshxdevs</p>
           <h1 className={`text-4xl font-bold ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>{blog.title}</h1>
           <p className={`text-xl mt-2 ${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}>{blog.subtitle}</p>
           <p className={`text-sm mt-1 ${theme === "dark" ? "text-zinc-500" : "text-zinc-500"}`}>
-              {blog.createdOn}
+              {formatted}
           </p>
         </div>
         <div className='flex justify-between items-center gap-2 mt-4'>
@@ -217,7 +206,7 @@ export default function BlogPage() {
       </div>
       <div className='border-b border-zinc-800 w-[70%] mx-auto pt-4'/>
       <div className="flex flex-col justify-center items-center ">
-        <div className="w-[60%] h-fit">
+        <div className="px-5 sm:px-0 w-full sm:w-[60%] h-fit">
           <div className="mt-5 rounded-md pb-5">
             {blog.thumbnailImg && (
               <img
@@ -251,11 +240,11 @@ export default function BlogPage() {
               </div>
             )}
             <div className='flex justify-center items-center'>
-              <div className="flex justify-between w-[65%] border border-zinc-600 rounded-md mt-8">
+              <div className="flex justify-between w-full sm:w-[70%] border border-zinc-600 rounded-md mt-8">
                 <input
                   type="email"
                   placeholder="heisenberg.druglord@gmail.com"
-                  className="w-full outline-none bg-transparent p-1 border-t border-b border-l rounded-l-md border-orange-600"
+                  className="text-sm sm:text-lg w-full outline-none bg-transparent p-1 border-t border-b border-l rounded-l-md border-orange-600"
                 />
                 <button className="w-56 bg-orange-600 rounded-sm font-semibold text-slate-100">
                   Subscribe
