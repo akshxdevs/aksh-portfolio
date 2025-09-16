@@ -41,7 +41,7 @@ export const NewsLetter = () => {
   };
   return (
     <div className="max-w-5xl mx-auto py-5">
-      <div className="flex flex-col px-32">
+      <div className="flex flex-col px-5 sm:px-32">
         <h1
           className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}
         >
@@ -54,12 +54,12 @@ export const NewsLetter = () => {
           just what i’m building and thinking.
         </p>
         <div
-          className={`flex gap-4 p-3 border rounded-lg mt-4 ${theme === "dark" ? "border-zinc-700" : "border-zinc-300"}`}
+          className={`flex flex-col sm:flex-row gap-4 p-3 border rounded-lg mt-4 ${theme === "dark" ? "border-zinc-700" : "border-zinc-300"}`}
         >
           <input
             type="text"
             placeholder="heisenberg"
-            className="w-36 bg-transparent p-2 border rounded-md border-orange-600"
+            className="w-full text-xs sm:text-md sm:w-36 bg-transparent p-2 border rounded-md border-orange-600"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -67,13 +67,13 @@ export const NewsLetter = () => {
             <input
               type="email"
               placeholder="heisenberg.druglord@gmail.com"
-              className="w-full outline-none bg-transparent p-2 border-t border-b border-l rounded-l-md border-orange-600"
+              className="w-full text-xs sm:text-md outline-none bg-transparent p-2 border-t border-b border-l rounded-l-md border-orange-600"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
               onClick={() => handleSubscribtion()}
-              className="w-56 bg-orange-600 px-6 rounded-sm font-semibold"
+              className="w-28 sm:w-56 bg-orange-600 px-6 rounded-sm font-semibold text-sm sm:text-md"
             >
               {isSubscribing ? (
                 <div className="flex items-center gap-2">
@@ -82,7 +82,7 @@ export const NewsLetter = () => {
                 </div>
               ) : (
                 "Subscribe"
-              )}{" "}
+              )}
             </button>
           </div>
         </div>
