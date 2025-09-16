@@ -43,7 +43,7 @@ export default function(){
     return (
       <div className="max-w-5xl mx-auto py-5">
         <div className="flex flex-col justify-center items-center mt-16">
-          <div className="flex flex-col justify-center items-center gap-3 pt-2 px-44">
+          <div className="flex flex-col justify-center items-center gap-3 pt-2 px-5 sm:px-44">
             <button
               className="btn-glow relative rounded-lg p-2 group"
               style={{ zIndex: 10 }}
@@ -53,18 +53,18 @@ export default function(){
               </h1>
             </button>
             <h2
-              className={`text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
+              className={`text-center text-5xl font-semibold ${theme === "dark" ? "text-slate-200" : "text-slate-900"}`}
             >
               Check out my latest work
             </h2>
             <p
-              className={`w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
+              className={`w-full sm:w-[70%] text-center text-md font-normal ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}`}
             >
               I've worked on a variety of projects, from simple websites to complex
               web applications. Here are a few of my favorites.
             </p>
           </div>
-          <div className="w-2/3 h-fit grid grid-cols-2 gap-4">
+          <div className="px-5 sm:px-0 w-full sm:w-2/3 h-fit grid grid-cols-1 sm:grid-cols-2 gap-2">
             {[...Array(2)].map((_, index) => (
               <div
                 key={index}
