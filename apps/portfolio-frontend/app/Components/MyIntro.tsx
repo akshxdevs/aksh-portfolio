@@ -10,7 +10,7 @@ export const MyIntro = () => {
           <img
             width="900"
             height="900"
-            src="./profilepic.jpeg"
+            src="./profilepicnew.jpg"
             alt="ProfilePic"
             className="border rounded-full border-gray-300 dark:border-slate-700 transition-colors duration-300"
           />
@@ -215,7 +215,7 @@ export const MyIntro = () => {
               <img
                 width="900"
                 height="900"
-                src="./profilepic.jpeg"
+                src="./profilepicnew.jpg"
                 alt="ProfilePic"
                 className="border rounded-lg border-gray-300 dark:border-slate-700 transition-colors duration-300"
               />
