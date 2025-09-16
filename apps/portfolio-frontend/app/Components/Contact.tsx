@@ -5,7 +5,7 @@ export const Contact = () => {
   const {theme} = useTheme();
   return (
     <div className="max-w-5xl mx-auto py-5">
-      <div className={`flex flex-col gap-1 px-32 ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>
+      <div className={`flex flex-col gap-1 px-5 sm:px-32 ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>
         <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}>
           Hire Me, Meet Me, DM Me
         </h1>
