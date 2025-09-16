@@ -63,7 +63,7 @@ export const Projects = () => {
           </p>
         </div>
         <div className="flex flex-col justify-center items-center mt-16">
-          <div className="w-2/3 h-fit grid grid-cols-2 gap-4">
+          <div className="w-full sm:w-2/3 h-fit grid grid-cols-1 sm:grid-cols-2 gap-4 px-5 sm:px-0">
             {[...Array(2)].map((_, index) => (
               <div
                 key={index}
