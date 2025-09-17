@@ -399,8 +399,8 @@ export const MyIntro = () => {
               <div></div>
             </div>
           </div>
-          <div>
-            <p className={`p-2 text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}>
+          <div className="w-full">
+            <p className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}>
               i break things, fix them, and learn fast. deep into code, chasing
               mastery across software + hardware, diving into web3 to build and
               scale. obsessed with space, rockets, astronomy, cosmology,
