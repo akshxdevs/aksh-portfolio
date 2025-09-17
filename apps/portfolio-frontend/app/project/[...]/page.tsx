@@ -52,7 +52,6 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen transition-colors duration-300" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
         <div className="max-w-5xl mx-auto py-32">
-          {/* Back Button Skeleton */}
           <div className="flex gap-4 mb-8">
             <div className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg">
               <div className="w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
@@ -60,20 +59,16 @@ export default function ProjectPage() {
             </div>
           </div>
 
-          {/* Project Content Skeleton */}
           <div className="flex flex-col justify-center items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-[70%] max-w-4xl">
               <div className="rounded-md pb-5">
-                {/* Title and Date Skeleton */}
                 <div className="flex flex-col justify-center items-center px-5 pb-5">
                   <div className="w-64 h-10 bg-gray-300 dark:bg-gray-600 rounded animate-pulse mb-2"></div>
                   <div className="w-32 h-4 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
                 </div>
                 
-                {/* Image Skeleton */}
                 <div className="w-full h-96 bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse mb-4"></div>
 
-                {/* Description Skeleton */}
                 <div className="px-5 py-3 mb-4">
                   <div className="space-y-2">
                     <div className="w-full h-4 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
@@ -82,9 +77,7 @@ export default function ProjectPage() {
                   </div>
                 </div>
 
-                {/* Tech Stack and Links Skeleton */}
                 <div className="px-5 flex justify-between items-end">
-                  {/* Tech Stack Skeleton */}
                   <div className="flex flex-wrap gap-2 justify-center items-center">
                     <div className="w-16 h-8 bg-gray-300 dark:bg-gray-600 rounded-lg animate-pulse"></div>
                     <div className="w-20 h-8 bg-gray-300 dark:bg-gray-600 rounded-lg animate-pulse"></div>
@@ -92,7 +85,6 @@ export default function ProjectPage() {
                     <div className="w-18 h-8 bg-gray-300 dark:bg-gray-600 rounded-lg animate-pulse"></div>
                   </div>
                   
-                  {/* Links Skeleton */}
                   <div className="flex justify-center items-center gap-3">
                     <div className="flex items-center gap-1 border border-gray-300 dark:border-gray-600 rounded-lg p-1">
                       <div className="w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
@@ -136,7 +128,7 @@ export default function ProjectPage() {
         <div className="flex gap-4 mb-8">
           <button 
             onClick={() => router.push("/")}
-            className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+            className={`flex items-center gap-2 px-4 py-2 border rounded-lg transition-colors duration-200 ${theme === "dark" ? "border-zinc-600 hover:bg-zinc-800" : "border-zinc-300 hover:bg-zinc-300"}`}
           >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -152,16 +144,16 @@ export default function ProjectPage() {
               d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
             />
           </svg>
-            <span className="text-gray-800 dark:text-white">Back to Main</span>
+            <span className={`${theme === "dark" ? "text-white" : "text-gray-800"}`}>Back to Main</span>
         </button>
       </div>
 
       <div className="flex flex-col justify-center items-center">
-        <div className="w-fit h-fit">
+        <div className="w-[70%] h-1/2">
           <div className="mt-5 rounded-md pb-5">
             <div className="flex flex-col justify-center items-center px-5 pb-5">
-                <h1 className="text-4xl font-semibold text-gray-800 dark:text-white">{project.title}</h1>
-                <p className="text-gray-600 dark:text-gray-400">
+                <h1 className={`text-4xl font-semibold ${theme === "dark" ? "text-white" : "text-gray-800"}`}>{project.title}</h1>
+                <p className={`${theme === "dark" ? "text-white" : "text-gray-600"}`}>
                 {dayjs(project.createdAt).format("MMMM YYYY")}
               </p>
             </div>
@@ -172,19 +164,21 @@ export default function ProjectPage() {
             />
 
             <div className="px-5 py-3 mt-8">
-                <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
+                <p className={`text-lg ${theme === "dark" ? "text-white" : "text-gray-800"}`}>{project.description}</p>
             </div>
-              <div className="flex flex-wrap gap-2 justify-center items-center">
+            <h1 className={`text-2xl font-semibold px-5 mb-3 ${theme === "dark" ? "text-white" : "text-gray-800"}`}>Skills Used</h1>
+              <div className="flex flex-wrap gap-2 items-center px-5">
                 {project.techStack.map((tag: any) => (
                   <p
                     key={tag}
-                      className="border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-white"
+                      className={`border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${theme === "dark" ? "text-white" : "text-gray-800"}`}
                   >
                     {tag}
                   </p>
                 ))}
               </div>
-              <div className="flex justify-center items-center gap-3 mt-10">
+              <h1 className={`text-2xl mt-4 font-semibold px-5 mb-3 ${theme === "dark" ? "text-white" : "text-gray-800"}`}>Links</h1>
+              <div className="flex items-center gap-3 px-5">
                 <a
                   href={project.webUrl}
                   target="_blank"
@@ -193,21 +187,21 @@ export default function ProjectPage() {
                 >
                   {theme === "dark" ? (
                     <img
-                      width="20"
-                      height="20"
+                      width="30"
+                      height="30"
                       src="https://img.icons8.com/pulsar-line/50/FFFFFF/external-link.png"
                       alt="external-link"
                     />
                   ) : (
                     <img
-                      width="20"
-                      height="20"
+                      width="30"
+                      height="30"
                       src="https://img.icons8.com/pulsar-line/48/external-link.png"
                       alt="external-link"
                       className="transition-all duration-300 group-hover:brightness-110"
                     />
                   )}
-                    <span className="text-gray-800 dark:text-white">Website</span>
+                    <span className={`${theme === "dark" ? "text-white" : "text-gray-800"}`}>Website</span>
                 </a>
                 <a
                   href={project.githubLink}
@@ -217,22 +211,22 @@ export default function ProjectPage() {
                 >
                   {theme === "dark" ? (
                     <img
-                      width="20"
-                      height="20"
+                      width="30"
+                      height="30"
                       src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
                       alt="github"
                       className="transition-all duration-300 group-hover:brightness-110"
                     />
                   ) : (
                     <img
-                      width="20"
-                      height="20"
+                      width="30"
+                      height="30"
                       src="https://img.icons8.com/sf-regular/48/github.png"
                       alt="github"
                       className="transition-all duration-300 group-hover:brightness-110"
                     />
                   )}
-                    <span className="text-gray-800 dark:text-white">Source</span>
+                    <span className={`${theme === "dark" ? "text-white" : "text-gray-800"}`}>Source</span>
                 </a>
                 </div>
             </div>
