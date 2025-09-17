@@ -47,7 +47,7 @@ export const SupportSection = () => {
           me. every bit of support helps me keep creating, improving, and
           sharing more.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           <a 
             href="https://github.com/sponsors/akshxdevs" 
             target="_blank" 
