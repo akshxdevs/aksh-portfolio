@@ -69,12 +69,12 @@ export const MyIntro = () => {
             sometimes, but execution always lands. here to make something real,
             something that lasts.
           </p>
-          <div className="flex mt-2">
+          <div className="flex gap-2 mt-2">
             <div className="group relative">
-              <a href="mailto:akashgovind222@gmail.com" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="mailto:akashgovind222@gmail.com" className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-9 h-9 text-white"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -90,14 +90,14 @@ export const MyIntro = () => {
                   </svg>
                 )}
               </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Email
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
               </div>
             </div>
 
             <div className="group relative">
-              <a href="https://github.com/akshxdevs" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://github.com/akshxdevs" target="_blank" className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -116,14 +116,14 @@ export const MyIntro = () => {
                   />
                 )}
               </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 GitHub
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
               </div>
             </div>
 
             <div className="group relative">
-              <a href="https://x.com/akshxdevs" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://x.com/akshxdevs" target="_blank" className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -142,14 +142,14 @@ export const MyIntro = () => {
                   />
                 )}
               </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Twitter/X
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
               </div>
             </div>
 
             <div className="group relative">
-              <a href="https://www.linkedin.com/in/akshxdevs/" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://www.linkedin.com/in/akshxdevs/" target="_blank" className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -168,14 +168,14 @@ export const MyIntro = () => {
                   />
                 )}
               </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 LinkedIn
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
               </div>
             </div>
 
             <div className="group relative">
-              <a href="" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="" target="_blank" className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -194,7 +194,7 @@ export const MyIntro = () => {
                   />
                 )}
               </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Resume
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
               </div>
