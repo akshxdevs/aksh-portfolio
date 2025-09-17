@@ -64,7 +64,7 @@ export const NewsLetter = () => {
           <div className="flex justify-between w-full rounded-md">
             <input
               type="email"
-              placeholder="heisenberg.druglord@gmail.com"
+              placeholder="heisenberg@gmail.com"
               className="w-full text-xs sm:text-md outline-none bg-transparent p-2 border-t border-b border-l rounded-l-md border-orange-600"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
