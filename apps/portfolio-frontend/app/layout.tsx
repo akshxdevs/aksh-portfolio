@@ -13,6 +13,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
+const martin = localFont({
+  src: "./fonts/MartianMono-VariableFont_wdth,wght.ttf",
+  variable: "--font-martin",
+});
+
 export const metadata: Metadata = {
   title: "akshxdevs | Portfolio",
   description: "Full Stack Developer Portfolio",
@@ -25,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${martin.variable}`}>
         <ThemeProvider>
           {children}
           <Toaster 
