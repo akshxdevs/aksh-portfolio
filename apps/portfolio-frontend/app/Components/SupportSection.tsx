@@ -52,7 +52,7 @@ export const SupportSection = () => {
             href="https://github.com/sponsors/akshxdevs" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-300 transition-colors"
           >
             <img
               width="20"
@@ -67,7 +67,7 @@ export const SupportSection = () => {
             href="https://buymeacoffee.com/akshxdevs" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-300 transition-colors"
           >
             <img
               width="20"
@@ -80,7 +80,7 @@ export const SupportSection = () => {
           
           <button 
             onClick={() => handleSolana()} 
-            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-300 transition-colors"
           >
             <img
               width="20"
@@ -97,7 +97,7 @@ export const SupportSection = () => {
               e.stopPropagation();
               handleUpi();
             }} 
-            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-800 transition-colors cursor-pointer"
+            className="flex justify-center items-center gap-1 border border-zinc-600 rounded-lg px-2 py-1 hover:bg-zinc-300 transition-colors cursor-pointer"
             type="button"
           >
             {theme === "dark" ? (
@@ -111,7 +111,7 @@ export const SupportSection = () => {
               <img
                 width="20"
                 height="20"
-                src="https://img.icons8.com/ios-filled/50/FFFFFF/bhim-upi.png"
+                src="https://img.icons8.com/ios-filled/50/000000/bhim-upi.png"
                 alt="bhim-upi"
               />
             )}
