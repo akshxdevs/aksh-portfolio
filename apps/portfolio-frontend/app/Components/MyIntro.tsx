@@ -5,17 +5,16 @@ export const MyIntro = () => {
   const { theme } = useTheme();
   return (
     <div className="max-w-5xl mx-auto pt-10">
-      <div className="hidden sm:flex justify-between gap-2 sm:gap-5 pt-10 px-5 sm:px-32">
+      <div className="hidden sm:flex justify-between gap-2 sm:gap-5 mt-20 px-5 sm:px-24">
         <div>
           <img
-            width="900"
-            height="900"
+            width={800}
             src="./profilepicnew.jpg"
             alt="ProfilePic"
-            className="border rounded-full border-gray-300 dark:border-slate-700 transition-colors duration-300"
+            className="border rounded-lg border-zinc-700 transition-colors duration-300"
           />
         </div>
-        <div className="flex flex-col gap-1 sm:gap-2 ">
+        <div className="flex flex-col gap-0">
           <div className="flex items-center gap-2">
             <h1
               className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-gray-800"} font-bold transition-colors duration-300`}
@@ -29,12 +28,9 @@ export const MyIntro = () => {
               <p className={`text-xs text-green-500`}>Available</p>
             </div>
           </div>
-          <h2
-            className={`text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}
-          >
-            21, Full Stack and Blockchain{" "}
+          <h2 className={`flex items-center gap-1 text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}>
+            21, Full Stack and Blockchain
             <span className="flex items-center gap-1">
-              {" "}
               Developer
               <a
                 href="mailto:akash@example.com"
@@ -75,7 +71,7 @@ export const MyIntro = () => {
           </p>
           <div className="flex mt-2">
             <div className="group relative">
-              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="mailto:akashgovind222@gmail.com" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <svg
                     className="w-8 h-8 text-white"
@@ -93,7 +89,7 @@ export const MyIntro = () => {
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                   </svg>
                 )}
-              </button>
+              </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Email
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
@@ -101,7 +97,7 @@ export const MyIntro = () => {
             </div>
 
             <div className="group relative">
-              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://github.com/akshxdevs" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -119,7 +115,7 @@ export const MyIntro = () => {
                     className="w-8 h-8"
                   />
                 )}
-              </button>
+              </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 GitHub
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
@@ -127,7 +123,7 @@ export const MyIntro = () => {
             </div>
 
             <div className="group relative">
-              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://x.com/akshxdevs" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -145,7 +141,7 @@ export const MyIntro = () => {
                     className="w-8 h-8"
                   />
                 )}
-              </button>
+              </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Twitter/X
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
@@ -153,7 +149,7 @@ export const MyIntro = () => {
             </div>
 
             <div className="group relative">
-              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="https://www.linkedin.com/in/akshxdevs/" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -171,7 +167,7 @@ export const MyIntro = () => {
                     className="w-8 h-8 transition-all duration-300 group-hover:brightness-110"
                   />
                 )}
-              </button>
+              </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 LinkedIn
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
@@ -179,7 +175,7 @@ export const MyIntro = () => {
             </div>
 
             <div className="group relative">
-              <button className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+              <a href="" target="_blank" className="p-1 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
                 {theme === "dark" ? (
                   <img
                     width="32"
@@ -197,7 +193,7 @@ export const MyIntro = () => {
                     className="w-8 h-8"
                   />
                 )}
-              </button>
+              </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Resume
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
