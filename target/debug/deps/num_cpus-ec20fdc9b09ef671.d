@@ -1,0 +1,8 @@
+/home/akshxdevs/codes/projects/aksh-portfolio/target/debug/deps/num_cpus-ec20fdc9b09ef671.d: /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/linux.rs
+
+/home/akshxdevs/codes/projects/aksh-portfolio/target/debug/deps/libnum_cpus-ec20fdc9b09ef671.rlib: /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/linux.rs
+
+/home/akshxdevs/codes/projects/aksh-portfolio/target/debug/deps/libnum_cpus-ec20fdc9b09ef671.rmeta: /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs /home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/linux.rs
+
+/home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs:
+/home/akshxdevs/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/linux.rs:
