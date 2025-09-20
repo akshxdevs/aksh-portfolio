@@ -1,6 +1,20 @@
 [package]
 name = "analytics-service"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+axum = { version = "0.8.4", features = ["ws"] }
+deadpool-redis = "0.22.0"
+dotenv = "0.15.0"
+env_logger = "0.11.8"
+futures-util = "0.3.31"
+log = "0.4.28"
+rdkafka = "0.38.0"
+redis = "0.32.5"
+serde = "1.0.225"
+serde_json = "1.0.145"
+tokio = { version = "1.47.1", features = ["full"] }
+tokio-stream = "0.1.17"
+tower = "0.5.2"
+uuid = { version = "1.18.1", features = ["v4"] }
