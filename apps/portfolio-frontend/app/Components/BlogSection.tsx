@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { getTimeAgo, formatDate } from '../utils/timeUtils';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../contexts/ThemeContext';
-import toast from 'react-hot-toast';
 import axios from 'axios';
 
 
