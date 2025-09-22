@@ -30,6 +30,7 @@ dependencies = [
 name = "analytics-service"
 version = "0.1.0"
 dependencies = [
+ "api",
  "axum",
  "chrono",
  "deadpool-redis",
@@ -106,6 +107,19 @@ dependencies = [
  "anstyle",
  "once_cell_polyfill",
  "windows-sys 0.60.2",
+]
+
+[[package]]
+name = "api"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "chrono",
+ "jsonwebtoken",
+ "serde",
+ "serde_json",
+ "store",
+ "uuid",
 ]
 
 [[package]]

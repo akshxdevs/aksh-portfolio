@@ -1,7 +1,9 @@
 use crate::auth::generate_jwt;
 use axum::{extract::State, response::IntoResponse, Json};
+use axum::http::StatusCode;
 use std::sync::Arc;
 use store::store::Store;
+use uuid::Uuid;
 
 #[derive(serde::Deserialize)]
 pub struct CreateUserInput {
@@ -17,7 +19,7 @@ pub struct SignInInput {
 
 #[derive(serde::Serialize)]
 pub struct CreateUserOutput {
-    pub id: i32,
+    pub id: Uuid,
     pub token: String,
 }
 
@@ -27,27 +29,16 @@ pub async fn signup_route(
 ) -> impl IntoResponse {
     match store.sign_up(data.username.clone(), data.password_hash) {
         Ok(user) => {
-            let secret = "your-secret-key"; // Move to env/config in real app
+            let secret = "your-secret-key"; // TODO: move to env
             match generate_jwt(user.id.to_string(), secret) {
                 Ok(token) => {
-                    let response = CreateUserOutput {
-                        id: user.id,
-                        token,
-                    };
+                    let response = CreateUserOutput { id: user.id, token };
                     Json(response).into_response()
                 }
-                Err(e) => (
-                    axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-                    format!("Token generation error: {}", e),
-                )
-                    .into_response(),
+                Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Token generation error: {}", e)).into_response(),
             }
         }
-        Err(e) => (
-            axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-            format!("Signup error: {}", e),
-        )
-            .into_response(),
+        Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Signup error: {}", e)).into_response(),
     }
 }
 
@@ -57,32 +48,16 @@ pub async fn signin_route(
 ) -> impl IntoResponse {
     match store.sign_in(data.username.clone(), data.password_hash.clone()) {
         Ok(Some(user)) => {
-            let secret = "akshxsect34";
+            let secret = "akshxsect34"; // TODO: move to env
             match generate_jwt(user.id.to_string(), secret) {
                 Ok(token) => {
-                    let response = CreateUserOutput {
-                        id: user.id,
-                        token,
-                    };
+                    let response = CreateUserOutput { id: user.id, token };
                     Json(response).into_response()
                 }
-                Err(e) => (
-                    axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-                    format!("Token generation error: {}", e),
-                )
-                .into_response(),
+                Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Token generation error: {}", e)).into_response(),
             }
         }
-        Ok(None) => (
-            axum::http::StatusCode::UNAUTHORIZED,
-            "Invalid username or password".to_string(),
-        )
-        .into_response(),
-        Err(e) => (
-            axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-            format!("Signin error: {}", e),
-        )
-        .into_response(),
+        Ok(None) => (StatusCode::UNAUTHORIZED, "Invalid username or password".to_string()).into_response(),
+        Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Signin error: {}", e)).into_response(),
     }
 }
-

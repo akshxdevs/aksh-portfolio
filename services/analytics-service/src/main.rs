@@ -9,6 +9,8 @@ use log::{info};
 
 mod services;
 use store::store::Store;
+use axum::routing::post;
+
 #[derive(Clone)]
 pub struct AppState {
     pub kafka_producer: Arc<rdkafka::producer::FutureProducer>,
@@ -49,9 +51,17 @@ pub async fn main() -> Result<(),std::io::Error>{
         }
     });
 
+    let api_router = Router::new()
+        .route("/register", post(api::routes::user::signup_route))
+        .route("/login", post(api::routes::user::signin_route))
+        .with_state(store.clone());
+
+    let ws_router = ws::ws_router().with_state(state.clone());
+
     let app = Router::new()
-    .merge(ws::ws_router())
-    .with_state(state);
+        .merge(api_router)
+        .merge(ws_router);
+
     let addr = SocketAddr::from(([0,0,0,0],3000));
     info!("Server Listening on {}",addr);
     let listener = tokio::net::TcpListener::bind(&addr).await?;

@@ -1,12 +1,13 @@
 use crate::store::Store;
 use diesel::{insert_into, prelude::*, OptionalExtension};
 use chrono::NaiveDateTime;
+use uuid::Uuid;
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::users)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct User {
-    pub id: i32,
+    pub id: Uuid,
     pub username: String,
     pub password_hash: String,
     pub created_at: NaiveDateTime,

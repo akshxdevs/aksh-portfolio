@@ -2,9 +2,10 @@
 
 diesel::table! {
     use diesel::sql_types::*;
+    use diesel::sql_types::Uuid;
 
     users (id) {
-        id -> Int4,
+        id -> Uuid,
         username -> Text,
         password_hash -> Text,
         created_at -> Timestamp,

@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["src/store"]
+members = ["src/store", "src/api"]
 
 [package]
 name = "analytics-service"
@@ -26,3 +26,4 @@ tower = "0.5.2"
 uuid = { version = "1.18.1", features = ["v4", "serde", "fast-rng"] }
 # Diesel only needed in store crate; can be kept here or moved. Keeping minimal here.
 store = { path = "src/store" }
+api = { path = "src/api" }
