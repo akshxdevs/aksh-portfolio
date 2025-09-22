@@ -1,0 +1,10 @@
+[package]
+name = "store"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+diesel = { version = "2.2", features = ["postgres", "r2d2", "chrono", "uuid"] }
+dotenv = "0.15.0"
+uuid = { version = "1.8.0", features = ["v4", "serde", "fast-rng"] }
+chrono = { version = "0.4", features = ["serde"] }
