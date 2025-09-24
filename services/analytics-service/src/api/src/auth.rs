@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
+use chrono::Utc;
 use jsonwebtoken::{encode, decode, Header, Validation, EncodingKey, DecodingKey};
-use std::time::{SystemTime, Duration, UNIX_EPOCH};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Claims {
@@ -9,8 +9,10 @@ pub struct Claims {
 }
 
 pub fn generate_jwt(user_id: String, secret: &str) -> Result<String, jsonwebtoken::errors::Error> {
-    let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or(Duration::from_secs(0));
-    let exp = (now + Duration::from_secs(24 * 60 * 60)).as_secs() as usize;
+    let exp = Utc::now()
+        .checked_add_signed(chrono::Duration::hours(24))
+        .unwrap()
+        .timestamp() as usize;
 
     let claims = Claims {
         sub: user_id,
