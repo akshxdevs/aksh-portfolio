@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const AppBar = () => {
     const [time,setTime] = useState(new Date());
-    
+    const {theme} = useTheme();
     useEffect(()=>{
         const interval = setInterval(() => {
             setTime(new Date());
@@ -18,11 +19,8 @@ export const AppBar = () => {
     }
     return (
         <div>
-            <div className="flex justify-center py-2 items-center text-white text-md font-normal">
+            <div className={`flex justify-center py-2 items-center ${theme === "dark" ? "text-white" : "text-black"} text-md font-normal`}>
                 {formatTime(time)}
-            </div>
-            <div>
-                
             </div>
         </div>
     );
