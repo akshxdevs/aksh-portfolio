@@ -1,5 +1,8 @@
 "use client";
+import { MdOutlineAttachFile } from "react-icons/md";
 import { useTheme } from "../contexts/ThemeContext";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 export const MyIntro = () => {
   const { theme } = useTheme();
@@ -31,7 +34,7 @@ export const MyIntro = () => {
           <h2
             className={`flex items-center gap-1 text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}
           >
-            21, Full Stack and Blockchain
+            21, Full Stack Blockchain
             <span className="flex items-center gap-1">
               Developer
               <a
@@ -64,62 +67,22 @@ export const MyIntro = () => {
           <p
             className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}
           >
-            i break things, fix them, and learn fast. deep into code, chasing
-            mastery across software + hardware, diving into web3 to build and
-            scale. obsessed with space, rockets, astronomy, cosmology, anything
-            that pushes limits. for fun, it’s football, chess, and mma. lazy
-            sometimes, but execution always lands. here to make something real,
-            something that lasts.
+            Polymath. Builder. Problem solver. Engineer at heart, innovator by
+            choice. With a strong foundation in software and hardware, I’m
+            diving deep into Web3 to design and scale impactful products.
+            Passionate about space, rockets, great books, histroy and frontier
+            sciences, I thrive on pushing boundaries. football, chess are my
+            edge sharp, always aiming to create products that scale, endure, and
+            make a lasting impact.
           </p>
           <div className="flex gap-2 mt-2">
-            <div className="group relative">
-              <a
-                href="mailto:akashgovind222@gmail.com"
-                className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
-              >
-                {theme === "dark" ? (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/material-rounded/24/FFFFFF/new-post.png"
-                    alt="new-post"
-                  />
-                ) : (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/material-rounded/24/1A1A1A/new-post.png"
-                    alt="new-post"
-                  />
-                )}
-              </a>
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
-                Email
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
-              </div>
-            </div>
-
-            <div className="group relative">
+            <div className="group relative border p-1 rounded-md border-zinc-600">
               <a
                 href="https://github.com/akshxdevs"
                 target="_blank"
                 className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
               >
-                {theme === "dark" ? (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
-                    alt="github"
-                  />
-                ) : (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
-                    alt="github"
-                  />
-                )}
+                <FaGithub size={25} />
               </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 GitHub
@@ -127,27 +90,13 @@ export const MyIntro = () => {
               </div>
             </div>
 
-            <div className="group relative">
+            <div className="group relative border p-1 rounded-md border-zinc-600">
               <a
                 href="https://x.com/akshxdevs"
                 target="_blank"
                 className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
               >
-                {theme === "dark" ? (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
-                    alt="twitterx--v2"
-                  />
-                ) : (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios/50/twitterx--v2.png"
-                    alt="twitterx--v2"
-                  />
-                )}
+                <BsTwitterX size={25} />
               </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Twitter/X
@@ -155,27 +104,13 @@ export const MyIntro = () => {
               </div>
             </div>
 
-            <div className="group relative">
+            <div className="group relative border p-1 rounded-md border-zinc-600">
               <a
                 href="https://www.linkedin.com/in/akshxdevs/"
                 target="_blank"
                 className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
               >
-                {theme === "dark" ? (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
-                    alt="linkedin"
-                  />
-                ) : (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
-                    alt="linkedin"
-                  />
-                )}
+                <FaLinkedin size={25} />
               </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 LinkedIn
@@ -183,27 +118,13 @@ export const MyIntro = () => {
               </div>
             </div>
 
-            <div className="group relative">
+            <div className="group relative border p-1 rounded-md border-zinc-600">
               <a
                 href=""
                 target="_blank"
                 className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
               >
-                {theme === "dark" ? (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/FFFFFF/external-Resume-files-tanah-basah-glyph-tanah-basah.png"
-                    alt="external-Resume-files-tanah-basah-glyph-tanah-basah"
-                  />
-                ) : (
-                  <img
-                    width="32"
-                    height="32"
-                    src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/1A1A1A/external-Resume-files-tanah-basah-glyph-tanah-basah.png"
-                    alt="external-Resume-files-tanah-basah-glyph-tanah-basah"
-                  />
-                )}
+                <MdOutlineAttachFile size={25} />
               </a>
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                 Resume
@@ -275,141 +196,76 @@ export const MyIntro = () => {
                   </div>
                 </a>
               </div>
-
-              <div className="flex gap-1 mt-3">
-                <div className="group relative">
-                  <button className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                    {theme === "dark" ? (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/material-rounded/24/FFFFFF/new-post.png"
-                        alt="new-post"
-                      />
-                    ) : (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/material-rounded/24/1A1A1A/new-post.png"
-                        alt="new-post"
-                      />
-                    )}
-                  </button>
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
-                    Email
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
-                  </div>
-                </div>
-
-                <div className="group relative">
-                  <button className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                    {theme === "dark" ? (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
-                        alt="github"
-                      />
-                    ) : (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/sf-regular/48/github.png"
-                        alt="github"
-                      />
-                    )}
-                  </button>
+              <div className="flex gap-2 mt-1">
+                <div className="group relative border p-1 rounded-md border-zinc-600">
+                  <a
+                    href="https://github.com/akshxdevs"
+                    target="_blank"
+                    className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <FaGithub size={25} />
+                  </a>
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                     GitHub
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
                   </div>
                 </div>
 
-                <div className="group relative">
-                  <button className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                    {theme === "dark" ? (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
-                        alt="twitterx--v2"
-                      />
-                    ) : (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/ios/50/twitterx--v2.png"
-                        alt="twitterx--v2"
-                      />
-                    )}
-                  </button>
+                <div className="group relative border p-1 rounded-md border-zinc-600">
+                  <a
+                    href="https://x.com/akshxdevs"
+                    target="_blank"
+                    className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <BsTwitterX size={25} />
+                  </a>
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                     Twitter/X
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
                   </div>
                 </div>
 
-                <div className="group relative">
-                  <button className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                    {theme === "dark" ? (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
-                        alt="linkedin"
-                      />
-                    ) : (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/color/48/linkedin.png"
-                        alt="linkedin"
-                      />
-                    )}
-                  </button>
+                <div className="group relative border p-1 rounded-md border-zinc-600">
+                  <a
+                    href="https://www.linkedin.com/in/akshxdevs/"
+                    target="_blank"
+                    className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <FaLinkedin size={25} />
+                  </a>
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                     LinkedIn
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
                   </div>
                 </div>
 
-                <div className="group relative">
-                  <button className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                    {theme === "dark" ? (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/FFFFFF/external-Resume-files-tanah-basah-glyph-tanah-basah.png"
-                        alt="external-Resume-files-tanah-basah-glyph-tanah-basah"
-                      />
-                    ) : (
-                      <img
-                        width="32"
-                        height="32"
-                        src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/1A1A1A/external-Resume-files-tanah-basah-glyph-tanah-basah.png"
-                        alt="external-Resume-files-tanah-basah-glyph-tanah-basah"
-                      />
-                    )}
-                  </button>
+                <div className="group relative border p-1 rounded-md border-zinc-600">
+                  <a
+                    href=""
+                    target="_blank"
+                    className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <MdOutlineAttachFile size={25} />
+                  </a>
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
                     Resume
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100 dark:border-t-gray-800"></div>
                   </div>
                 </div>
               </div>
-              <div></div>
             </div>
           </div>
           <div className="w-full">
             <p
               className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}
             >
-              i break things, fix them, and learn fast. deep into code, chasing
-              mastery across software + hardware, diving into web3 to build and
-              scale. obsessed with space, rockets, astronomy, cosmology,
-              anything that pushes limits. for fun, it’s football, chess, and
-              mma. lazy sometimes, but execution always lands. here to make
-              something real, something that lasts.
+              Polymath. Builder. Problem solver. Engineer at heart, innovator by
+              choice. With a strong foundation in software and hardware, I’m
+              diving deep into Web3 to design and scale impactful products.
+              Passionate about space, rockets, great books, histroy and frontier
+              sciences, I thrive on pushing boundaries. football, chess are my
+              edge sharp, always aiming to create products that scale, endure,
+              and make a lasting impact.
             </p>
           </div>
         </div>
