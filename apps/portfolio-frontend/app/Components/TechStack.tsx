@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
+import { CgVercel } from "react-icons/cg";
 
 export const TechStack = () => {
   const [showMore, setShowMore] = useState(false);
@@ -8,15 +9,9 @@ export const TechStack = () => {
   return (
     <div className="max-w-5xl mx-auto py-2 pb-5">
       <div className="px-5 sm:px-32">
-        {showMore ? (
           <h1 className={`text-2xl ${theme === 'dark' ? 'text-slate-50' : 'text-slate-900'} font-semibold`}>
             tech & tools.
           </h1>
-        ) : (
-          <h1 className={`text-2xl ${theme === 'dark' ? 'text-slate-50' : 'text-slate-900'} font-semibold`}>
-            weapons of choice.
-          </h1>
-        )}
         {showMore ? (
           <div className="flex flex-wrap gap-3 mt-2">
             <div className="px-2 py-1 rounded-lg bg-zinc-800 flex items-center justify-center shadow-md gap-2">
@@ -152,11 +147,7 @@ export const TechStack = () => {
               <span className="text-slate-200 font-medium">Tailwind</span>
             </div>
             <div className="px-4 py-1 rounded-lg bg-zinc-800 flex items-center justify-center shadow-md gap-2">
-              <img
-                src="./favicon.ico"
-                alt="Vercel"
-                className="w-8 h-8"
-              />
+              <CgVercel className="text-white"/>
               <span className="text-slate-200 font-medium">Vercel</span>
             </div>
             <div className="px-4 py-1 rounded-lg bg-zinc-800 flex items-center justify-center shadow-md gap-2">
