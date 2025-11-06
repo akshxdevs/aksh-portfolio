@@ -1,0 +1,13 @@
+# Ignore meta/config files from language stats
+Makefile linguist-vendored
+*.json linguist-vendored
+*.lock linguist-vendored
+*.yml linguist-vendored
+*.yaml linguist-vendored
+
+# Ignore build + frontend artifacts
+target/** linguist-vendored
+apps/** linguist-vendored
+frontend/** linguist-vendored
+sdk/** linguist-vendored
+tests/** linguist-vendored
