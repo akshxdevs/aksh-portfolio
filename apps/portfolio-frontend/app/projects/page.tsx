@@ -1,39 +1,18 @@
 "use client";
-import axios from "axios";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { useTheme } from "../contexts/ThemeContext";
+import { projects } from "../utils/project";
 
 export default function(){
   const router = useRouter();
-  const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
-  useEffect(() => {
-    getAllProjects();
-  }, []);
 
-  const getAllProjects = async () => {
-    try {
-      setLoading(true);
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/projects/getallprojects`
-      );
-      if (res.data) {
-        setProjects(res.data);
-        toast.success("Projects fetched successfully!");
-      } else {
-        toast.error("No projects found!");
-      }
-    } catch (error) {
-      console.log(error, "Something Went Wrong");
-      toast.error("Failed to fetch projects");
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const handleProject = (projectName: string) => {
     router.push(`/project/${projectName}`);
@@ -159,7 +138,7 @@ export default function(){
       </div>
       <div className="flex flex-col justify-center items-center mt-10">
         {projects.length > 0 && (
-          <div className="px-5 sm:px-0 w-full sm:w-2/3 h-1/2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="px-5 sm:px-0 w-2/3 sm:w-[85%] h-1/2 grid grid-cols-1 sm:grid-cols-2 gap-16">
             {projects.map((project) => (
               <div
                 key={project.id}
