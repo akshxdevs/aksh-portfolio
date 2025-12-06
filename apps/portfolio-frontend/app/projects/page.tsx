@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { projects } from "../utils/project";
 
-export default function(){
+export default function ProjectsPage(){
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
