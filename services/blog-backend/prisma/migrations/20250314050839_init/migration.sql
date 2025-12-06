@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE "Blog" ALTER COLUMN "blogImg" DROP NOT NULL,
-ALTER COLUMN "tags" DROP NOT NULL;
