@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getTimeAgo, formatDate } from '../utils/timeUtils';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '../contexts/ThemeContext';
-import axios from 'axios';
 
 
 export const BlogSection = () => {
@@ -15,23 +14,23 @@ export const BlogSection = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblogs`);
-        if (!response.data) {
-          throw new Error('Failed to fetch blogs');
-        }   
-        const data = response.data.blogs; 
-        setBlogs(data.slice(0, 2));
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
-        console.error('Error fetching blogs:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchBlogs();
+    // const fetchBlogs = async () => {
+    //   try {
+    //     setLoading(true);
+    //     const response = await axios.get(`${process.env.NEXT_PUBLIC_BLOG_API_URL}/api/v1/blog/getblogs`);
+    //     if (!response.data) {
+    //       throw new Error('Failed to fetch blogs');
+    //     }   
+    //     const data = response.data.blogs; 
+    //     setBlogs(data.slice(0, 2));
+    //   } catch (err) {
+    //     setError(err instanceof Error ? err.message : 'An error occurred');
+    //     console.error('Error fetching blogs:', err);
+    //   } finally {
+    //   }
+    // };
+    // fetchBlogs();
+    setLoading(false);
   }, []);
 
   if (loading) {
