@@ -5,34 +5,34 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useTheme } from "../contexts/ThemeContext";
+import { projects } from "../utils/project";
 
 export const Projects = () => {
   const router = useRouter();
-  const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
   useEffect(() => {
-    getAllProjects();
+    setLoading(false);
   }, []);
 
-  const getAllProjects = async () => {
-    try {
-      setLoading(true);
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/projects/getallprojects`
-      );
-      if (res.data) {
-        setProjects(res.data);
-      } else {
-        toast.error("No projects found!");
-      }
-    } catch (error) {
-      console.log(error, "Something Went Wrong");
-      toast.error("Failed to fetch projects");
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const getAllProjects = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const res = await axios.get(
+  //       `${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/projects/getallprojects`
+  //     );
+  //     if (res.data) {
+  //       setProjects(res.data);
+  //     } else {
+  //       toast.error("No projects found!");
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "Something Went Wrong");
+  //     toast.error("Failed to fetch projects");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleProject = (projectName: string) => {
     router.push(`/project/${projectName}`);
