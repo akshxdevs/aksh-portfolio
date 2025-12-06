@@ -7,7 +7,7 @@ export const GitHubContributionGraph = () => {
     const [year,setYear] = useState(2025);
     const { theme } = useTheme();
     return(
-        <div className={`${theme === "dark" ? "bg-black/40" : "bg-white/40"} max-w-4xl mx-auto w-full flex flex-col justify-center items-center my-10 rounded-lg p-5`}>
+        <div className={`border-b border-zinc-800 pb-16 ${theme === "dark" ? "bg-black/40" : "bg-white/40"} max-w-4xl mx-auto w-[60%] flex flex-col justify-center items-center my-10 rounded-lg p-5`}>
         <GitHubCalendar username="akshxdevs" year={year} blockSize={8} blockMargin={5} fontSize={16} />
         <div className="flex gap-2">
             <button onClick={() => setYear(2025)} className={`border border-zinc-700 px-3 py-1 rounded-md hover:scale-105 transition-all duration-300 hover:border-green-500 ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}>2025</button>

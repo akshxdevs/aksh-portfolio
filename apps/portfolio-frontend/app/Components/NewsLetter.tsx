@@ -38,8 +38,8 @@ export const NewsLetter = () => {
     }
   };
   return (
-    <div className="max-w-5xl mx-auto py-5">
-      <div className="flex flex-col px-5 sm:px-32">
+    <div className="max-w-3xl mx-auto py-8 border-b border-zinc-800">
+      <div className="flex flex-col px-5">
         <h1
           className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-semibold`}
         >

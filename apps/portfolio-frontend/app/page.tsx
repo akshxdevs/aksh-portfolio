@@ -9,7 +9,6 @@ import { Experience } from "./Components/Experience";
 import { Footer } from "./Components/Footer";
 import { GitHubContributionGraph } from "./Components/GitHubContributionGraph";
 import { MyIntro } from "./Components/MyIntro";
-import { NavBar } from "./Components/NavBar";
 import { NewsLetter } from "./Components/NewsLetter";
 import { Projects } from "./Components/Projects";
 import { ReachOut } from "./Components/ReachOut";
@@ -60,10 +59,10 @@ export default function Home() {
         <Footer />
       </div>
       
-      <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/20 via-white/10 to-transparent dark:from-gray-900/20 dark:via-gray-900/10 dark:to-transparent pointer-events-none z-10"></div>
+      {/* <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/20 via-white/10 to-transparent dark:from-gray-900/20 dark:via-gray-900/10 dark:to-transparent pointer-events-none z-10"></div>
       <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-20">
         <NavBar />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -7,8 +7,8 @@ export const TechStack = () => {
   const [showMore, setShowMore] = useState(false);
   const {theme} = useTheme();
   return (
-    <div className="max-w-5xl mx-auto py-2 pb-5">
-      <div className="px-5 sm:px-32">
+    <div className="max-w-3xl mx-auto py-2 pb-5 border-b border-zinc-800">
+      <div className="px-5">
           <h1 className={`text-2xl ${theme === 'dark' ? 'text-slate-50' : 'text-slate-900'} font-semibold`}>
             tech & tools.
           </h1>

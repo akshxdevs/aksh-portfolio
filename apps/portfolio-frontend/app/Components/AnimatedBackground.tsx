@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const gifUrls = [
@@ -12,24 +12,41 @@ const gifUrls = [
 
 export const AnimatedBackground = () => {
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
+  const [opacity, setOpacity] = useState(1);
   const { theme } = useTheme();
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentGifIndex(prevIndex => (prevIndex + 1) % gifUrls.length);
-    }, 60 * 60 * 1000); 
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    return () => clearInterval(interval);
+  useEffect(() => {
+    // Change image every 8 seconds (8000ms)
+    const interval = setInterval(() => {
+      // Fade out
+      setOpacity(0);
+      
+      // After fade out completes, change image and fade in
+      timeoutRef.current = setTimeout(() => {
+        setCurrentGifIndex(prevIndex => (prevIndex + 1) % gifUrls.length);
+        setOpacity(1);
+      }, 500); // Half of transition duration
+    }, 8000); // 8 seconds between changes
+
+    return () => {
+      clearInterval(interval);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   return (
     <div className="absolute top-0 left-0 w-full h-full z-0">
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[350px]">
         <img 
           src={gifUrls[currentGifIndex]} 
           alt="Animated background" 
           className="w-full h-full object-cover transition-opacity duration-1000"
+          style={{ opacity }}
         />
-        <div className={`absolute bottom-0 left-0 w-full h-full ${theme === 'dark' ? 'bg-gradient-to-b from-transparent to-zinc-900' : 'bg-gradient-to-b from-transparent to-white'}`}/>
+        <div className={`absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black`}/>
       </div>
     </div>
   );

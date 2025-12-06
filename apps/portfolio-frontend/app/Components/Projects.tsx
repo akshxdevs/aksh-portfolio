@@ -232,7 +232,7 @@ export const Projects = () => {
           </div>
         )}
         {projects.length > 0 && (
-          <div className="mt-12 flex justify-center">
+          <div className="max-w-3xl pb-10 mt-12 flex justify-center w-full border-b border-zinc-800">
             <button
               onClick={() => router.push("/projects")}
               className={`group flex items-center gap-2 px-6 py-3 text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-lg transition-all duration-300 hover:bg-slate-800/50 ${theme === "dark" ? "text-slate-300" : "text-slate-900"}`}

@@ -7,54 +7,49 @@ import { BsTwitterX } from "react-icons/bs";
 export const MyIntro = () => {
   const { theme } = useTheme();
   return (
-    <div className="max-w-5xl mx-auto pt-10">
+    <div className="max-w-5xl mx-auto pt-10 px-8">
       <div className="hidden sm:flex justify-between gap-2 sm:gap-5 mt-20 px-5 sm:px-24">
         <div>
           <img
-            width={800}
-            src="./profilepicnew.jpg"
+            width={600}
+            src="./pp1.jpeg"
             alt="ProfilePic"
             className="border rounded-lg border-zinc-700 transition-colors duration-300"
           />
         </div>
-        <div className="flex flex-col gap-0">
-          <div className="flex items-center gap-2">
-            <h1
-              className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-gray-800"} font-bold transition-colors duration-300`}
-            >
-              Akash
-            </h1>
-            <div
-              className={`flex items-center gap-1 border border-green-500 rounded-lg px-2 py-1 ${theme === "dark" ? "bg-black" : "bg-zinc-50"}`}
-            >
-              <div className="w-1 h-1 bg-green-500 rounded-lg animate-pulse"></div>
-              <p className={`text-xs text-green-500`}>Available</p>
-            </div>
-          </div>
+        <div className="flex flex-col">
+          <h1
+            className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-gray-800"} font-bold transition-colors duration-300`}
+          >
+            akshxdevs
+          </h1>
+          {/* <div className="flex items-center gap-2">
+            <h2>open for work</h2>
+            <div className="w-2 h-2 bg-green-500 rounded-lg animate-pulse"></div>
+          </div> */}
           <h2
             className={`flex items-center gap-1 text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}
           >
-            21, Full Stack Blockchain
+            hi, I'm Akash, a full stack             
             <span className="flex items-center gap-1">
-              Developer
               <a
-                href="mailto:akash@example.com"
+                href="https://solana.com/"
                 className="group relative rounded-lg transition-all duration-300 hover:bg-green-600/20 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
                 title="Hire Me"
               >
                 {theme === "dark" ? (
                   <img
-                    width="20"
-                    height="20"
-                    src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/briefcase.png"
+                    width="16"
+                    height="16"
+                    src="./solanaLogoMark.png"
                     alt="briefcase"
                   />
                 ) : (
                   <img
-                    width="20"
-                    height="20"
-                    src="https://img.icons8.com/sf-regular-filled/48/briefcase.png"
-                    alt="briefcase "
+                    width="16"
+                    height="16"
+                    src="./solanaLogoMark.png"
+                    alt="briefcase"
                   />
                 )}
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-sm font-semibold px-3 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30">
@@ -62,18 +57,16 @@ export const MyIntro = () => {
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
                 </div>
               </a>
-            </span>
+            </span> engineer.
+
           </h2>
           <p
-            className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}
+            className={`text-sm ${theme === "dark" ? "text-slate-200" : "text-gray-900"}`}
           >
-            Polymath. Builder. Problem solver. Engineer at heart, innovator by
-            choice. With a strong foundation in software and hardware, I’m
-            diving deep into Web3 to design and scale impactful products.
-            Passionate about space, rockets, great books, histroy and frontier
-            sciences, I thrive on pushing boundaries. football, chess are my
-            edge sharp, always aiming to create products that scale, endure, and
-            make a lasting impact.
+            a polymath engineer shaping onchain products in the solana ecosystem.
+            i build systems that are fast, resilient, and grounded in strong engineering principles.
+            my curiosity stretches from rockets and history to frontier sciences.
+            football and chess keep me sharp while I create products built to last.
           </p>
           <div className="flex gap-2 mt-2">
             <div className="group relative border p-1 rounded-md border-zinc-600">
@@ -137,13 +130,13 @@ export const MyIntro = () => {
 
       {/* Mobile View */}
       <div className="sm:hidden">
-        <div className="flex flex-col justify-center items-center gap-2 sm:gap-5 pt-10 px-5">
+        <div className="flex flex-col justify-center items-center gap-2 sm:gap-5 pt-10">
           <div className="flex gap-2 sm:gap-5 w-full">
             <div className="w-[75%]">
               <img
                 width="900"
                 height="900"
-                src="./profilepicnew.jpg"
+                src="./pp1.jpeg"
                 alt="ProfilePic"
                 className="border rounded-lg border-gray-300 dark:border-slate-700 transition-colors duration-300"
               />
@@ -155,12 +148,10 @@ export const MyIntro = () => {
                 >
                   Akash
                 </h1>
-                <div
-                  className={`flex items-center border border-green-500 rounded-lg px-2 py-1 ${theme === "dark" ? "bg-black" : "bg-zinc-50"}`}
-                >
-                  <div className="w-1 h-1 bg-green-500 rounded-lg animate-pulse"></div>
-                  <p className={`text-xs text-green-500`}>Available</p>
-                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <h2>open for work</h2>
+                <div className="w-2 h-2 bg-green-500 rounded-lg animate-pulse"></div>
               </div>
               <div className="flex items-center">
                 <h2
@@ -259,13 +250,10 @@ export const MyIntro = () => {
             <p
               className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}
             >
-              Polymath. Builder. Problem solver. Engineer at heart, innovator by
-              choice. With a strong foundation in software and hardware, I’m
-              diving deep into Web3 to design and scale impactful products.
-              Passionate about space, rockets, great books, histroy and frontier
-              sciences, I thrive on pushing boundaries. football, chess are my
-              edge sharp, always aiming to create products that scale, endure,
-              and make a lasting impact.
+              a polymath engineer shaping onchain products in the solana ecosystem.
+              i build systems that are fast, resilient, and grounded in strong engineering principles.
+              my curiosity stretches from rockets and history to frontier sciences.
+              football and chess keep me sharp while I create products built to last.
             </p>
           </div>
         </div>

@@ -4,8 +4,8 @@ import { useTheme } from "../contexts/ThemeContext";
 export const Education = () => {
   const {theme} = useTheme();
   return (
-    <div className="max-w-5xl mx-auto py-5">
-      <div className="px-5 sm:px-32">
+    <div className="max-w-3xl mx-auto pb-10 border-b border-zinc-800">
+      <div className="px-5">
         <h1 className={`text-3xl ${theme === "dark" ? "text-slate-50" : "text-slate-900"} font-bold`}>Education</h1>
         <div className="flex flex-col sm:flex-row justify-between gap-3 mt-4">
           <div className="flex items-center gap-2">

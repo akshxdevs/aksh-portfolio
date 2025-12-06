@@ -135,7 +135,7 @@
 }
 
 .dark {
-  --background: #171717;
+  --background: #000000;
   --foreground: #ededed;
   --card-bg: #1e293b;
   --card-border: #334155;

@@ -95,7 +95,7 @@ export const BlogSection = () => {
     );
   }
   return (
-    <div className="max-w-5xl mx-auto py-5">
+    <div className="max-w-3xl mx-auto pt-8 border-b border-zinc-800">
       <div className="flex flex-col items-center justify-center">
         <h1 className={`text-2xl text-slate-50 font-semibold mb-8 ${theme === "dark" ? "text-slate-50" : "text-slate-900"}`}>
           Recent Blogs
