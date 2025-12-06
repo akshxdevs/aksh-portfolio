@@ -206,7 +206,7 @@ export const TechStack = () => {
               />
               <span className="text-slate-200 font-medium">Kubernetes</span>
             </div>
-          <div className="px-2 py-1 rounded-lg bg-zinc-800 flex items-center justify-center gap-2">
+            <div className="px-10 py-1 rounded-lg bg-zinc-800 flex items-center justify-center gap-2">
               <button 
                 onClick={(e) => {
                   e.preventDefault();
