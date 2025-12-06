@@ -12,8 +12,7 @@ interface VisitorsData {
 
 // Helper function to get visitor identifier
 function getVisitorId(request: NextRequest): string {
-  const ip = request.ip || 
-    request.headers.get('x-forwarded-for')?.split(',')[0] || 
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
     request.headers.get('x-real-ip') || 
     'unknown';
   const userAgent = request.headers.get('user-agent') || 'unknown';
