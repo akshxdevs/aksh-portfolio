@@ -10,7 +10,7 @@ export const Education = () => {
         <div className="flex flex-col sm:flex-row justify-between gap-3 mt-4">
           <div className="flex items-center gap-2">
             <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/250px-Anna_University_Logo.svg.png"
+              src="./anna-university.png"
               alt="Anna university"
               className="h-16 w-16 border border-zinc-800 rounded-full"
             />
