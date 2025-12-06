@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useTheme } from "../../contexts/ThemeContext";
+import { projects } from "../../utils/project";
 
 export default function ProjectPage() {
   const router = useRouter();
@@ -27,13 +28,10 @@ export default function ProjectPage() {
 
   const getProject = async () => {
     try {
-      setLoading(true);
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/projects/getproject/${encodeURIComponent(projectName)}`
-      );
-
-      if (res.data) {
-        setProject(res.data);
+      const res = projects.find(item=>item.title === projectName);
+      if (res) {
+        console.log({res});
+        setProject(res);
         toast.success("Project fetched successfully!");
       } else {
         toast.error("Project not found!");
