@@ -23,7 +23,7 @@ export const AnimatedBackground = () => {
 
   return (
     <div className="absolute top-0 left-0 w-full h-full z-0">
-      <div className="relative w-full h-1/2">
+      <div className="relative w-full h-[400px]">
         <img 
           src={gifUrls[currentGifIndex]} 
           alt="Animated background" 
