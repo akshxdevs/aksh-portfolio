@@ -33,11 +33,11 @@ export const AppBar = () => {
         return `${hours}:${minutes}`;
     }
     return (
-        <div className="flex justify-between py-2 items-center">
-            <div className={`w-[95%] mx-auto flex justify-center items-center ${theme === "dark" ? "text-white" : "text-black"} text-md font-normal`}>
+        <div className="grid grid-cols-[1fr_auto] items-center py-2 px-2 sm:px-4">
+            <div className={`justify-self-center ${theme === "dark" ? "text-white" : "text-black"} text-md font-normal`}>
                 {formatTime(time)}
             </div>
-            <div className="w-[5%] sm:mx-auto">
+            <div className="justify-self-end">
                 <button
                     type="button"
                     onClick={handleToggle}
