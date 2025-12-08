@@ -14,26 +14,26 @@ export const ReachOut = () => {
         <p className={`text-2xl ${theme === "dark" ? "text-zinc-200" : "text-slate-900"} transition-colors duration-300`}>Got questions? Talk to me.</p>
         <div className="flex space-x-4 mt-4">
           <button className="relative rounded-lg p-2 overflow-hidden group ">
-              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'gradient-rotate 0.5s linear infinite', animationPlayState: 'running'}}></div>
-              <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
-              <a href="https://cal.com/akshxdevs-4fqslc/fun-meet" className="relative flex items-center gap-2 z-10">
-                <img width="20" height="20" src="https://img.icons8.com/ios/50/FFFFFF/calendar--v1.png" alt="calendar--v1"/>
-                <span className="text-gray-800 dark:text-white transition-colors duration-300">Book a meet</span>
-              </a>
-            </button>
-            <button className="relative rounded-lg p-2 overflow-hidden group">
-              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'twitter-gradient 0.5s linear infinite', animationPlayState: 'running'}}></div>
-              <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
-              <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferre" className="relative flex items-center gap-1 z-10">
-                <img
-                    width="20"
-                    height="20"
-                    src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
-                    alt="twitterx--v2"
-                  />
-                <span className="text-slate-200 transition-colors duration-300">Chat on twitter</span>
-              </a>
-            </button>
+            <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'gradient-rotate 0.5s linear infinite', animationPlayState: 'running'}}></div>
+            <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
+            <a href="https://cal.com/akshxdevs-4fqslc/fun-meet" className="relative flex items-center gap-2 z-10">
+              <img width="20" height="20" src="https://img.icons8.com/ios/50/FFFFFF/calendar--v1.png" alt="calendar--v1"/>
+              <span className="text-slate-200 transition-colors duration-300">Book a meet</span>
+            </a>
+          </button>
+          <button className="relative rounded-lg p-2 overflow-hidden group">
+            <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{animation: 'twitter-gradient 0.5s linear infinite', animationPlayState: 'running'}}></div>
+            <div className="absolute inset-[1.5px] rounded-lg bg-zinc-800 transition-colors duration-300"></div>
+            <a href={`https://x.com/akshxdevs`} target="_blank" rel="noopener noreferre" className="relative flex items-center gap-1 z-10">
+              <img
+                  width="20"
+                  height="20"
+                  src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png"
+                  alt="twitterx--v2"
+                />
+              <span className="text-slate-200 transition-colors duration-300">Chat on twitter</span>
+            </a>
+          </button>
         </div>
       </div>
       <div className="px-5">
