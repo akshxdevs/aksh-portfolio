@@ -13,7 +13,6 @@ const gifUrlsForDark = [
 
 const gifUrlsForLight = [
   'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHViMHRjYmlpN2YxcHU1NmF6cmJwdWdyZzVxanBwcmpmeml6ejd1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dMsfVKqi7PHyYTdHsS/giphy.gif',
-  'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXRtOTJsOW9qcDVrbTRtdXA0M3VuMXNmaTFyMHYwejZuMGI0cWc4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UQ1EI1ML2ABQdbebup/giphy.gif',
 ]
 
 export const AnimatedBackground = () => {
