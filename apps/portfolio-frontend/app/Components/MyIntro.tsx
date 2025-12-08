@@ -7,7 +7,7 @@ import { BsTwitterX } from "react-icons/bs";
 export const MyIntro = () => {
   const { theme } = useTheme();
   return (
-    <div className="max-w-5xl mx-auto pt-10 px-8">
+    <div className="max-w-5xl mx-auto px-8">
       <div className="hidden sm:flex justify-between gap-2 sm:gap-5 mt-20 px-5 sm:px-24">
         <div>
           <img

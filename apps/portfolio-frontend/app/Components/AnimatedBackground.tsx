@@ -61,7 +61,12 @@ export const AnimatedBackground = () => {
           className="w-full h-full object-cover transition-opacity duration-1000"
           style={{ opacity }}
         />
-        <div className={`absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black`}/>
+        {theme === "dark" ? (
+          <div className={`absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black`}/>
+
+        ):(
+          <div className={`absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-white`}/>
+        )}
       </div>
     </div>
   );
