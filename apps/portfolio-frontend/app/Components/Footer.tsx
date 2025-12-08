@@ -21,12 +21,10 @@ export const Footer = () => {
   useEffect(() => {
     const trackAndFetchVisits = async () => {
       try {
-        // Track the visit
         await fetch('/api/visitors', {
           method: 'POST',
         });
         
-        // Fetch the updated count
         const response = await fetch('/api/visitors');
         if (response.ok) {
           const data = await response.json();
@@ -34,7 +32,6 @@ export const Footer = () => {
         }
       } catch (error) {
         console.error('Error tracking/fetching visits:', error);
-        // Fallback to showing nothing or a default value
       }
     };
 
@@ -42,7 +39,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto pt-8 pb-20 text-sm">
+    <div className="max-w-3xl mx-auto pt-8 pb-20 text-sm px-5">
       <div className={`flex flex-col gap-4 ${theme === "dark" ? "text-zinc-100" : "text-zinc-900"} text-sm`}>
         <div className="flex justify-between gap-2 w-full text-[#41444d]"> 
           <div>

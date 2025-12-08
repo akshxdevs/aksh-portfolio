@@ -23,10 +23,6 @@ export const MyIntro = () => {
           >
             akshxdevs
           </h1>
-          {/* <div className="flex items-center gap-2">
-            <h2>open for work</h2>
-            <div className="w-2 h-2 bg-green-500 rounded-lg animate-pulse"></div>
-          </div> */}
           <h2
             className={`flex items-center gap-1 text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}
           >
@@ -58,7 +54,6 @@ export const MyIntro = () => {
                 </div>
               </a>
             </span> engineer.
-
           </h2>
           <p
             className={`text-sm ${theme === "dark" ? "text-slate-200" : "text-gray-900"}`}
@@ -132,7 +127,7 @@ export const MyIntro = () => {
       <div className="sm:hidden">
         <div className="flex flex-col justify-center items-center gap-2 sm:gap-5 pt-10">
           <div className="flex gap-2 sm:gap-5 w-full">
-            <div className="w-[75%]">
+            <div className="w-full">
               <img
                 width="900"
                 height="900"
@@ -142,50 +137,26 @@ export const MyIntro = () => {
               />
             </div>
             <div className="w-full flex flex-col mt-2">
-              <div className="flex items-center gap-2">
-                <h1
-                  className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-gray-800"} font-bold transition-colors duration-300`}
-                >
-                  Akash
-                </h1>
-              </div>
-              <div className="flex items-center gap-2">
-                <h2>open for work</h2>
-                <div className="w-2 h-2 bg-green-500 rounded-lg animate-pulse"></div>
-              </div>
-              <div className="flex items-center">
-                <h2
-                  className={` text-md font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300 leading-tight`}
-                >
-                  21, Full Stack and Blockchain Developer
+              <h1 className={`text-2xl ${theme === "dark" ? "text-slate-50" : "text-gray-800"} font-bold transition-colors duration-300`}>
+                akshxdevs
+              </h1>
+              <div className="w-full">
+                <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}>
+                  hi, i'm akash,
                 </h2>
-                <a
-                  href="mailto:akash@example.com"
-                  className="mt-5 right-1 group relative inline-block rounded-lg transition-all duration-300 hover:bg-green-600/20 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
-                  title="Hire Me"
-                >
-                  {theme === "dark" ? (
+                <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}>
+                  <span className="whitespace-nowrap">full stack </span>
+                  <span className="inline-flex items-center gap-1">
                     <img
-                      width="30"
-                      height="30"
-                      src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/briefcase.png"
+                      width="16"
+                      height="16"
+                      src="./solanaLogoMark.png"
                       alt="briefcase"
                       className="inline"
                     />
-                  ) : (
-                    <img
-                      width="30"
-                      height="30"
-                      src="https://img.icons8.com/sf-regular-filled/48/briefcase.png"
-                      alt="briefcase"
-                      className="inline"
-                    />
-                  )}
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-zinc-100 text-xs font-semibold px-2 py-1 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-green-500/30 z-50">
-                    Hire Me!
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
-                  </div>
-                </a>
+                    engineer.
+                  </span>
+                </h2>
               </div>
               <div className="flex gap-2 mt-1">
                 <div className="group relative border p-1 rounded-md border-zinc-600">
