@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { FaBitcoin, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import localFont from "next/font/local";
+
+const myfont = localFont({
+  src: "../fonts/ABCGintoNord-Black-Trial-BF651b7b72b5ea4.woff",
+  variable: "--font-myfont"     // optional but recommended
+});
 
 const formatVisitCount = (count: number): string => {
   if (count >= 1000000) {
@@ -39,28 +45,30 @@ export const Footer = () => {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto pt-8 pb-20 text-sm px-5">
+    <div className="max-w-3xl mx-auto pt-8 pb-2 text-sm px-5">
       <div className={`flex flex-col gap-4 ${theme === "dark" ? "text-zinc-100" : "text-zinc-900"} text-sm`}>
         <div className="flex justify-between gap-2 w-full text-[#41444d]"> 
           <div>
-            <p className="text-sm">built with <a href="" className="underline">turbo.repo</a></p>
+            <p className={`text-sm ${theme === "dark" ? "text-slate-200/85" : ""}`}>built with <a href="" className="underline">turbo.repo</a></p>
           </div>
           <div>
             <div
               className={`flex items-center gap-1 border border-yellow-500 rounded-lg px-2 py-1 ${theme === "dark" ? "bg-black" : "bg-zinc-50"}`}
             >
               <div className="w-1 h-1 bg-yellow-500 rounded-lg animate-pulse"></div>
-              <p className={`text-xs text-yellow-500`}>last updated 8 dec 2025</p>
+              <p className={`text-xs text-yellow-500`}>last updated 12 dec 2025</p>
             </div>
             <p className="text-sm"></p>
           </div>
         </div>
         <div>
-          <p className="text-[#41444d] text-sm">
+          <p className={`text-[#41444d] text-sm ${theme === "dark" ? "text-slate-200/85" : ""}`}>
             {visitCount !== null && visitCount > 0 ? `${formatVisitCount(visitCount)} visits` : 'Loading...'}
           </p>
         </div>
-        <div></div>
+        <div className=" max-w-3xl w-full  py-20 rounded- bg-blue-500">
+          <h1 className={`${myfont.className} text-[200px] text-center text-white`}>build</h1>
+        </div>
         <div className="flex items-center justify-between"> 
           <div>
             <p>© 2025 akshxdevs</p>
