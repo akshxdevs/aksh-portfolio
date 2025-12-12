@@ -1,71 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import pool from '../../../lib/db';
 
-const VISITORS_FILE = path.join(process.cwd(), 'data', 'visitors.json');
+const VISITOR_COOKIE = 'portfolio_visitor_id';
+const ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 
-interface VisitorsData {
-  totalVisits: number;
-  uniqueVisitors: Set<string>;
-  lastUpdated: string;
+async function ensureTable() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS visitor_counts (
+      visitor_id TEXT PRIMARY KEY,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `);
 }
 
-// Helper function to get visitor identifier
-function getVisitorId(request: NextRequest): string {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
-    request.headers.get('x-real-ip') || 
-    'unknown';
-  const userAgent = request.headers.get('user-agent') || 'unknown';
-  return `${ip}-${userAgent}`;
+async function getTotalVisits(): Promise<number> {
+  const result = await pool.query<{ total: string }>(
+    'SELECT COUNT(*)::int AS total FROM visitor_counts'
+  );
+  return Number(result.rows[0]?.total || 0);
 }
 
-// Helper function to read visitors data
-async function readVisitorsData(): Promise<VisitorsData> {
+export async function GET() {
   try {
-    await fs.mkdir(path.dirname(VISITORS_FILE), { recursive: true });
-    const data = await fs.readFile(VISITORS_FILE, 'utf-8');
-    const parsed = JSON.parse(data);
-    return {
-      totalVisits: parsed.totalVisits || 0,
-      uniqueVisitors: new Set(parsed.uniqueVisitors || []),
-      lastUpdated: parsed.lastUpdated || new Date().toISOString(),
-    };
-  } catch (error) {
-    // File doesn't exist or is invalid, return default
-    return {
-      totalVisits: 0,
-      uniqueVisitors: new Set<string>(),
-      lastUpdated: new Date().toISOString(),
-    };
-  }
-}
-
-// Helper function to write visitors data
-async function writeVisitorsData(data: VisitorsData): Promise<void> {
-  try {
-    await fs.mkdir(path.dirname(VISITORS_FILE), { recursive: true });
-    await fs.writeFile(
-      VISITORS_FILE,
-      JSON.stringify({
-        totalVisits: data.totalVisits,
-        uniqueVisitors: Array.from(data.uniqueVisitors),
-        lastUpdated: data.lastUpdated,
-      }, null, 2),
-      'utf-8'
-    );
-  } catch (error) {
-    console.error('Error writing visitors data:', error);
-  }
-}
-
-// GET endpoint to retrieve visitor count
-export async function GET(request: NextRequest) {
-  try {
-    const data = await readVisitorsData();
-    return NextResponse.json({
-      totalVisits: data.totalVisits,
-      uniqueVisitors: data.uniqueVisitors.size,
-    });
+    await ensureTable();
+    const totalVisits = await getTotalVisits();
+    return NextResponse.json({ totalVisits });
   } catch (error) {
     console.error('Error reading visitors data:', error);
     return NextResponse.json(
@@ -75,28 +34,36 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST endpoint to increment visitor count
 export async function POST(request: NextRequest) {
   try {
-    const data = await readVisitorsData();
-    const visitorId = getVisitorId(request);
-    
-    // Increment total visits
-    data.totalVisits += 1;
-    
-    // Add to unique visitors if not already present
-    if (!data.uniqueVisitors.has(visitorId)) {
-      data.uniqueVisitors.add(visitorId);
+    await ensureTable();
+
+    const existingVisitorId = request.cookies.get(VISITOR_COOKIE)?.value;
+    const visitorId = existingVisitorId || crypto.randomUUID();
+
+    await pool.query(
+      `
+        INSERT INTO visitor_counts (visitor_id)
+        VALUES ($1)
+        ON CONFLICT (visitor_id) DO NOTHING
+      `,
+      [visitorId]
+    );
+
+    const totalVisits = await getTotalVisits();
+    const response = NextResponse.json({ totalVisits });
+
+    if (!existingVisitorId) {
+      response.cookies.set(VISITOR_COOKIE, visitorId, {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: true,
+        path: '/',
+        maxAge: ONE_YEAR_SECONDS,
+      });
     }
-    
-    data.lastUpdated = new Date().toISOString();
-    
-    await writeVisitorsData(data);
-    
-    return NextResponse.json({
-      totalVisits: data.totalVisits,
-      uniqueVisitors: data.uniqueVisitors.size,
-    });
+
+    return response;
   } catch (error) {
     console.error('Error updating visitors data:', error);
     return NextResponse.json(

@@ -27,17 +27,15 @@ export const Footer = () => {
   useEffect(() => {
     const trackAndFetchVisits = async () => {
       try {
-        await fetch('/api/visitors', {
-          method: 'POST',
-        });
-        
-        const response = await fetch('/api/visitors');
-        if (response.ok) {
-          const data = await response.json();
-          setVisitCount(data.totalVisits);
+        const response = await fetch('/api/visitors', { method: 'POST' });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch visits: ${response.statusText}`);
         }
+        const data = await response.json();
+        setVisitCount(data.totalVisits ?? 0);
       } catch (error) {
         console.error('Error tracking/fetching visits:', error);
+        setVisitCount(0);
       }
     };
 
@@ -63,7 +61,7 @@ export const Footer = () => {
         </div>
         <div>
           <p className={`text-[#41444d] text-sm ${theme === "dark" ? "text-slate-200/85" : ""}`}>
-            {visitCount !== null && visitCount > 0 ? `${formatVisitCount(visitCount)} visits` : 'Loading...'}
+            {visitCount !== null && visitCount > 0 ? `${formatVisitCount(visitCount)} visitors` : 'Loading...'}
           </p>
         </div>
         <div className=" max-w-3xl w-full  py-20 rounded- bg-blue-500">
