@@ -64,8 +64,8 @@ export const Footer = () => {
             {visitCount !== null && visitCount > 0 ? `${formatVisitCount(visitCount)} visitors` : 'Loading...'}
           </p>
         </div>
-        <div className=" max-w-3xl w-full  py-20 rounded- bg-blue-500">
-          <h1 className={`${myfont.className} text-[200px] text-center text-white`}>build</h1>
+        <div className=" max-w-3xl w-full py-8 sm:py-20 rounded- bg-blue-500">
+          <h1 className={`${myfont.className} text-[80px] sm:text-[200px] text-center text-white`}>build</h1>
         </div>
         <div className="flex items-center justify-between"> 
           <div>
