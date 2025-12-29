@@ -7,12 +7,12 @@ import { BsTwitterX } from "react-icons/bs";
 export const MyIntro = () => {
   const { theme } = useTheme();
   return (
-    <div className="max-w-5xl mx-auto px-8">
-      <div className="hidden sm:flex justify-between gap-2 sm:gap-5 mt-20 px-5 sm:px-24">
+    <div className="max-w-3xl mx-auto px-8 pb-8 mb-4 border-b border-zinc-800">
+      <div className="hidden sm:flex justify-between gap-2 sm:gap-5 mt-20 px-8">
         <div>
           <img
-            width={600}
-            src="./pp1.jpeg"
+            width={400}
+            src="./pfp.jpg"
             alt="ProfilePic"
             className="border rounded-lg border-zinc-700 transition-colors duration-300"
           />
@@ -26,7 +26,7 @@ export const MyIntro = () => {
           <h2
             className={`flex items-center gap-1 text-lg font-semibold ${theme === "dark" ? "text-slate-200" : "text-gray-800"} transition-colors duration-300`}
           >
-            hi, I'm Akash, a full stack             
+            hi, i'm akash, a full stack             
             <span className="flex items-center gap-1">
               <a
                 href="https://solana.com/"
@@ -58,10 +58,8 @@ export const MyIntro = () => {
           <p
             className={`text-sm ${theme === "dark" ? "text-slate-200" : "text-gray-900"}`}
           >
-            a polymath engineer shaping onchain products in the solana ecosystem.
-            i build systems that are fast, resilient, and grounded in strong engineering principles.
-            my curiosity stretches from rockets and history to frontier sciences.
-            football and chess keep me sharp while I create products built to last.
+            building fast, reliable on-chain systems on Solana. Into astronomy, cybertech, and 
+            aerial and mobile robotics. Always curious, always building something new.
           </p>
           <div className="flex gap-2 mt-2">
             <div className="group relative border p-1 rounded-md border-zinc-600">
@@ -131,7 +129,7 @@ export const MyIntro = () => {
               <img
                 width="900"
                 height="900"
-                src="./pp1.jpeg"
+                src="./pfp.jpg"
                 alt="ProfilePic"
                 className="border rounded-lg border-gray-300 dark:border-slate-700 transition-colors duration-300"
               />
@@ -221,10 +219,8 @@ export const MyIntro = () => {
             <p
               className={`text-md ${theme === "dark" ? "text-slate-300" : "text-gray-900"}`}
             >
-              a polymath engineer shaping onchain products in the solana ecosystem.
-              i build systems that are fast, resilient, and grounded in strong engineering principles.
-              my curiosity stretches from rockets and history to frontier sciences.
-              football and chess keep me sharp while I create products built to last.
+            building fast, reliable on-chain systems on Solana. Into astronomy, cybertech, and 
+            aerial and mobile robotics. Always curious, always building something new.
             </p>
           </div>
         </div>
