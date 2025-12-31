@@ -54,7 +54,7 @@ export const Footer = () => {
               className={`flex items-center gap-1 border border-yellow-500 rounded-lg px-2 py-1 ${theme === "dark" ? "bg-black" : "bg-zinc-50"}`}
             >
               <div className="w-1 h-1 bg-yellow-500 rounded-lg animate-pulse"></div>
-              <p className={`text-xs text-yellow-500`}>last updated 29 dec 2025</p>
+              <p className={`text-xs text-yellow-500`}>last updated 31 dec 2025</p>
             </div>
             <p className="text-sm"></p>
           </div>
