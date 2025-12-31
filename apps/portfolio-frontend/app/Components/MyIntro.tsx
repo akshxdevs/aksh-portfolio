@@ -106,7 +106,7 @@ export const MyIntro = () => {
 
             <div className="group relative border p-1 rounded-md border-zinc-600">
               <a
-                href=""
+                href="https://spqtin.staticfast.com"
                 target="_blank"
                 className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
               >
@@ -201,7 +201,7 @@ export const MyIntro = () => {
 
                 <div className="group relative border p-1 rounded-md border-zinc-600">
                   <a
-                    href=""
+                    href="https://spqtin.staticfast.com"
                     target="_blank"
                     className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
                   >
